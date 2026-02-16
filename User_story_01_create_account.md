@@ -2,7 +2,7 @@
 
 Keep any other version here as well, e.g. User registration, Sign up user.
 
-## Priority: Must-have (Iteration 1)
+## Priority: high (Iteration 1)
 This is a core functionality required for any user to use the system.
 
 ## Estimation: 2 days
