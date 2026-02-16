@@ -40,7 +40,7 @@ The registration process includes basic validation and stores the user data secu
   - Password
 - Error messages shown for invalid input
 
-(Mockup to be added later)
-
+### Mockup
+![US01 - Create account mockup](../images/us01_create_account_mockup.jpg)
 ## Completed
 - Not started
