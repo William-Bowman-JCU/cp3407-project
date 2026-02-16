@@ -1,46 +1,62 @@
 # User story title: Create user account
 
-Keep any other version here as well, e.g. User registration, Sign up user.
-
-## Priority: high (Iteration 1)
-This is a core functionality required for any user to use the system.
+## Priority: 10 (planned for iteration-1)
 
 ## Estimation: 2 days
 Planning poker estimates:
-- Alice: 2 days
-- Bob: 1.5 days
-- Charlie: 2 days
+- Leonard: 2 days
+- Joyal: 1.5 days
+- Alan: 2 days
+- Will: 2 days
 
 Final estimate agreed: 2 days
 
 ## Assumptions (if any)
 - The user provides a valid email address.
-- Basic validation (email format, password length) is required.
+- Basic validation (email format, password length, password confirmation) is required.
 - No external authentication (e.g. Google, Facebook) in this iteration.
+- Social media login buttons are displayed but not functionally implemented in iteration-1.
 
 ## Description
 As a **user**, I want to **create an account** so that **my personal information is saved and I can place orders**.
 
 ### Description – version 1
-The system provides a registration form where users can enter their name, email address, and password.
+The system provides a registration form where users can enter their full name, email address, password, and confirm their password.
 
 ### Description – version 2
-The registration process includes basic validation and stores the user data securely in the system database.
+The registration process includes basic validation (email format, password confirmation). 
+If the input is valid, the user data is stored securely in the system database. 
+If the input is invalid, an error message is displayed.
 
 ## Tasks (see chapter 4)
+
 1. Design registration form UI – 0.5 days  
-2. Implement input validation – 0.5 days  
-3. Store user data in database – 0.5 days  
-4. Test registration workflow – 0.5 days  
+2. Implement input validation (including password confirmation) – 0.5 days  
+3. Store user data securely in database – 0.5 days  
+4. Display validation error messages – 0.25 days  
+5. Test registration workflow – 0.25 days  
 
 ## UI Design
-- Simple registration form with fields:
-  - Name
-  - Email
+
+The registration screen includes:
+
+- Headline: "Create an account"
+- Input fields:
+  - Full name
+  - Email address
   - Password
+  - Confirm Password
+- Button: "Sign up"
+- Link: "login" (for existing users)
+- Social media icons (Facebook, Twitter, Instagram) – UI only
 - Error messages shown for invalid input
+
+The left side of the screen contains marketing text:
+- "Your food delivered fast"
+- Short description of the service
 
 ### Mockup
 ![US01 - Create account mockup](../images/us01_create_account_mockup.jpg)
+
 ## Completed
 - Not started

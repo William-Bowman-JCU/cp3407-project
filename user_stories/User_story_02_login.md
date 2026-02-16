@@ -1,46 +1,58 @@
 # User story title: User login
 
-Keep any other version here as well, e.g. Secure login, Authenticate user.
-
-## Priority: Must-have (Iteration 1)
-Users must be able to log in to access their account and place orders.
+## Priority: 9 (planned for iteration-1)
+Login is required so that registered users can access their account and place orders.
 
 ## Estimation: 1 day
 Planning poker estimates:
-- Alice: 1 day
-- Bob: 1 day
-- Charlie: 1.5 days
+- Leonard: 1 day
+- Joyal: 1 day
+- Alan: 1.5 days
+- Will: 2 days
 
 Final estimate agreed: 1 day
 
 ## Assumptions (if any)
-- The user already has a registered account.
-- Login is done using email and password.
-- Passwords are stored securely (hashing handled by the system).
+- The user already has a registered account (see "Create user account").
+- Login uses email + password.
+- "Remember Me" stores session information locally.
+- Social media login (Facebook, Twitter, Instagram) is planned but may not be fully implemented in iteration-1.
 - No multi-factor authentication in this iteration.
+- Basic error handling is required (wrong password / unknown email).
+
 
 ## Description
-As a **user**, I want to **log in securely** so that **my account is protected and only accessible to me**.
+As a **user**, I want to **log in** so that **I can access my account and place orders securely**.
 
 ### Description – version 1
-The system provides a login form where users can enter their email address and password.
+The system provides a login form where users can enter their email and password.
 
 ### Description – version 2
-The system validates the login credentials and grants access only if the credentials are correct.
-
+The system validates the user credentials and grants access only if the credentials are correct. 
+An error message is shown if the login fails. 
+Users may optionally select "Remember Me" to stay logged in. 
+Social media login options are displayed to allow alternative authentication methods.
 ## Tasks (see chapter 4)
 1. Design login form UI – 0.25 days  
-2. Implement credential validation – 0.25 days  
-3. Handle login errors (wrong password, unknown user) – 0.25 days  
-4. Test login functionality – 0.25 days  
+2. Implement credential validation (check email + password) – 0.25 days  
+3. Implement error handling (invalid login) – 0.25 days  
+4. Implement "Remember Me" functionality – 0.15 days  
+5. Display social media login buttons – 0.10 days  
+6. Test login workflow – 0.25 days  
 
 ## UI Design
 - Login form with fields:
   - Email
   - Password
+- Checkbox: Remember Me
+- Link: Forgot Password
+- Link: Create account
+- Social media login buttons (Facebook, Twitter, Instagram)
 - Error message shown for invalid credentials
 
-(Mockup to be added later)
+
+## Mockup
+![US02 - Login mockup](../images/us02_login_mockup.jpg)
 
 ## Completed
 - Not started
