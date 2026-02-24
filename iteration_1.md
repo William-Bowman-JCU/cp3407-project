@@ -5,12 +5,15 @@ Checklist:
 2. User stories are correct: see p39
 
 * Assumed Velocity: ?? 
-* Number of developers: ??
+* Number of developers: 5
 * Total estimated amount of work: YY days
 
 User stories or tasks (see chapter 4):
-1. [user story or task title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
+* [Create account](./user_stories/User_story_01_create_account.md), priority 10, 2 days
+* [Login](./user_stories/User_story_02_login.md), priority 9, 1 days
+* [Browse Food](./user_stories/User_story_03_browse_food.md), priority 8, 2 days
+* [View Menu](./user_stories/User_story_04_view_menu.md), priority 8, 2 days
+* [Shopping Cart](./user_stories/User_story_05_shopping_cart.md), priority 7, 2 days
 
 In progress:
 * Task-2 (developer name or initials), date started
