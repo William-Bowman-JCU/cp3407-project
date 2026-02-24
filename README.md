@@ -12,18 +12,22 @@ The following is the list of items, which are required to be completed.
 
 It is recommended to complete this assignment in a group of 2-4 students.
 1. Leonard Rein – on-campus student (CP3407)
+2. Willaim Bowman - on-campus student (CP3407)
+3. Joyal Joy - on-campus student (CP3407)
 
 
 # Project planning BEFORE iteration-1, (see chapters 1-3)
-Checklist/TODOs: 
-* Update the following during each week prac session
-* github entry timestamp is BEFORE the iteration-1
-* User stories are correct: see p39
 * Must have more user stories than fits into iterations 1 and 2. To practice the priority.
-* [user story title](./user_stories/user_story_01_title.md), priority XX, YY days 
-* ...
 
-Total: YY days
+* [Create account](./user_stories/User_story_01_create_account.md), priority 10, 2 days
+* [Login](./user_stories/User_story_02_login.md), priority 9, 1 days
+* [Browse Food](./user_stories/User_story_03_browse_food.md), priority 8, 2 days
+* [View Menu](./user_stories/User_story_04_view_menu.md), priority 8, 2 days
+* [Shopping Cart](./user_stories/User_story_05_shopping_cart.md), priority 7, 2 days
+* [Checkout](./user_stories/User_story_06_checkout.md), priority 6, 2 days
+* [Track Order](./user_stories/User_story_07_track_order.md), priority 8, 2 days
+
+Total: 13 days
 
 
 ## Iteration 1 [duration 3-4 weeks], add your start and end dates 
