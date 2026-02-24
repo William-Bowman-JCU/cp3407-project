@@ -41,11 +41,19 @@ This can include a history section for all previous orders
 5. Test order creation, updating & history - 0.1 days
 
 
-# UI Design:
+## UI Design:
 - Top of page categories - Left = Cart, Right = Orders
 - "Orders" page shows a complete history of orders, ordered newest to oldest
 - All orders which aren't of status "completed/delivered" will be highlighted in a contrasting colour
 - Opening an orders shows the date & order details, delivery & payment details, an optional receipt, and a real time map for orders in progress
+
+## Mockup - My Orders
+
+![US07 - My Orders mockup](../images/us07_track_orders_mockup_1.png)
+
+## Mockup - Order Overview
+
+![US07 - Order Overview mockup](../images/us07_track_orders_mockup_2.png)
 
 # Completed:
 Not started
