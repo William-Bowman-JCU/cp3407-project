@@ -12,7 +12,7 @@ The following is the list of items, which are required to be completed.
 
 It is recommended to complete this assignment in a group of 2-4 students.
 1. Leonard Rein – on-campus student (CP3407)
-2. Willaim Bowman - on-campus student (CP3407)
+2. William Bowman - on-campus student (CP3407)
 3. Joyal Joy - on-campus student (CP3407)
 
 
