@@ -10,7 +10,8 @@ Planning poker estimates:
 - Leonard: 2 days  
 - Joyal: 1.5 days  
 - Alan: 2 days  
-- Will: 2 days  
+- Will: 2 days
+- Joe: 2 days
 
 Final estimate agreed: 2 days
 
