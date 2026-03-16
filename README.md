@@ -45,6 +45,60 @@ End date: 14 Mar 2026
 
 Total: 13 days
 
+
+## Iteration 1 Review
+
+### Completed user stories
+
+1. [Create account](./user_stories/User_story_01_create_account.md), priority 10, 2 days
+2. [Login](./user_stories/User_story_02_login.md), priority 9, 1 day
+3. [Browse Food](./user_stories/User_story_03_browse_food.md), priority 8, 2 days
+4. [View Menu](./user_stories/User_story_04_view_menu.md), priority 8, 2 days
+5. [Shopping Cart](./user_stories/User_story_05_shopping_cart.md), priority 7, 2 days
+6. [Checkout](./user_stories/User_story_06_checkout.md), priority 6, 2 days
+7. [Track Order](./user_stories/User_story_07_track_order.md), priority 5, 2 days
+
+Completed effort: **13 story days**
+
+The **Account Settings** user story was not implemented and moved to iteration 2.
+
+---
+
+### What went well
+
+- The prioritised backlog helped the team focus on the core ordering workflow.
+- UI mockups helped clarify the expected behaviour of each feature.
+- The core system flow (account → browsing → ordering → tracking) was successfully implemented.
+
+---
+
+### Lessons learned
+
+- Some domain details (e.g., selecting a delivery location before browsing restaurants) were identified during development but were not explicitly included in the initial backlog.
+- Breaking user stories into smaller tasks helped improve clarity during implementation.
+
+---
+
+### Velocity
+
+Planned effort: **15 story days**  
+Completed effort: **13 story days**
+
+Team velocity for iteration 1: **≈13 story days per iteration**
+
+This velocity will be used to plan the scope of iteration 2.
+
+---
+
+### Improvements for Iteration 2
+
+Based on the review of iteration 1, the team will:
+
+- Implement the **Account Settings** functionality.
+- Refine user stories with additional domain details where needed.
+- Continue improving the ordering workflow based on feedback from iteration 1.
+
+
 ## Iteration 2 [duration 3–4 weeks]
 
 This iteration focuses on additional features and improvements based on the initial system functionality.
