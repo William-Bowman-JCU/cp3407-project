@@ -92,10 +92,6 @@ Based on the review of iteration 1, the team will:
 
 ## Iteration 2 [duration 3–4 weeks]
 
-## Iteration 2 [duration 3–4 weeks]
-
-## Iteration 2 [duration 3–4 weeks]
-
 This iteration focuses on improving the realism and usability of the ordering process by introducing location selection, restaurant browsing improvements, and account management features.
 
 Start date: 17 Mar 2026  
