@@ -1,10 +1,7 @@
-How to edit this: test-2025
-* Option-1 (tested and worked ok): PyCharm supports editing of these .md files. Then you need to push to the main branch or make a pull request.
-* Option-2 (tested ok): Edit and commit it directly on GitHub. Then any local repo copies will need to be "updated".
-
 # CP3407 Software Engineering Project
-This is a project assignment template for CP3407.  
-The following is the list of items that are required to be completed.
+
+This repository contains the planning and development artefacts for the CP3407 Software Engineering group project.  
+It includes the project backlog, user stories, iteration planning, and links to implementation progress.
 
 ## Team
 
@@ -30,11 +27,9 @@ It is recommended to complete this assignment in a group of 2–4 students.
 
 Total: 15 days
 
-## Iteration 1 [duration 3-4 weeks]
+## Iteration 1 [duration 3–4 weeks]
 
-* Goal is to have 2 iterations during a trimester of teaching.
-* Update the following during each weekly prac session.
-* During pracs, we may experiment with other GitHub ways of tracking changes, e.g. via pull requests.
+This iteration focuses on delivering the core ordering workflow, allowing users to create an account, browse food options, add items to the cart, complete checkout, and track their orders.
 
 Start date: 17 Feb 2026 
 End date: 14 Mar 2026
@@ -50,9 +45,9 @@ End date: 14 Mar 2026
 
 Total: 13 days
 
-### Iteration 2 [duration 3–4 weeks]
+## Iteration 2 [duration 3–4 weeks]
 
-Goal is to have 2 iterations during a trimester of teaching.
+This iteration focuses on additional features and improvements based on the initial system functionality.
 
 Start date: 17 Mar 2026
 End date: 10 Apr 2026
