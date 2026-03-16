@@ -52,8 +52,7 @@ This iteration focuses on additional features and improvements based on the init
 Start date: 17 Mar 2026
 End date: 10 Apr 2026
 
-1. [Track Order](./user_stories/User_story_07_track_order.md), priority 5, 2 days
-2. [Account Settings](./user_stories/User_story_08_account_settings.md), priority 4, 2 days
+1. [Account Settings](./user_stories/User_story_08_account_settings.md), priority 4, 2 days
 
 Total: 4 days
 
