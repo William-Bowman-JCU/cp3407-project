@@ -111,10 +111,6 @@ Total: 15 days
 
 ### Not enough time/developers
 
-1. [Track Order](./user_stories/User_story_07_track_order.md), priority 5, 2 days
-2. [Account Settings](./user_stories/User_story_08_account_settings.md), priority 4, 2 days
-
-Total: 4 days
 
 # Actual iterations
 1. [Iteration-1](./iteration_1.md)
