@@ -13,6 +13,9 @@ Planning poker estimates:
 Final estimate agreed: 2 days
 
 ## Assumptions (if any)
+
+## Refinement
+
 - The user provides a valid email address.
 - Basic validation (email format, password length, password confirmation) is required.
 - No external authentication (e.g. Google, Facebook) in this iteration.

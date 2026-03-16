@@ -14,6 +14,9 @@ Planning poker estimates:
 Final estimate agreed: 1 day
 
 ## Assumptions (if any)
+
+## Refinement
+
 - The user already has a registered account (see "Create user account").
 - Login uses email + password.
 - "Remember Me" stores session information locally.

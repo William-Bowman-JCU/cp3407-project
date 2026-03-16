@@ -16,6 +16,8 @@ Final estimate agreed: 2 days
 
 ## Assumptions (if any):
 
+## Refinement
+
 - User has completed order process including item selection & payment
 - Restaurants & drivers update order statuses
 - No GPS functionality in this iteration
