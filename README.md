@@ -62,7 +62,6 @@ Completed effort: **13 story days**
 
 The **Account Settings** user story was not implemented and moved to iteration 2.
 
----
 
 ### What went well
 
@@ -70,14 +69,12 @@ The **Account Settings** user story was not implemented and moved to iteration 2
 - UI mockups helped clarify the expected behaviour of each feature.
 - The core system flow (account → browsing → ordering → tracking) was successfully implemented.
 
----
 
 ### Lessons learned
 
 - Some domain details (e.g., selecting a delivery location before browsing restaurants) were identified during development but were not explicitly included in the initial backlog.
 - Breaking user stories into smaller tasks helped improve clarity during implementation.
 
----
 
 ### Velocity
 
@@ -88,7 +85,6 @@ Team velocity for iteration 1: **≈13 story days per iteration**
 
 This velocity will be used to plan the scope of iteration 2.
 
----
 
 ### Improvements for Iteration 2
 
@@ -98,6 +94,7 @@ Based on the review of iteration 1, the team will:
 - Refine user stories with additional domain details where needed.
 - Continue improving the ordering workflow based on feedback from iteration 1.
 
+---
 
 ## Iteration 2 [duration 3–4 weeks]
 
