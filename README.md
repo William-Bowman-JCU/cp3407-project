@@ -31,8 +31,8 @@ Total: 15 days
 
 This iteration focuses on delivering the core ordering workflow, allowing users to create an account, browse food options, add items to the cart, complete checkout, and track their orders.
 
-Start date: 17 Feb 2026 
-End date: 14 Mar 2026
+Start date: 17 Feb 2026  
+End date: 14 Mar 2026  
 
 1. [Create account](./user_stories/User_story_01_create_account.md), priority 10, 2 days
 2. [Login](./user_stories/User_story_02_login.md), priority 9, 1 day
@@ -40,11 +40,9 @@ End date: 14 Mar 2026
 4. [View Menu](./user_stories/User_story_04_view_menu.md), priority 8, 2 days
 5. [Shopping Cart](./user_stories/User_story_05_shopping_cart.md), priority 7, 2 days
 6. [Checkout](./user_stories/User_story_06_checkout.md), priority 6, 2 days
-7. [Track Order](./user_stories/User_story_07_track_order.md), priority 8, 2 days
-
+7. [Track Order](./user_stories/User_story_07_track_order.md), priority 5, 2 days
 
 Total: 13 days
-
 
 ## Iteration 1 Review
 
@@ -62,19 +60,16 @@ Completed effort: **13 story days**
 
 The **Account Settings** user story was not implemented and moved to iteration 2.
 
-
 ### What went well
 
 - The prioritised backlog helped the team focus on the core ordering workflow.
 - UI mockups helped clarify the expected behaviour of each feature.
 - The core system flow (account → browsing → ordering → tracking) was successfully implemented.
 
-
 ### Lessons learned
 
 - Some domain details (e.g., selecting a delivery location before browsing restaurants) were identified during development but were not explicitly included in the initial backlog.
 - Breaking user stories into smaller tasks helped improve clarity during implementation.
-
 
 ### Velocity
 
@@ -84,7 +79,6 @@ Completed effort: **13 story days**
 Team velocity for iteration 1: **≈13 story days per iteration**
 
 This velocity will be used to plan the scope of iteration 2.
-
 
 ### Improvements for Iteration 2
 
@@ -100,12 +94,12 @@ Based on the review of iteration 1, the team will:
 
 This iteration focuses on additional features and improvements based on the initial system functionality.
 
-Start date: 17 Mar 2026
-End date: 10 Apr 2026
+Start date: 17 Mar 2026  
+End date: 10 Apr 2026  
 
 1. [Account Settings](./user_stories/User_story_08_account_settings.md), priority 4, 2 days
 
-Total: 4 days
+Total: 2 days
 
 ### Not enough time/developers
 
