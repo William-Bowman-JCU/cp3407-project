@@ -41,3 +41,4 @@ Completed:
 * 0 weeks left, 0 days  
 
 * Actual Velocity: 13 story days
+    
