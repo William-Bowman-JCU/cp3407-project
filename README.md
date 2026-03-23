@@ -12,7 +12,7 @@ It is recommended to complete this assignment in a group of 2–4 students.
 3. Joyal Joy – on-campus student (CP3407)
 4. Joe David Mathew – on-campus student (CP3407)
 
-# Project planning BEFORE iteration-1 (see chapters 1–3)
+## Project planning BEFORE iteration-1 (see chapters 1–3)
 
 * Must have more user stories than fit into iterations 1 and 2, to practice prioritisation.
 
