@@ -16,7 +16,7 @@ Final estimate agreed: 2 days
 
 ## Assumptions (if any)
 
-## Refinement
+## Precondition
 
 - The user is logged in.
 - Restaurant data includes category and rating information.
