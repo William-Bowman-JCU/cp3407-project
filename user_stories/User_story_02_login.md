@@ -15,7 +15,7 @@ Final estimate agreed: 1 day
 
 ## Assumptions (if any)
 
-## Refinement
+## Precondition
 
 - The user already has a registered account (see "Create user account").
 - Login uses email + password.

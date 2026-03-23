@@ -14,7 +14,7 @@ Final estimate agreed: 2 days
 
 ## Assumptions (if any)
 
-## Refinement
+## Precondition
 
 - The user provides a valid email address.
 - Basic validation (email format, password length, password confirmation) is required.

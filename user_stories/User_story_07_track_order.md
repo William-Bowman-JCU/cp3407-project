@@ -16,7 +16,7 @@ Final estimate agreed: 2 days
 
 ## Assumptions (if any):
 
-## Refinement
+## Precondition
 
 - User has completed order process including item selection & payment
 - Restaurants & drivers update order statuses

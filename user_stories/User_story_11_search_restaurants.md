@@ -16,7 +16,7 @@ Final estimate agreed: 1 day
 
 ## Assumptions (if any)
 
-## Refinement
+## Precondition
 
 - The user is logged in.
 - Restaurant names are stored in the database.

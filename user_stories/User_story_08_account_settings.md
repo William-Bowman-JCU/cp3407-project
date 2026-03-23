@@ -16,7 +16,7 @@ Final estimate agreed: 1.5 days
 
 ## Assumptions (if any):
 
-## Refinement
+## Precondition
 
 - User has already created an account
 

@@ -16,7 +16,7 @@ Final estimate agreed: 2 days
 
 ## Assumptions (if any)
 
-## Refinement
+## Precondition
 
 - The user is logged in.
 - The user has previously placed at least one order.

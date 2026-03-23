@@ -17,7 +17,7 @@ Final estimate agreed: 2 days
 
 ## Assumptions (if any)
 
-## Refinement
+## Precondition
 
 - The restaurant data (pizza name and price) is stored in the system database.
 - Prices are displayed in Australian Dollars (AU$).

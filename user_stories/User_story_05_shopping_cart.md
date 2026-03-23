@@ -16,7 +16,7 @@ Final estimate agreed: 2 days
 
 ## Assumptions (if any)
 
-## Refinement
+## Precondition
 
 - The user has already added at least one item to the cart.
 - Cart data is stored temporarily in the session.

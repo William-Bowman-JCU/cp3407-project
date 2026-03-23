@@ -17,7 +17,7 @@ Final estimate agreed: 2 days
 
 ## Assumptions (if any)
 
-## Refinement
+## Precondition
 
 - The user has at least one item in the shopping cart.  
 - Cart data is stored in the session.  

@@ -16,7 +16,7 @@ Final estimate agreed: 2 days
 
 ## Assumptions (if any)
 
-## Refinement
+## Precondition
 
 - The user is logged in.
 - Food categories (e.g. Fast Food, Dinner) are stored in the database.
