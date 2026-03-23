@@ -75,6 +75,7 @@ The restaurant menu screen includes:
 
 ![US04 - View restaurant menu mockup](../images/us04_view_restaurant_menu_mockup.jpg)
 
-## Completed
 
-- Not started
+## Completed
+- Feature implemented
+- Basic functionality tested

@@ -101,6 +101,7 @@ The checkout screen includes:
 
 ![US06 - Checkout mockup](../images/us06_checkout_mockup.jpg)
 
-## Completed
 
-- Not started
+## Completed
+- Feature implemented
+- Basic functionality tested

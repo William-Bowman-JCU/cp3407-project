@@ -59,4 +59,5 @@ Social media login options are displayed to allow alternative authentication met
 ![US02 - Login mockup](../images/us02_login_mockup.jpg)
 
 ## Completed
-- Not started
+- Feature implemented
+- Basic functionality tested

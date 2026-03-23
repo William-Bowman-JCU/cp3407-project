@@ -58,6 +58,7 @@ This can include a history section for all previous orders
 
 ![US07 - Order Overview mockup](../images/us07_track_orders_mockup_2.png)
 
-# Completed:
-Not started
+## Completed
+- Feature implemented
+- Basic functionality tested
 

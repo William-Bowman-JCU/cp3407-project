@@ -63,4 +63,5 @@ The left side of the screen contains marketing text:
 ![US01 - Create account mockup](../images/us01_create_account_mockup.jpg)
 
 ## Completed
-- Not started
+- Feature implemented
+- Basic functionality tested
