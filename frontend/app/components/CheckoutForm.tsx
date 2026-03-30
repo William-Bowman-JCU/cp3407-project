@@ -1,20 +1,6 @@
-/**
- * CheckoutForm Component
- *
- * Handles payment input fields:
- * - Card holder name
- * - Card number (formatted as XXXX XXXX XXXX XXXX)
- * - Expiry month + year
- * - Notifications checkbox
- *
- * Validates input before calling onSubmit.
- */
-
 "use client";
 
 import { useState } from "react";
-
-// --- Type Definitions ---
 
 export type PaymentFormData = {
   cardName: string;
@@ -29,17 +15,12 @@ type CheckoutFormProps = {
   isLoading: boolean;
 };
 
-// --- Helper: Format card number with spaces every 4 digits ---
 function formatCardNumber(value: string): string {
-  // Remove non-digits, then insert a space every 4 chars
   const digits = value.replace(/\D/g, "").slice(0, 16);
   return digits.replace(/(.{4})/g, "$1 ").trim();
 }
 
-// --- Component ---
-
 export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps) {
-  // Form state
   const [formData, setFormData] = useState<PaymentFormData>({
     cardName: "",
     cardNumber: "",
@@ -48,10 +29,7 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
     notifications: false,
   });
 
-  // Validation error messages
   const [errors, setErrors] = useState<Partial<PaymentFormData>>({});
-
-  // --- Handlers ---
 
   function handleCardNumberChange(e: React.ChangeEvent<HTMLInputElement>) {
     const formatted = formatCardNumber(e.target.value);
@@ -65,8 +43,6 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
       [name]: type === "checkbox" ? checked : value,
     }));
   }
-
-  // --- Validation ---
 
   function validate(): boolean {
     const newErrors: Partial<PaymentFormData> = {};
@@ -86,7 +62,7 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
     }
 
     const yearNum = parseInt(formData.year, 10);
-    const currentYear = new Date().getFullYear() % 100; // e.g. 26 for 2026
+    const currentYear = new Date().getFullYear() % 100;
     if (!formData.year || isNaN(yearNum) || yearNum < currentYear) {
       newErrors.year = "Enter a valid future year (2-digit).";
     }
@@ -95,8 +71,6 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
     return Object.keys(newErrors).length === 0;
   }
 
-  // --- Submit Handler ---
-
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (validate()) {
@@ -104,7 +78,6 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
     }
   }
 
-  // --- Shared input style ---
   const inputClass =
     "w-full bg-zinc-600 text-white placeholder-zinc-400 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 transition";
 
@@ -112,14 +85,12 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-
-      {/* Card Holder Name */}
       <div>
         <label className="text-zinc-300 text-sm mb-1 block">Card Name</label>
         <input
           type="text"
           name="cardName"
-          placeholder="John Doe"
+          placeholder="Leonard Rein"
           value={formData.cardName}
           onChange={handleChange}
           className={inputClass}
@@ -128,7 +99,6 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
         {errors.cardName && <p className={errorClass}>{errors.cardName}</p>}
       </div>
 
-      {/* Card Number */}
       <div>
         <label className="text-zinc-300 text-sm mb-1 block">Card Number</label>
         <input
@@ -137,7 +107,7 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
           placeholder="1234 5678 9012 3456"
           value={formData.cardNumber}
           onChange={handleCardNumberChange}
-          maxLength={19} // 16 digits + 3 spaces
+          maxLength={19}
           className={inputClass}
           autoComplete="cc-number"
           inputMode="numeric"
@@ -145,7 +115,6 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
         {errors.cardNumber && <p className={errorClass}>{errors.cardNumber}</p>}
       </div>
 
-      {/* Month + Year side by side */}
       <div className="flex gap-4">
         <div className="flex-1">
           <label className="text-zinc-300 text-sm mb-1 block">Month</label>
@@ -179,7 +148,6 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
         </div>
       </div>
 
-      {/* Notifications Checkbox */}
       <label className="flex items-center gap-3 cursor-pointer text-zinc-300 text-sm">
         <input
           type="checkbox"
@@ -191,7 +159,6 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
         Do you like to receive notifications and updates?
       </label>
 
-      {/* PAY Button */}
       <button
         type="submit"
         disabled={isLoading}
