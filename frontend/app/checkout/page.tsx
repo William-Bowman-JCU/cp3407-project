@@ -68,22 +68,25 @@ export default function CheckoutPage() {
     <div className="min-h-screen bg-zinc-900 text-white">
 
       {/* ── Top Navigation Bar ─────────────────────────────────────── */}
-      <nav className="flex items-center justify-between px-8 py-4 bg-zinc-800 shadow-md">
-        {/* App Name / Logo */}
-        <span className="text-orange-500 font-extrabold text-2xl tracking-tight">
-          feedme
-        </span>
+      <nav className="bg-zinc-800 shadow-md border-b-2 border-red-600">
+        <div className="flex items-center justify-between px-8 py-4">
+          {/* App Name / Logo — "Feed" white, "Me" red */}
+          <span className="font-extrabold text-2xl tracking-tight">
+            <span className="text-white">Feed</span>
+            <span className="text-red-500">Me</span>
+          </span>
 
-        {/* Right icons */}
-        <div className="flex items-center gap-4">
-          {/* Cart icon */}
-          <button aria-label="Cart" className="text-zinc-300 hover:text-white transition">
-            🛒
-          </button>
-          {/* User icon */}
-          <button aria-label="Profile" className="text-zinc-300 hover:text-white transition">
-            👤
-          </button>
+          {/* Right icons */}
+          <div className="flex items-center gap-4">
+            {/* Cart icon */}
+            <button aria-label="Cart" className="text-zinc-300 hover:text-white transition">
+              🛒
+            </button>
+            {/* User icon */}
+            <button aria-label="Profile" className="text-zinc-300 hover:text-white transition">
+              👤
+            </button>
+          </div>
         </div>
       </nav>
 

@@ -106,7 +106,7 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
 
   // --- Shared input style ---
   const inputClass =
-    "w-full bg-zinc-600 text-white placeholder-zinc-400 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 transition";
+    "w-full bg-zinc-600 text-white placeholder-zinc-400 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 transition";
 
   const errorClass = "text-red-400 text-xs mt-1";
 
@@ -186,7 +186,7 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
           name="notifications"
           checked={formData.notifications}
           onChange={handleChange}
-          className="w-4 h-4 accent-orange-500"
+          className="w-4 h-4 accent-red-500"
         />
         Do you like to receive notifications and updates?
       </label>
@@ -195,7 +195,7 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
       <button
         type="submit"
         disabled={isLoading}
-        className="mt-2 w-full bg-orange-500 hover:bg-orange-600 disabled:bg-zinc-500 disabled:cursor-not-allowed text-white font-bold py-3 rounded-xl text-base tracking-widest uppercase transition-colors"
+        className="mt-2 w-full bg-red-600 hover:bg-red-700 disabled:bg-zinc-500 disabled:cursor-not-allowed text-white font-bold py-3 rounded-xl text-base tracking-widest uppercase transition-colors"
       >
         {isLoading ? "Processing..." : "PAY"}
       </button>
