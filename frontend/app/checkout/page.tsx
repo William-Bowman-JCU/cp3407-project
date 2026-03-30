@@ -23,24 +23,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-900 text-white">
-      <nav className="bg-zinc-800 shadow-md border-b-2 border-red-600">
-        <div className="flex items-center justify-between px-8 py-4">
-          <span className="font-extrabold text-2xl tracking-tight">
-            <span className="text-white">Feed</span>
-            <span className="text-red-500">Me</span>
-          </span>
-          <div className="flex items-center gap-4">
-            <button aria-label="Cart" className="text-zinc-300 hover:text-white transition">
-              🛒
-            </button>
-            <button aria-label="Profile" className="text-zinc-300 hover:text-white transition">
-              👤
-            </button>
-          </div>
-        </div>
-      </nav>
-
+    <div className="min-h-screen text-white">
       <main className="max-w-5xl mx-auto px-6 py-10">
         <h1 className="text-3xl font-bold text-center mb-10 tracking-wide">
           Checkout
