@@ -43,7 +43,7 @@ The system filters restaurant results dynamically based on the search query.
 - Filtered results displayed dynamically
 
 ### Mockup
-(To be added)
+![US11 - Search restaurant mockup](../images/us11_search_restaurants.jpg)
 
 ## Completed
 - Not started

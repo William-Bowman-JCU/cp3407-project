@@ -48,7 +48,7 @@ Users can click on a restaurant to open its menu.
 - Clickable restaurant card leading to the menu page
 
 ### Mockup
-(To be added)
+![US10 - Select restaurant mockup](../images/us10_select_restaurant.jpg)
 
 ## Completed
 - Not started

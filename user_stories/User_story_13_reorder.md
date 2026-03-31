@@ -43,7 +43,7 @@ When the user clicks the "Reorder" button, the same items from the previous orde
 - Clicking the button adds items directly to the shopping cart
 
 ### Mockup
-(To be added)
+![US13 - Reorder mockup](../images/us13_reorder.jpg)
 
 ## Completed
 - Not started

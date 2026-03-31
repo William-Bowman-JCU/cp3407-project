@@ -47,7 +47,7 @@ The restaurant details page shows the restaurant name, rating, delivery time, an
 - Clean and structured layout
 
 ### Mockup
-(To be added)
+![US14 - Restaurant details mockup](../images/us14_restaurant_details.jpg)
 
 ## Completed
 - Not started

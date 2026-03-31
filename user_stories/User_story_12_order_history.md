@@ -47,7 +47,7 @@ Each order shows the order date, restaurant name, ordered items, and total price
   - Total price
 
 ### Mockup
-(To be added)
+![US12 - Order history mockup](../images/us12_order_history.jpg)
 
 ## Completed
 - Not started

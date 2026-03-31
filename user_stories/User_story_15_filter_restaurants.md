@@ -46,7 +46,7 @@ Users can filter restaurants by category or rating to reduce the number of displ
 - Restaurant list updates based on selected filters
 
 ### Mockup
-(To be added)
+![US15 - Filter Restaurants mockup](../images/us15_filter_restaurants.jpg)
 
 ## Completed
 - Not started
