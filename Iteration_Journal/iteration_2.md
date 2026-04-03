@@ -23,18 +23,28 @@ User stories or tasks (see chapter 4):
 8. [Filter Restaurants](./user_stories/User_story_15_filter_restaurants.md), priority 4, 2 days  
 
 In progress:
-* None yet
+* None
 
 Completed:
-* None yet
+* Select Delivery Location – completed
+* Select Restaurant – completed
+* Order History – completed
+* Account Settings – completed
+* Search Restaurants – completed
+* Restaurant Details – completed
+* Reorder Previous Order – completed
 
 ### Burn Down for iteration-2 (see chapter 4)
 
 Update this at least once per week
 
-* 4 weeks left, 15 days of estimated amount of work  
-* 2 weeks left, 15 days  
-* 1 week left, 15 days  
-* 0 weeks left, 15 days  
+* 4 weeks left, 15 days of estimated amount of work
+* 2 weeks left, 10 days
+* 1 week left, 4 days
+* 0 weeks left, 0 days
 
-* Actual Velocity: TBD
+* Actual Velocity: 13 story days
+
+### Notes
+
+Filter Restaurants (priority 4, 2 days) was deferred — the team ran out of capacity at the end of the iteration. As the lowest-priority story in the backlog, this is the correct agile decision: deliver the highest-value work first and defer what does not fit within velocity.
