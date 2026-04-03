@@ -6,7 +6,7 @@ nav_order: 5
 # Testing
 {: .no_toc }
 
-This page describes the testing strategy for FeedMe, including the types of tests used, the acceptance criteria verified for each user story, and the approach to test data.
+FeedMe uses a layered testing approach with **69 automated tests** covering unit, integration, API, and acceptance levels. All tests pass against a clean in-memory database.
 
 <details open markdown="block">
   <summary>Table of contents</summary>
@@ -17,222 +17,146 @@ This page describes the testing strategy for FeedMe, including the types of test
 
 ---
 
+## Running the Tests
+
+```bash
+cd cp3407-project
+source venv/bin/activate
+python manage.py test backend.app --verbosity=2
+```
+
+Expected output:
+```
+Ran 69 tests in 12.5s
+OK
+```
+
+---
+
 ## Testing Strategy
 
 FeedMe uses a **layered testing approach** covering three levels:
 
 ```mermaid
 graph TB
-    A["Acceptance Tests\n(User story criteria — manual + automated)"]
-    B["Integration Tests\n(API endpoints — Django test client)"]
-    C["Unit Tests\n(Individual functions and components)"]
-
-    A --> B --> C
+    A["Acceptance Tests — user story scenarios end-to-end"]
+    B["API Tests — HTTP endpoints, authentication, response shape"]
+    C["Integration Tests — model relationships, cascade behaviour"]
+    D["Unit Tests — individual model methods and validators"]
+    A --> B --> C --> D
 ```
 
-| Level | What is tested | Tool | Scope |
-|-------|---------------|------|-------|
-| Unit | Individual functions, utility logic | pytest (Python), Jest (TypeScript) | Backend models, frontend utilities |
-| Integration | API endpoints, database interactions | Django TestCase + test client | REST API routes |
-| Acceptance | Full user story scenarios | Manual walkthrough + automated | All delivered features |
+| Suite | Tests | Level | What is tested |
+|-------|-------|-------|----------------|
+| `UserAuthenticationTest` | 6 | Unit + Integration | Password hashing, login, wrong credentials, duplicates |
+| `AddressModelTest` | 5 | Unit + Integration | Address creation, default-address logic, cascade delete |
+| `RestaurantModelTest` | 6 | Unit | Create, rating validation (0–5), is_active flag |
+| `MenuItemModelTest` | 6 | Unit + Integration | Price validation, availability flag, cascade delete |
+| `OrderModelTest` | 9 | Unit + Integration | Subtotal, total, status transitions, price snapshot |
+| `OrderItemModelTest` | 4 | Unit | Line total calculation, cascade delete |
+| `AcceptanceTest` | 12 | Acceptance | User story scenarios US-01 through US-12 |
+| `RestaurantAPITest` | 7 | API | List, filter, search, detail, inactive → 404 |
+| `MenuItemAPITest` | 3 | API | Available items only, field shape, unknown restaurant |
+| `OrderAPITest` | 6 | API | Auth required, isolation, create, subtotal/total in response |
+| `AddressAPITest` | 5 | API | Auth required, isolation, create, delete |
+| **Total** | **69** | | |
 
 ### Test-Driven Development
 
-For each user story, acceptance criteria were defined *before* implementation began. This followed a lightweight TDD cycle:
+Acceptance criteria were written in each user story `.md` file **before** implementation began. Tests were then derived directly from those criteria, following a lightweight TDD cycle:
 
-1. Write acceptance criteria (in the user story `.md` file)
-2. Implement just enough code to make the test pass
-3. Refactor for clarity and performance
-4. Confirm the acceptance test passes
-
----
-
-## Acceptance Tests by User Story
-
-### US-01: Create Account
-
-| # | Test Scenario | Input | Expected Output | Status |
-|---|--------------|-------|-----------------|--------|
-| 1 | Valid registration | Email: `test@email.com`, Password: `Pass123!`, Name: `Test User` | Account created, redirect to home | Pass |
-| 2 | Duplicate email | Email already registered | Error: "An account with this email already exists" | Pass |
-| 3 | Weak password | Password: `abc` | Error: "Password must be at least 8 characters" | Pass |
-| 4 | Missing fields | Empty name field | Form validation error shown | Pass |
-
-### US-02: Login
-
-| # | Test Scenario | Input | Expected Output | Status |
-|---|--------------|-------|-----------------|--------|
-| 1 | Valid login | Correct email + password | Redirect to home, session active | Pass |
-| 2 | Wrong password | Correct email, wrong password | Error: "Invalid email or password" | Pass |
-| 3 | Non-existent email | Unregistered email | Error: "Invalid email or password" (no info leak) | Pass |
-| 4 | Remember Me | Checked "Remember Me" | Session persists after browser restart | Pass |
-
-### US-03: Browse Food
-
-| # | Test Scenario | Expected Output | Status |
-|---|--------------|-----------------|--------|
-| 1 | Home page loads | Category cards displayed within 2 seconds | Pass |
-| 2 | Category click | Navigates to filtered results | Pass |
-| 3 | Mobile viewport | Cards reflow to single column | Pass |
-
-### US-04: View Menu
-
-| # | Test Scenario | Expected Output | Status |
-|---|--------------|-----------------|--------|
-| 1 | Menu page loads | Items grouped by category with prices | Pass |
-| 2 | Add item to cart | Cart icon count increments | Pass |
-| 3 | Out-of-stock item | Item is greyed out, "Add" button disabled | Pass |
-
-### US-05: Shopping Cart
-
-| # | Test Scenario | Expected Output | Status |
-|---|--------------|-----------------|--------|
-| 1 | Add two items | Both items appear in cart | Pass |
-| 2 | Increase quantity | Quantity increments, line price updates | Pass |
-| 3 | Remove item | Item removed, total recalculated | Pass |
-| 4 | Cart persists | Navigate away and return — cart unchanged | Pass |
-| 5 | Total calculation | Sum of (quantity × price) matches displayed total | Pass |
-
-### US-06: Checkout
-
-| # | Test Scenario | Expected Output | Status |
-|---|--------------|-----------------|--------|
-| 1 | Complete checkout | Order confirmation page shown with order ID | Pass |
-| 2 | No address entered | Form validation prevents submission | Pass |
-| 3 | Order summary | Items, prices, and total match cart | Pass |
-
-### US-07: Track Order
-
-| # | Test Scenario | Expected Output | Status |
-|---|--------------|-----------------|--------|
-| 1 | Order placed | Status shows "Confirmed" | Pass |
-| 2 | Status page layout | Delivery address, ETA, and item summary visible | Pass |
+1. Write acceptance criteria (user story file)
+2. Write a failing test for that criterion
+3. Implement the minimum code to make it pass
+4. Refactor and confirm the test still passes
 
 ---
 
-## Backend Unit Tests
+## Acceptance Tests (User Story Coverage)
 
-The Django backend includes unit tests in `backend/app/tests.py`. Tests use Django's `TestCase` class which wraps each test in a transaction that is rolled back after each test, ensuring test isolation.
+Each acceptance test is named after the user story it validates:
 
-### Example: User Model Tests
+| Test | User Story | What is verified |
+|------|-----------|-----------------|
+| `test_us01_user_can_register_account` | US-01 Create Account | Account created, password hashed, not staff |
+| `test_us02_registered_user_can_login` | US-02 Login | Valid credentials succeed |
+| `test_us02_wrong_credentials_cannot_login` | US-02 Login | Invalid credentials rejected |
+| `test_us05_cart_total_calculated_correctly` | US-05 Shopping Cart | Subtotal and total with delivery fee |
+| `test_us06_checkout_creates_confirmed_order` | US-06 Checkout | Order created with confirmed status and delivery address |
+| `test_us07_order_status_progresses_to_delivered` | US-07 Track Order | Status transitions through full lifecycle |
+| `test_us08_user_can_add_multiple_addresses` | US-08 Account Settings | Multiple addresses, single default enforced |
+| `test_us09_default_address_updated_when_new_default_set` | US-09 Delivery Location | Setting new default clears old default |
+| `test_us12_order_history_returns_all_user_orders` | US-12 Order History | All past orders returned for user |
+| `test_price_snapshot_preserved_after_menu_change` | US-06 Checkout | Price locked at order time, unaffected by later menu changes |
+| `test_inactive_restaurant_can_still_be_queried` | US-10 Select Restaurant | Inactive flag queryable for admin use |
+
+---
+
+## API Tests
+
+The API test suite verifies that all REST endpoints behave correctly for authenticated and unauthenticated clients.
+
+### Key security tests
+
+| Test | Endpoint | Scenario | Expected |
+|------|----------|----------|---------|
+| `test_order_list_requires_authentication` | `GET /api/orders/` | No credentials | 403 Forbidden |
+| `test_order_create_requires_authentication` | `POST /api/orders/create/` | No credentials | 403 Forbidden |
+| `test_address_list_requires_authentication` | `GET /api/addresses/` | No credentials | 403 Forbidden |
+| `test_user_cannot_see_other_users_orders` | `GET /api/orders/` | Authenticated as User A | Only User A's orders returned |
+| `test_user_cannot_see_other_users_addresses` | `GET /api/addresses/` | Authenticated as User A | Only User A's addresses returned |
+
+### Restaurant API tests
+
+| Test | Scenario | Expected |
+|------|----------|---------|
+| `test_list_returns_only_active_restaurants` | Two active + one inactive restaurant | Inactive excluded from list |
+| `test_filter_by_cuisine` | `?cuisine=japanese` | Only Japanese restaurants returned |
+| `test_search_by_name` | `?search=burger` | Only matching restaurants returned |
+| `test_detail_includes_menu_items` | `GET /api/restaurants/{id}/` | Response includes nested `menu_items` array |
+| `test_detail_inactive_restaurant_returns_404` | Request inactive restaurant | 404 Not Found |
+
+---
+
+## API Endpoints
+
+The REST API is served at `/api/` and provides the following endpoints:
+
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| GET | `/api/restaurants/` | No | List active restaurants (supports `?search=` and `?cuisine=`) |
+| GET | `/api/restaurants/{id}/` | No | Restaurant detail with full menu |
+| GET | `/api/restaurants/{id}/menu/` | No | Available menu items for a restaurant |
+| GET | `/api/orders/` | Yes | List current user's order history |
+| POST | `/api/orders/create/` | Yes | Place a new order |
+| GET | `/api/orders/{id}/` | Yes | Order detail with items, subtotal, total |
+| GET | `/api/addresses/` | Yes | List current user's saved addresses |
+| POST | `/api/addresses/` | Yes | Add a new address |
+| PUT/PATCH | `/api/addresses/{id}/` | Yes | Update an address |
+| DELETE | `/api/addresses/{id}/` | Yes | Delete an address |
+
+---
+
+## Test Isolation
+
+Every test runs in a **database transaction that is rolled back** after the test completes. This means:
+- Tests are fully independent — no shared state between tests
+- Test order does not affect results
+- The production database is never touched during testing
+
+Django's `TestCase` class handles this automatically.
+
+---
+
+## Test Data Helpers
+
+To avoid repetition, shared helper functions are defined at the top of `tests.py`:
 
 ```python
-from django.test import TestCase
-from django.contrib.auth.models import User
-
-class UserCreationTest(TestCase):
-    def test_create_user_valid(self):
-        user = User.objects.create_user(
-            username='testuser@email.com',
-            email='testuser@email.com',
-            password='SecurePass123!'
-        )
-        self.assertEqual(user.email, 'testuser@email.com')
-        self.assertTrue(user.check_password('SecurePass123!'))
-
-    def test_create_user_no_email(self):
-        with self.assertRaises(ValueError):
-            User.objects.create_user(username='', email='', password='pass')
+make_user(username, password)      # Creates a Django User
+make_restaurant(name, cuisine)     # Creates a Restaurant
+make_menu_item(restaurant, ...)    # Creates a MenuItem
+make_address(user, street, ...)    # Creates an Address
 ```
 
-### Example: Order Model Tests
-
-```python
-class OrderTotalTest(TestCase):
-    def setUp(self):
-        self.user = User.objects.create_user(
-            username='buyer@email.com',
-            password='pass123'
-        )
-
-    def test_order_total_matches_items(self):
-        # Given an order with two items at known prices
-        # When the total is calculated
-        # Then it equals the sum of (quantity × price) + delivery fee
-        expected_total = (2 * 12.50) + (1 * 8.00) + 3.99  # delivery fee
-        self.assertAlmostEqual(expected_total, 36.99, places=2)
-```
-
----
-
-## API Integration Tests
-
-```python
-from django.test import TestCase, Client
-import json
-
-class RegistrationAPITest(TestCase):
-    def setUp(self):
-        self.client = Client()
-
-    def test_register_valid_user(self):
-        response = self.client.post(
-            '/api/auth/register/',
-            data=json.dumps({
-                'email': 'new@user.com',
-                'password': 'StrongPass1!',
-                'full_name': 'New User'
-            }),
-            content_type='application/json'
-        )
-        self.assertEqual(response.status_code, 201)
-        self.assertIn('token', response.json())
-
-    def test_register_duplicate_email(self):
-        # Register once
-        self.client.post('/api/auth/register/', data=json.dumps({
-            'email': 'dupe@user.com', 'password': 'Pass123!', 'full_name': 'User'
-        }), content_type='application/json')
-
-        # Try to register again with same email
-        response = self.client.post('/api/auth/register/', data=json.dumps({
-            'email': 'dupe@user.com', 'password': 'Pass123!', 'full_name': 'User'
-        }), content_type='application/json')
-        self.assertEqual(response.status_code, 400)
-```
-
----
-
-## Test Data
-
-Test data is managed using Django fixtures (JSON files). A base fixture provides:
-
-- 3 test users (one regular, one with saved addresses, one admin)
-- 5 test restaurants across different cuisine categories
-- Menu items for each restaurant (10–15 items per restaurant)
-- Sample past orders for history testing
-
-```bash
-# Load test fixtures
-python manage.py loaddata test_users.json
-python manage.py loaddata test_restaurants.json
-python manage.py loaddata test_orders.json
-```
-
----
-
-## Running the Tests
-
-```bash
-# Backend tests
-cd backend
-python manage.py test app
-
-# With verbose output
-python manage.py test app --verbosity=2
-
-# Frontend tests (Jest)
-cd frontend
-npm test
-```
-
-### Test Results Summary
-
-| Suite | Tests | Passed | Failed |
-|-------|-------|--------|--------|
-| User model | 4 | 4 | 0 |
-| Order model | 3 | 3 | 0 |
-| Registration API | 2 | 2 | 0 |
-| Login API | 3 | 3 | 0 |
-| Cart logic | 5 | 5 | 0 |
-| **Total** | **17** | **17** | **0** |
+These helpers keep individual tests concise and focused on what is being asserted, not on setup boilerplate.

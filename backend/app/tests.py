@@ -2,7 +2,10 @@ from decimal import Decimal
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from django.urls import reverse
 from django.utils import timezone
+from rest_framework.test import APIClient
+from rest_framework import status as http_status
 
 from .models import Address, Restaurant, MenuItem, Order, OrderItem
 
@@ -425,3 +428,192 @@ class AcceptanceTest(TestCase):
         r.save()
         fetched = Restaurant.objects.get(name='Closed Place')
         self.assertFalse(fetched.is_active)
+
+
+class RestaurantAPITest(TestCase):
+
+    def setUp(self):
+        self.client = APIClient()
+        self.r1 = make_restaurant(name='Burger Palace', cuisine='Fast Food')
+        self.r2 = make_restaurant(name='Sushi World', cuisine='Japanese')
+        self.inactive = Restaurant.objects.create(
+            name='Closed Diner', cuisine_type='American',
+            address='1 Old St', rating=3.0,
+            opening_time='09:00', closing_time='22:00', is_active=False,
+        )
+
+    def test_list_returns_only_active_restaurants(self):
+        response = self.client.get('/api/restaurants/')
+        self.assertEqual(response.status_code, http_status.HTTP_200_OK)
+        names = [r['name'] for r in response.data]
+        self.assertIn('Burger Palace', names)
+        self.assertIn('Sushi World', names)
+        self.assertNotIn('Closed Diner', names)
+
+    def test_list_returns_correct_fields(self):
+        response = self.client.get('/api/restaurants/')
+        first = response.data[0]
+        for field in ['id', 'name', 'cuisine_type', 'rating', 'is_active']:
+            self.assertIn(field, first)
+
+    def test_filter_by_cuisine(self):
+        response = self.client.get('/api/restaurants/?cuisine=japanese')
+        self.assertEqual(response.status_code, http_status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 1)
+        self.assertEqual(response.data[0]['name'], 'Sushi World')
+
+    def test_search_by_name(self):
+        response = self.client.get('/api/restaurants/?search=burger')
+        self.assertEqual(response.status_code, http_status.HTTP_200_OK)
+        self.assertEqual(response.data[0]['name'], 'Burger Palace')
+
+    def test_search_no_match_returns_empty(self):
+        response = self.client.get('/api/restaurants/?search=zzznomatch')
+        self.assertEqual(response.status_code, http_status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 0)
+
+    def test_detail_includes_menu_items(self):
+        item = make_menu_item(self.r1, name='Cheeseburger', price='12.50')
+        response = self.client.get(f'/api/restaurants/{self.r1.pk}/')
+        self.assertEqual(response.status_code, http_status.HTTP_200_OK)
+        self.assertIn('menu_items', response.data)
+        self.assertEqual(response.data['menu_items'][0]['name'], 'Cheeseburger')
+
+    def test_detail_inactive_restaurant_returns_404(self):
+        response = self.client.get(f'/api/restaurants/{self.inactive.pk}/')
+        self.assertEqual(response.status_code, http_status.HTTP_404_NOT_FOUND)
+
+
+class MenuItemAPITest(TestCase):
+
+    def setUp(self):
+        self.client = APIClient()
+        self.restaurant = make_restaurant()
+        make_menu_item(self.restaurant, name='Burger', price='12.50', category='Mains')
+        make_menu_item(self.restaurant, name='Fries', price='4.50', category='Sides')
+        unavailable = make_menu_item(self.restaurant, name='Sold Out Item', price='9.00')
+        unavailable.is_available = False
+        unavailable.save()
+
+    def test_menu_lists_available_items_only(self):
+        response = self.client.get(f'/api/restaurants/{self.restaurant.pk}/menu/')
+        self.assertEqual(response.status_code, http_status.HTTP_200_OK)
+        names = [i['name'] for i in response.data]
+        self.assertIn('Burger', names)
+        self.assertIn('Fries', names)
+        self.assertNotIn('Sold Out Item', names)
+
+    def test_menu_item_has_required_fields(self):
+        response = self.client.get(f'/api/restaurants/{self.restaurant.pk}/menu/')
+        item = response.data[0]
+        for field in ['id', 'name', 'price', 'category', 'is_available']:
+            self.assertIn(field, item)
+
+    def test_menu_for_unknown_restaurant_returns_empty(self):
+        response = self.client.get('/api/restaurants/99999/menu/')
+        self.assertEqual(response.status_code, http_status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 0)
+
+
+class OrderAPITest(TestCase):
+
+    def setUp(self):
+        self.client = APIClient()
+        self.user = make_user()
+        self.restaurant = make_restaurant()
+        self.address = make_address(self.user)
+
+    def test_order_list_requires_authentication(self):
+        response = self.client.get('/api/orders/')
+        self.assertEqual(response.status_code, http_status.HTTP_403_FORBIDDEN)
+
+    def test_authenticated_user_can_list_own_orders(self):
+        Order.objects.create(user=self.user, restaurant=self.restaurant, delivery_address=self.address)
+        self.client.force_authenticate(user=self.user)
+        response = self.client.get('/api/orders/')
+        self.assertEqual(response.status_code, http_status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 1)
+
+    def test_user_cannot_see_other_users_orders(self):
+        other_user = make_user(username='otheruser')
+        Order.objects.create(user=other_user, restaurant=self.restaurant, delivery_address=make_address(other_user))
+        self.client.force_authenticate(user=self.user)
+        response = self.client.get('/api/orders/')
+        self.assertEqual(response.status_code, http_status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 0)
+
+    def test_authenticated_user_can_create_order(self):
+        self.client.force_authenticate(user=self.user)
+        response = self.client.post('/api/orders/create/', {
+            'restaurant': self.restaurant.pk,
+            'delivery_address': self.address.pk,
+            'delivery_fee': '3.99',
+        })
+        self.assertEqual(response.status_code, http_status.HTTP_201_CREATED)
+        self.assertEqual(Order.objects.filter(user=self.user).count(), 1)
+
+    def test_order_create_requires_authentication(self):
+        response = self.client.post('/api/orders/create/', {
+            'restaurant': self.restaurant.pk,
+            'delivery_address': self.address.pk,
+        })
+        self.assertEqual(response.status_code, http_status.HTTP_403_FORBIDDEN)
+
+    def test_order_detail_includes_subtotal_and_total(self):
+        order = Order.objects.create(
+            user=self.user, restaurant=self.restaurant,
+            delivery_address=self.address, delivery_fee=Decimal('3.99'),
+        )
+        item = make_menu_item(self.restaurant, price='15.00')
+        from .models import OrderItem
+        OrderItem.objects.create(order=order, menu_item=item, quantity=2, unit_price=item.price)
+        self.client.force_authenticate(user=self.user)
+        response = self.client.get(f'/api/orders/{order.pk}/')
+        self.assertEqual(response.status_code, http_status.HTTP_200_OK)
+        self.assertEqual(Decimal(str(response.data['subtotal'])), Decimal('30.00'))
+        self.assertEqual(Decimal(str(response.data['total'])), Decimal('33.99'))
+
+
+class AddressAPITest(TestCase):
+
+    def setUp(self):
+        self.client = APIClient()
+        self.user = make_user()
+
+    def test_address_list_requires_authentication(self):
+        response = self.client.get('/api/addresses/')
+        self.assertEqual(response.status_code, http_status.HTTP_403_FORBIDDEN)
+
+    def test_authenticated_user_can_list_addresses(self):
+        make_address(self.user, street='1 Home St')
+        self.client.force_authenticate(user=self.user)
+        response = self.client.get('/api/addresses/')
+        self.assertEqual(response.status_code, http_status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 1)
+
+    def test_authenticated_user_can_create_address(self):
+        self.client.force_authenticate(user=self.user)
+        response = self.client.post('/api/addresses/', {
+            'street': '42 New Rd',
+            'suburb': 'Townsville',
+            'city': 'Townsville',
+            'postcode': '4810',
+            'is_default': True,
+        })
+        self.assertEqual(response.status_code, http_status.HTTP_201_CREATED)
+        self.assertEqual(Address.objects.filter(user=self.user).count(), 1)
+
+    def test_user_cannot_see_other_users_addresses(self):
+        other_user = make_user(username='otheruser2')
+        make_address(other_user, street='Secret St')
+        self.client.force_authenticate(user=self.user)
+        response = self.client.get('/api/addresses/')
+        self.assertEqual(response.status_code, http_status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 0)
+
+    def test_authenticated_user_can_delete_own_address(self):
+        addr = make_address(self.user)
+        self.client.force_authenticate(user=self.user)
+        response = self.client.delete(f'/api/addresses/{addr.pk}/')
+        self.assertEqual(response.status_code, http_status.HTTP_204_NO_CONTENT)
+        self.assertEqual(Address.objects.filter(user=self.user).count(), 0)
