@@ -8,6 +8,19 @@ nav_order: 4
 
 This page documents the features delivered in each iteration, the technology stack, and the deployment setup.
 
+---
+
+## Live Application
+
+[**Open FeedMe App**](https://feedme-dusky.vercel.app){: .btn .btn-primary .fs-5 .mb-4 }
+
+The frontend is deployed on Vercel and publicly accessible. The app demonstrates the complete Iteration 1 user journey: browse food categories, manage the shopping cart, proceed through checkout, and view the order confirmation.
+
+| Environment | URL | Status |
+|-------------|-----|--------|
+| Production (frontend) | [feedme-dusky.vercel.app](https://feedme-dusky.vercel.app) | Live |
+| Backend API | Django / local dev | Available via `python manage.py runserver` |
+
 <details open markdown="block">
   <summary>Table of contents</summary>
   {: .text-delta }

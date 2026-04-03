@@ -9,7 +9,8 @@ nav_order: 1
 A modern food delivery application — built with Next.js and Django for CP3407 Advanced Software Engineering at James Cook University.
 {: .fs-6 .fw-300 }
 
-[View on GitHub](https://github.com/leonardrein/cp3407-project){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Live App](https://feedme-dusky.vercel.app){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View on GitHub](https://github.com/leonardrein/cp3407-project){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Project Board (Kanban)](https://github.com/users/leonardrein/projects/1){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
