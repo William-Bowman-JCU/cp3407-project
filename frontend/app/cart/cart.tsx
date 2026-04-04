@@ -23,6 +23,7 @@ export default function CartPage() {
     
     const [items, setItemsRaw] = useState<cartItem[]>(() => {
         //state for cart items, initially empty array
+        if (typeof window === "undefined") return []; //check if window is defined (for server-side rendering)
         const saved = localStorage.getItem("cart");
         return saved ? JSON.parse(saved) : [];
     });
@@ -48,13 +49,13 @@ export default function CartPage() {
     }
 
   return (
-    <div className='min-h-screen text-white py-12 px-8 flex items-center justify-center'>
-        <main className='max-w-6xl w-full'>
-            <h1 className='text-4xl mb-2 font-bold'>Cart</h1>
+    <div className='min-h-screen text-white py-12'>
+        <main className='max-w-6xl mx-auto px-6'>
+            <h1 className='text-4xl mb-2 font-bold text-center tracking-wide'>Cart</h1>
 
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
                 {/* Cart Items */}
-                <div className='lg:col-span-2'>
+                <div className='lg:col-span-2 shadow-lg rounded-2xl p-8 bg-zinc-800'>
                     {items.length === 0 ? (
                          <div className='bg-gray-800 rounded-2xl p-12 text-center'>
                                 <p className='text-gray-400 text-lg mb-6'>Your cart is empty</p>
