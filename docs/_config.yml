@@ -3,7 +3,7 @@ description: Food delivery application built for CP3407 Advanced Software Engine
 baseurl: "/cp3407-project"
 url: "https://william-bowman-jcu.github.io"
 
-theme: just-the-docs
+# theme: just-the-docs
 
 # Mermaid diagram support
 mermaid:
