@@ -16,17 +16,15 @@ export type cartItem = { //'cartItem' is the const for each item in the shopping
 
 export default function CartPage() {
     const [isLoading, setIsLoading] = React.useState(false);
+    const [items, setItemsRaw] = useState<cartItem[]>(() => {
+        //state for cart items, initially empty array
+        const saved = localStorage.getItem("cart");
+        return saved ? JSON.parse(saved) : [];
+    });
 
     if(isLoading){
         return <div className='text-white text-center py-20'>Loading...</div>;
     }
-    
-    const [items, setItemsRaw] = useState<cartItem[]>(() => {
-        //state for cart items, initially empty array
-        if (typeof window === "undefined") return []; //check if window is defined (for server-side rendering)
-        const saved = localStorage.getItem("cart");
-        return saved ? JSON.parse(saved) : [];
-    });
 
     const setItems = (newItems: cartItem[]) => {
         localStorage.setItem("cart", JSON.stringify(newItems));

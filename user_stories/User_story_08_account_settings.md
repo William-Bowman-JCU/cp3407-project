@@ -49,7 +49,7 @@ These will be freely editable within the interface and will only save & writebac
 
 ## Mockup - Account Settings
 
-![US07 - My Orders mockup](../images/us08_account_settings_mockup.png)
+![US08 - My Orders mockup](../images/us08_account_settings_mockup.png)
 
 # Completed:
 Not started
