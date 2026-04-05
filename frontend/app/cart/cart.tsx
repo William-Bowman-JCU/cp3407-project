@@ -16,6 +16,7 @@ export type cartItem = { //'cartItem' is the const for each item in the shopping
 
 export default function CartPage() {
     const [isLoading, setIsLoading] = React.useState(false);
+    
     const [items, setItemsRaw] = useState<cartItem[]>(() => {
         //state for cart items, initially empty array
         const saved = localStorage.getItem("cart");
@@ -30,6 +31,8 @@ export default function CartPage() {
         localStorage.setItem("cart", JSON.stringify(newItems));
         setItemsRaw(newItems);
     };
+
+    
 
     const updateQuantity = (id: number, quantity: number) => {};
 

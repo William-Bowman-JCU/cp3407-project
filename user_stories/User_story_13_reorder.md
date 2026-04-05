@@ -41,6 +41,8 @@ When the user clicks the "Reorder" button, the same items from the previous orde
 ## UI Design
 - "Reorder" button displayed on each order card in the order history
 - Clicking the button adds items directly to the shopping cart
+- If the order succesffuly went through or if an error occured, it is visually
+shown through a small pop up container/card with information text 
 
 ### Mockup
 ![US13 - Reorder mockup](../images/us13_reorder.jpg)

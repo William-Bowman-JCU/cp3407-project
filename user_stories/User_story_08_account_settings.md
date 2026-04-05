@@ -42,7 +42,8 @@ These will be freely editable within the interface and will only save & writebac
 
 ## UI Design:
 - Left side of page shows profile picture with large preview, right side of screen shows profile information
-- Information is seperated into sections and clearly labeled, and entire row is clickable for editing purposes
+- Information is seperated into sections and clearly labeled, and entire row is clickable for editing purposes. Input fields include Street Address, City & Postcode
+- Visual status for validation. For example, if the input format is invalid, shows 'error' in a red conatiner or border
 - Addresses are in a list, with alternative background shades to easily depict items.
 - Additional addresses can be added using the add button in the same section
 
