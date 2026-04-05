@@ -6,6 +6,8 @@ nav_order: 3
 # Design
 {: .no_toc }
 
+
+
 This page documents the architectural, database, and user interface design decisions for FeedMe.
 
 <details open markdown="block">
