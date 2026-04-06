@@ -1,11 +1,6 @@
 "use client";
 
-export type CartItem = {
-  id: number;
-  name: string;
-  quantity: number;
-  price: number;
-};
+import { type CartItem } from "../context/CartContext";
 
 type OrderSummaryProps = {
   items: CartItem[];
