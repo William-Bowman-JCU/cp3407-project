@@ -29,10 +29,11 @@ Completed:
 * Select Delivery Location – completed
 * Select Restaurant – completed
 * Order History – completed
-* Account Settings – completed
+* Account Settings – completed (closes #6)
 * Search Restaurants – completed
 * Restaurant Details – completed
 * Reorder Previous Order – completed
+* Shopping Cart / Cart Page – completed (closes #11)
 
 ### Burn Down for iteration-2 (see chapter 4)
 
