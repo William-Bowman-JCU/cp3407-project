@@ -2,21 +2,49 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import CheckoutForm, { type PaymentFormData } from "../components/CheckoutForm";
 import OrderSummary from "../components/OrderSummary";
 import { useCart } from "../context/CartContext";
+import { createAddress, createOrder, ApiError } from "../services/api";
 
 export default function CheckoutPage() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
+  const [needsLogin, setNeedsLogin] = useState(false);
   const { items, clearCart } = useCart();
 
   async function handlePayment(formData: PaymentFormData) {
     setIsLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    const orderId = "ORD-" + Math.random().toString(36).slice(2, 8).toUpperCase();
-    clearCart();
-    router.push(`/confirmation?orderId=${orderId}`);
+    setApiError(null);
+    setNeedsLogin(false);
+
+    try {
+      const address = await createAddress({
+        street: formData.street,
+        city: formData.city,
+        postal_code: formData.postalCode,
+      });
+
+      const restaurantId = items.find((i) => i.restaurantId)?.restaurantId ?? 1;
+
+      const order = await createOrder({
+        restaurant: restaurantId,
+        delivery_address: address.id,
+      });
+
+      clearCart();
+      router.push(`/confirmation?orderId=ORD-${order.id}`);
+    } catch (err) {
+      if (err instanceof ApiError && err.status === 401) {
+        setNeedsLogin(true);
+      } else {
+        setApiError("Something went wrong. Please try again.");
+      }
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -40,8 +68,33 @@ export default function CheckoutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-zinc-800 rounded-2xl p-8 shadow-lg">
               <h2 className="text-zinc-300 text-sm uppercase tracking-widest mb-6">
-                Payment Details
+                Order Details
               </h2>
+
+              {needsLogin && (
+                <div className="mb-6 bg-zinc-700 border border-red-500 rounded-xl px-5 py-4 text-sm">
+                  <p className="text-red-400 font-semibold mb-1">
+                    Login required
+                  </p>
+                  <p className="text-zinc-300">
+                    Please{" "}
+                    <Link
+                      href="/login"
+                      className="text-red-400 underline hover:text-red-300 transition"
+                    >
+                      log in
+                    </Link>{" "}
+                    to place your order.
+                  </p>
+                </div>
+              )}
+
+              {apiError && (
+                <div className="mb-6 bg-zinc-700 border border-red-500 rounded-xl px-5 py-4 text-sm text-red-400">
+                  {apiError}
+                </div>
+              )}
+
               <CheckoutForm onSubmit={handlePayment} isLoading={isLoading} />
             </div>
 
