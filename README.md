@@ -11,6 +11,7 @@ It is recommended to complete this assignment in a group of 2–4 students.
 2. William Bowman – on-campus student (CP3407)
 3. Joyal Joy – on-campus student (CP3407)
 4. Joe David Mathew – on-campus student (CP3407)
+5. Alan Wilson – on-campus student (CP3407) 
 
 ## Project Board (Kanban)
 
