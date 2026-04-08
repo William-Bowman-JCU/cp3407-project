@@ -89,8 +89,12 @@ WSGI_APPLICATION = 'feedme.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'USER': 'postgres',
+        'PASSWORD': 'JCUcp3407',
+        'HOST': 'database-1-instance-1.crcs8cuq6041.ap-southeast-2.rds.amazonaws.com', # Found in RDS Connectivity tab
+        'PORT': '5432',
     }
 }
 
