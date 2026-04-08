@@ -40,7 +40,13 @@ The system filters restaurant results dynamically based on the search query.
 
 ## UI Design
 - Search bar at the top of the restaurant list
+- Loading ui status
 - Filtered results displayed dynamically
+- Empty status with appropriate text placement if the search resulted with no results
+- Results are shown in cards with restaurant image and detials all aligned nicely
+- Restaurent Cards Include:
+    - Restaurent Name
+    - Address
 
 ### Mockup
 ![US11 - Search restaurant mockup](../images/us11_search_restaurants.jpg)

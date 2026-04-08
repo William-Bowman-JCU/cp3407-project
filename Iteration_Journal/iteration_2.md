@@ -29,10 +29,13 @@ Completed:
 * Select Delivery Location – completed
 * Select Restaurant – completed
 * Order History – completed
-* Account Settings – completed
+* Account Settings – completed (closes #6)
 * Search Restaurants – completed
 * Restaurant Details – completed
 * Reorder Previous Order – completed
+* Shopping Cart / Cart Page – completed (closes #11)
+* Shared cart state (CartContext) – completed: React Context with localStorage persistence, live item count badge in Navbar, shared CartItem type across all pages
+* Backend API integration – completed: `services/api.ts` service layer connects checkout to Django REST API (`POST /api/addresses/`, `POST /api/orders/create/`); real order ID returned from backend; 401 prompts user to log in
 
 ### Burn Down for iteration-2 (see chapter 4)
 
@@ -43,7 +46,7 @@ Update this at least once per week
 * 1 week left, 4 days
 * 0 weeks left, 0 days
 
-* Actual Velocity: 13 story days
+* Actual Velocity: 15 story days
 
 ### Notes
 

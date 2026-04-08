@@ -3,6 +3,9 @@
 import { useState } from "react";
 
 export type PaymentFormData = {
+  street: string;
+  city: string;
+  postalCode: string;
   cardName: string;
   cardNumber: string;
   month: string;
@@ -22,6 +25,9 @@ function formatCardNumber(value: string): string {
 
 export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps) {
   const [formData, setFormData] = useState<PaymentFormData>({
+    street: "",
+    city: "",
+    postalCode: "",
     cardName: "",
     cardNumber: "",
     month: "",
@@ -29,7 +35,7 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
     notifications: false,
   });
 
-  const [errors, setErrors] = useState<Partial<PaymentFormData>>({});
+  const [errors, setErrors] = useState<Partial<Record<keyof PaymentFormData, string>>>({});
 
   function handleCardNumberChange(e: React.ChangeEvent<HTMLInputElement>) {
     const formatted = formatCardNumber(e.target.value);
@@ -45,7 +51,17 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
   }
 
   function validate(): boolean {
-    const newErrors: Partial<PaymentFormData> = {};
+    const newErrors: Partial<Record<keyof PaymentFormData, string>> = {};
+
+    if (!formData.street.trim()) {
+      newErrors.street = "Street address is required.";
+    }
+    if (!formData.city.trim()) {
+      newErrors.city = "City is required.";
+    }
+    if (!formData.postalCode.trim()) {
+      newErrors.postalCode = "Postal code is required.";
+    }
 
     if (!formData.cardName.trim()) {
       newErrors.cardName = "Card name is required.";
@@ -86,65 +102,132 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
       <div>
-        <label className="text-zinc-300 text-sm mb-1 block">Card Name</label>
-        <input
-          type="text"
-          name="cardName"
-          placeholder="Leonard Rein"
-          value={formData.cardName}
-          onChange={handleChange}
-          className={inputClass}
-          autoComplete="cc-name"
-        />
-        {errors.cardName && <p className={errorClass}>{errors.cardName}</p>}
+        <p className="text-zinc-400 text-xs uppercase tracking-widest mb-4">
+          Delivery Address
+        </p>
+
+        <div className="flex flex-col gap-4">
+          <div>
+            <label className="text-zinc-300 text-sm mb-1 block">Street</label>
+            <input
+              type="text"
+              name="street"
+              placeholder="123 Main St"
+              value={formData.street}
+              onChange={handleChange}
+              className={inputClass}
+              autoComplete="street-address"
+            />
+            {errors.street && <p className={errorClass}>{errors.street}</p>}
+          </div>
+
+          <div className="flex gap-4">
+            <div className="flex-1">
+              <label className="text-zinc-300 text-sm mb-1 block">City</label>
+              <input
+                type="text"
+                name="city"
+                placeholder="Townsville"
+                value={formData.city}
+                onChange={handleChange}
+                className={inputClass}
+                autoComplete="address-level2"
+              />
+              {errors.city && <p className={errorClass}>{errors.city}</p>}
+            </div>
+            <div className="w-32">
+              <label className="text-zinc-300 text-sm mb-1 block">Postal Code</label>
+              <input
+                type="text"
+                name="postalCode"
+                placeholder="4810"
+                value={formData.postalCode}
+                onChange={handleChange}
+                maxLength={10}
+                className={inputClass}
+                autoComplete="postal-code"
+                inputMode="numeric"
+              />
+              {errors.postalCode && (
+                <p className={errorClass}>{errors.postalCode}</p>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div className="border-t border-zinc-600" />
 
       <div>
-        <label className="text-zinc-300 text-sm mb-1 block">Card Number</label>
-        <input
-          type="text"
-          name="cardNumber"
-          placeholder="1234 5678 9012 3456"
-          value={formData.cardNumber}
-          onChange={handleCardNumberChange}
-          maxLength={19}
-          className={inputClass}
-          autoComplete="cc-number"
-          inputMode="numeric"
-        />
-        {errors.cardNumber && <p className={errorClass}>{errors.cardNumber}</p>}
-      </div>
+        <p className="text-zinc-400 text-xs uppercase tracking-widest mb-4">
+          Payment Details
+        </p>
 
-      <div className="flex gap-4">
-        <div className="flex-1">
-          <label className="text-zinc-300 text-sm mb-1 block">Month</label>
-          <input
-            type="text"
-            name="month"
-            placeholder="MM"
-            value={formData.month}
-            onChange={handleChange}
-            maxLength={2}
-            className={inputClass}
-            autoComplete="cc-exp-month"
-            inputMode="numeric"
-          />
-          {errors.month && <p className={errorClass}>{errors.month}</p>}
-        </div>
-        <div className="flex-1">
-          <label className="text-zinc-300 text-sm mb-1 block">Year</label>
-          <input
-            type="text"
-            name="year"
-            placeholder="YY"
-            value={formData.year}
-            onChange={handleChange}
-            maxLength={2}
-            className={inputClass}
-            autoComplete="cc-exp-year"
-            inputMode="numeric"
-          />
-          {errors.year && <p className={errorClass}>{errors.year}</p>}
+        <div className="flex flex-col gap-4">
+          <div>
+            <label className="text-zinc-300 text-sm mb-1 block">Card Name</label>
+            <input
+              type="text"
+              name="cardName"
+              placeholder="Leonard Rein"
+              value={formData.cardName}
+              onChange={handleChange}
+              className={inputClass}
+              autoComplete="cc-name"
+            />
+            {errors.cardName && <p className={errorClass}>{errors.cardName}</p>}
+          </div>
+
+          <div>
+            <label className="text-zinc-300 text-sm mb-1 block">Card Number</label>
+            <input
+              type="text"
+              name="cardNumber"
+              placeholder="1234 5678 9012 3456"
+              value={formData.cardNumber}
+              onChange={handleCardNumberChange}
+              maxLength={19}
+              className={inputClass}
+              autoComplete="cc-number"
+              inputMode="numeric"
+            />
+            {errors.cardNumber && (
+              <p className={errorClass}>{errors.cardNumber}</p>
+            )}
+          </div>
+
+          <div className="flex gap-4">
+            <div className="flex-1">
+              <label className="text-zinc-300 text-sm mb-1 block">Month</label>
+              <input
+                type="text"
+                name="month"
+                placeholder="MM"
+                value={formData.month}
+                onChange={handleChange}
+                maxLength={2}
+                className={inputClass}
+                autoComplete="cc-exp-month"
+                inputMode="numeric"
+              />
+              {errors.month && <p className={errorClass}>{errors.month}</p>}
+            </div>
+            <div className="flex-1">
+              <label className="text-zinc-300 text-sm mb-1 block">Year</label>
+              <input
+                type="text"
+                name="year"
+                placeholder="YY"
+                value={formData.year}
+                onChange={handleChange}
+                maxLength={2}
+                className={inputClass}
+                autoComplete="cc-exp-year"
+                inputMode="numeric"
+              />
+              {errors.year && <p className={errorClass}>{errors.year}</p>}
+            </div>
+          </div>
         </div>
       </div>
 

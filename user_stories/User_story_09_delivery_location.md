@@ -47,7 +47,7 @@ Users may optionally choose "Use my current location" as a shortcut.
 ## UI Design
 - Page title: "Select Delivery Location"
 - Description text: "Enter your delivery address to find restaurants near you"
-- Input fields:
+- Input fields(with validation checks incorporated):
   - Street Address
   - City
   - Postcode

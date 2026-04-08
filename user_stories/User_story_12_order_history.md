@@ -40,11 +40,14 @@ Each order shows the order date, restaurant name, ordered items, and total price
 
 ## UI Design
 - Page title: "Order History"
-- List of previous orders
+- List of previous orders shown in cards
 - Order cards including:
   - Order date
   - Restaurant name
   - Total price
+- Loading status
+- Empty status with appropriate text placement if the search resulted with no results
+
 
 ### Mockup
 ![US12 - Order history mockup](../images/us12_order_history.jpg)
