@@ -7,11 +7,11 @@ export default function Navbar() {
   const { totalItems } = useCart();
 
   return (
-    <nav className="bg-zinc-800 border-b-2 border-red-600 shadow-md">
+    <nav className="bg-zinc-800 border-b-2 border-[#D85A30] shadow-md">
       <div className="flex items-center justify-between px-8 py-4">
         <Link href="/" className="font-extrabold text-2xl tracking-tight">
           <span className="text-white">Feed</span>
-          <span className="text-red-500">Me</span>
+          <span className="text-[#D85A30]">Me</span>
         </Link>
 
         <div className="flex items-center gap-6">
