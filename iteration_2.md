@@ -1,7 +1,7 @@
 # Actual iteration-2 board (see chapters 3 and 4)
 
 Start date: 17 Mar 2026  
-End date: 10 Apr 2026
+End date: 14 Apr 2026
 
 Checklist: 
 1. github entry timestamps
@@ -28,7 +28,7 @@ In progress:
 Completed:
 * Select Delivery Location – completed
 * Select Restaurant – completed
-* Order History – completed
+* Order History – completed(Joe)
 * Account Settings – completed
 * Search Restaurants – completed
 * Restaurant Details – completed
