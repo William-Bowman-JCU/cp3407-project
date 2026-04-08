@@ -16,7 +16,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('http://127.0.0.1:8000/api/login/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -100,7 +100,12 @@ export default function LoginPage() {
 
           <p className="text-center text-sm text-stone-400 mt-6">
             Don't have an account?{' '}
-            <span className="text-[#D85A30] font-medium cursor-pointer">Sign up</span>
+            <span 
+              className="text-[#D85A30] font-medium cursor-pointer"
+              onClick={() => router.push('/register')}
+            >
+              Sign up
+            </span>
           </p>
         </div>
 
