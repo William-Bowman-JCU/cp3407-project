@@ -1,7 +1,7 @@
 # CP3407 Software Engineering Project
 
-This repository contains the planning and development artefacts for the CP3407 Software Engineering group project.  
-It includes the project backlog, user stories, iteration planning, and links to implementation progress.
+This repository contains the planning and development artefacts for the CP3407 Software Engineering group project. The projects consists of  creating a web application named FeedMe, a food delivery application that allows the users/customers to browse restaurants, place orders, view cart, checkout and track orders. 
+The following documentation includes the project backlog, user stories, iteration planning, and links to implementation progress.
 
 ## Team
 
@@ -12,6 +12,20 @@ It is recommended to complete this assignment in a group of 2–4 students.
 3. Joyal Joy – on-campus student (CP3407)
 4. Joe David Mathew – on-campus student (CP3407)
 5. Alan Wilson – on-campus student (CP3407) 
+
+## Tech Stack 
+
+* Frontend | Next.js, Tailwind CSS |
+* Database | SQL |
+* Deployment | AWS |
+* Tools | Github |
+
+
+* Database: [View](./docs/database.md)
+* UI: [View](./docs/design.md)
+* Testing: [View](./docs/testing.md)
+* Dev Tools: [View](./docs/tools.md)
+
 
 ## Project Board (Kanban)
 
@@ -50,6 +64,7 @@ End date: 14 Mar 2026
 Total: 13 days
 
 ## Iteration 1 Review
+
 
 ### Completed user stories
 
