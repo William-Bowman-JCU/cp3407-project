@@ -128,6 +128,17 @@ End date: 10 Apr 2026
 
 Total: 15 days
 
+## Iteration 2 Review
+
+### Completed user stories
+
+1. [Account Settings](./user_stories/User_story_08_account_settings.md), priority 9, 1-2 days
+2. [Select Delivery Location](./user_stories/User_story_09_delivery_location.md), priority 10, 1 day
+3. [Select Restaurant](./user_stories/User_story_10_select_restaurant.md), priority 4. [Search Restaurants](./user_stories/User_story_11_search_restaurants.md), priority 6, 1 day
+5. [Order History](./user_stories/User_story_12_order_history.md), priority 8, 2 days
+6. [Reorder Previous Order](./user_stories/User_story_13_reorder.md), priority 5, 2 days
+7. [Restaurant Details](./user_stories/User_story_14_restaurant_details.md), priority 6, 2 days
+8. [Filter Restaurants](./user_stories/User_story_15_filter_restaurants.md), priority 4, 2 days
 
 ### Not enough time/developers
 

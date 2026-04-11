@@ -24,7 +24,30 @@ export default function OrderHistoryPage() {
     const [isError, setIsError] = useState(false);
 
     useEffect(() => {
+        async function fetchOrders(){
+        try {
         // Fetch Data
+            const orderData = await fetch("http://localhost:8000/api/orders/", {
+                credentials: "include",
+            });
+
+            if (orderData.status == 400){
+                router.push("/login");
+                return;
+            }
+
+            const data = await orderData.json();
+            setOrders(data);
+
+        } catch(err){
+            setIsError("Could not fetch orders, please try again");
+        } finally {
+            setIsLoading(false);
+        }
+    }
+
+    fetchOrders();
+
     }, []);
 
     return (
@@ -39,7 +62,7 @@ export default function OrderHistoryPage() {
                     <div className='text-center text-zinc-400 py-20'>Loading Orders...</div>
                 )}
 
-                
+
 
 
 
