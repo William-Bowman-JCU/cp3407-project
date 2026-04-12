@@ -59,3 +59,32 @@ export function createOrder(payload: OrderPayload): Promise<CreatedOrder> {
     body: JSON.stringify(payload),
   });
 }
+
+// ── Account Settings ────────────────────────────────────────────────────────
+
+export type AccountProfile = {
+  name: string;
+  email: string;
+};
+
+export type AccountUpdatePayload = {
+  email: string;         // current email — used to identify the user
+  name?: string;
+  new_email?: string;
+  new_password?: string;
+};
+
+export function getAccount(email: string): Promise<AccountProfile> {
+  return apiFetch(`/account/?email=${encodeURIComponent(email)}`, {
+    method: "GET",
+  });
+}
+
+export function updateAccount(
+  payload: AccountUpdatePayload
+): Promise<{ message: string; user: AccountProfile }> {
+  return apiFetch("/account/", {
+    method: "PUT",
+    body: JSON.stringify(payload),
+  });
+}

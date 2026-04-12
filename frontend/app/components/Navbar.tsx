@@ -29,7 +29,7 @@ export default function Navbar() {
               </span>
             )}
           </Link>
-          <Link href="/login" className="text-zinc-300 hover:text-white transition">
+          <Link href="/account" className="text-zinc-300 hover:text-white transition">
             👤
           </Link>
         </div>

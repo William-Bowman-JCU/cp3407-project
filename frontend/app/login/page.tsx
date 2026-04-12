@@ -24,7 +24,16 @@ export default function LoginPage() {
 
       if (!response.ok) throw new Error('Login failed');
 
-      router.push('/dashboard');
+      const data = await response.json();
+      // Store user info so Account Settings page can read it
+      if (data.user) {
+        localStorage.setItem('feedme_user', JSON.stringify({
+          email: data.user.email,
+          name: data.user.name,
+        }));
+      }
+
+      router.push('/');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
