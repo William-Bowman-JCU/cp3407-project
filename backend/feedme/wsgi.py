@@ -1,5 +1,5 @@
 """
-WSGI config for feedme project.
+WSGI config for myfood project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

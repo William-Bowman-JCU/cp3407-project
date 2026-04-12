@@ -1,4 +1,4 @@
-# User story title: Track Order
+# User story title: Account Settings
 
 ## Priority: 6 (planned for iteration-1)
 
@@ -15,6 +15,8 @@ Planning poker estimates:
 Final estimate agreed: 1.5 days
 
 ## Assumptions (if any):
+
+## Precondition
 
 - User has already created an account
 
@@ -40,14 +42,15 @@ These will be freely editable within the interface and will only save & writebac
 
 ## UI Design:
 - Left side of page shows profile picture with large preview, right side of screen shows profile information
-- Information is seperated into sections and clearly labeled, and entire row is clickable for editing purposes
+- Information is seperated into sections and clearly labeled, and entire row is clickable for editing purposes. Input fields include Street Address, City & Postcode
+- Visual status for validation. For example, if the input format is invalid, shows 'error' in a red conatiner or border
 - Addresses are in a list, with alternative background shades to easily depict items.
 - Additional addresses can be added using the add button in the same section
 
 
 ## Mockup - Account Settings
 
-![US07 - My Orders mockup](../images/us08_account_settings_mockup.png)
+![US08 - My Orders mockup](../images/us08_account_settings_mockup.png)
 
 # Completed:
 Not started

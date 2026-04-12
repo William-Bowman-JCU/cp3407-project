@@ -15,6 +15,9 @@ Planning poker estimates:
 Final estimate agreed: 2 days
 
 ## Assumptions (if any)
+
+## Precondition
+
 - The user has already added at least one item to the cart.
 - Cart data is stored temporarily in the session.
 - Prices are displayed in Australian Dollars (AU$).
@@ -52,4 +55,5 @@ Users can increase or decrease the quantity, remove items, and see the total pri
 ![US06 - View shopping cart mockup](../images/us05_view_shopping_cart_mockup.jpg)
 
 ## Completed
-- Not started
+- Feature implemented
+- Basic functionality tested

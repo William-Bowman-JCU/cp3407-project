@@ -17,6 +17,8 @@ Final estimate agreed: 2 days
 
 ## Assumptions (if any)
 
+## Precondition
+
 - The restaurant data (pizza name and price) is stored in the system database.
 - Prices are displayed in Australian Dollars (AU$).
 - Each menu item has a name, price, and icon/image.
@@ -73,6 +75,7 @@ The restaurant menu screen includes:
 
 ![US04 - View restaurant menu mockup](../images/us04_view_restaurant_menu_mockup.jpg)
 
-## Completed
 
-- Not started
+## Completed
+- Feature implemented
+- Basic functionality tested

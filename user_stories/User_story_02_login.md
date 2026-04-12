@@ -14,6 +14,9 @@ Planning poker estimates:
 Final estimate agreed: 1 day
 
 ## Assumptions (if any)
+
+## Precondition
+
 - The user already has a registered account (see "Create user account").
 - Login uses email + password.
 - "Remember Me" stores session information locally.
@@ -56,4 +59,5 @@ Social media login options are displayed to allow alternative authentication met
 ![US02 - Login mockup](../images/us02_login_mockup.jpg)
 
 ## Completed
-- Not started
+- Feature implemented
+- Basic functionality tested

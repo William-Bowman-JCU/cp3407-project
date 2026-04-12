@@ -15,6 +15,9 @@ Planning poker estimates:
 Final estimate agreed: 2 days
 
 ## Assumptions (if any)
+
+## Precondition
+
 - The user is logged in.
 - Food categories (e.g. Fast Food, Dinner) are stored in the database.
 - Each category contains multiple food items.
@@ -52,5 +55,7 @@ Users can navigate between categories and view available meals.
 
 **Mockup v2 – Menu/Categories section**
 ![US03 - Browse restaurants mockup v2](../images/us03_browse_restaurants_mockup_02.jpg)
+
 ## Completed
-- Not started
+- Feature implemented
+- Basic functionality tested

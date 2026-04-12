@@ -13,6 +13,9 @@ Planning poker estimates:
 Final estimate agreed: 2 days
 
 ## Assumptions (if any)
+
+## Precondition
+
 - The user provides a valid email address.
 - Basic validation (email format, password length, password confirmation) is required.
 - No external authentication (e.g. Google, Facebook) in this iteration.
@@ -60,4 +63,5 @@ The left side of the screen contains marketing text:
 ![US01 - Create account mockup](../images/us01_create_account_mockup.jpg)
 
 ## Completed
-- Not started
+- Feature implemented
+- Basic functionality tested

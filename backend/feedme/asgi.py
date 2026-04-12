@@ -1,5 +1,5 @@
 """
-ASGI config for feedme project.
+ASGI config for myfood project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

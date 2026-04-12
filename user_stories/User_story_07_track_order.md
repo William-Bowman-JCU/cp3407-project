@@ -16,6 +16,8 @@ Final estimate agreed: 2 days
 
 ## Assumptions (if any):
 
+## Precondition
+
 - User has completed order process including item selection & payment
 - Restaurants & drivers update order statuses
 - No GPS functionality in this iteration
@@ -56,6 +58,7 @@ This can include a history section for all previous orders
 
 ![US07 - Order Overview mockup](../images/us07_track_orders_mockup_2.png)
 
-# Completed:
-Not started
+## Completed
+- Feature implemented
+- Basic functionality tested
 

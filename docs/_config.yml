@@ -1,0 +1,34 @@
+title: FeedMe – CP3407 Project
+description: Food delivery application built for CP3407 Advanced Software Engineering at JCU.
+baseurl: "/cp3407-project"
+url: "https://william-bowman-jcu.github.io"
+
+# theme: just-the-docs
+
+# Mermaid diagram support
+mermaid:
+  version: "10.9.0"
+
+# Navigation
+nav_enabled: true
+search_enabled: true
+heading_anchors: true
+
+# Footer
+footer_content: "CP3407 Advanced Software Engineering &mdash; JCU 2026 &mdash; Team FeedMe"
+
+# Colour scheme
+color_scheme: light
+
+# Back to top
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Aux links (shown in header)
+aux_links:
+  "GitHub Repo":
+    - "https://github.com/leonardrein/cp3407-project"
+  "Project Board (Kanban)":
+    - "https://github.com/users/leonardrein/projects/1"
+
+aux_links_new_tab: true
