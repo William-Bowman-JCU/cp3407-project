@@ -1,33 +1,36 @@
-Create more md files like this one as needed. Place them into the same folder 
-as this [user_stories folder](./)
-
 # User story title: e.g. Show current deals
 
-Keep any other version here as well, e.g. Display current deals, Let user to click on "show-current-deals".
+Keep any other version here as well, e.g. View food categories, Display meals by category, Navigate food sections.
 
 ## Priority: 10 (e.g. latest for iteration-1)
-Any notes on priority go here. 
-Note you may have different priorities at different stages of you project.
-Again, keep all changes here for marking.
+Core functionality required for MVP. Users must be able to browse meals before ordering.
 
 ## Estimation: e.g. 2 days
-Any notes on estimation go here. Keep your planning poker game numbers. For example
-* Bob: 1 day (e.g. estimated before iteration-1)
-* Lisa: 2 days
-* Jack: 3 days
+Initial planning poker estimates before iteration-1:
+
+Joyal: 2 days
+Alan: 3 days
+Leonard: 4 days
+Will: 3 days
 
 ## Assumptions (if any):
 
 ## Description: e.g. The web page will show current deals to Orion's orbits users
-You need to keep all versions here so that your instructor/marker can see your changes easily. 
-In a real project, your older versions could be viewed via commits.
+The system will allow users to browse food items grouped into categories. Each category will contain multiple food items displayed as cards with image and name.
 
-Description-v1: e.g. The web site will show current deals to Orion's orbits users
+You need to keep all versions here so that your instructor/marker can see your changes easily.
 
+Description-v1:
+The application displays categories (e.g., Pizza, Burgers, Drinks). When a category is selected, food items appear as cards with image and name. Users can navigate between categories and view available meals.
 ## Tasks, see chapter 4.
 
-1. Task 1, Estimation XX days
-2. ...
+1.Create category database model – Estimation 0.5 days
+
+2.Create food item card UI component – Estimation 1 day
+
+3.Implement category navigation system – Estimation 1 day
+
+4.Connect frontend to backend – Estimation 0.5 days
 
 
 # UI Design:
