@@ -10,9 +10,36 @@ export class ApiError extends Error {
 
 export type AddressPayload = {
   street: string;
+  suburb?: string;
   city: string;
-  postal_code: string;
+  postcode?: string;
+  postal_code?: string;
+  is_default?: boolean;
 };
+
+export type SavedAddress = {
+  id: number;
+  street: string;
+  suburb: string;
+  city: string;
+  postcode: string;
+  is_default: boolean;
+};
+
+export function getAddresses(): Promise<SavedAddress[]> {
+  return apiFetch("/addresses/", { method: "GET" });
+}
+
+export function deleteAddress(id: number): Promise<void> {
+  return apiFetch(`/addresses/${id}/`, { method: "DELETE" });
+}
+
+export function setDefaultAddress(id: number, current: SavedAddress): Promise<SavedAddress> {
+  return apiFetch(`/addresses/${id}/`, {
+    method: "PUT",
+    body: JSON.stringify({ ...current, is_default: true }),
+  });
+}
 
 export type OrderPayload = {
   restaurant: number;
