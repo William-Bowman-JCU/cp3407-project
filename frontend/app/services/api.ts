@@ -89,6 +89,32 @@ export function getRestaurantDetail(id: number): Promise<RestaurantDetail> {
   return apiFetch(`/restaurants/${id}/`, { method: "GET" });
 }
 
+// ── Orders ──────────────────────────────────────────────────────────────────
+
+export type OrderItem = {
+  id: number;
+  menu_item: { name: string; price: string };
+  quantity: number;
+  unit_price: string;
+  line_total: string;
+};
+
+export type Order = {
+  id: number;
+  restaurant: number;
+  status: string;
+  delivery_fee: string;
+  placed_at: string;
+  estimated_delivery: string | null;
+  items: OrderItem[];
+  subtotal: string;
+  total: string;
+};
+
+export function getOrders(): Promise<Order[]> {
+  return apiFetch("/orders/", { method: "GET" });
+}
+
 // ── Account Settings ────────────────────────────────────────────────────────
 
 export type AccountProfile = {

@@ -199,6 +199,8 @@ Post-order status view (US-07).
 
 Wireframe mockups were created during iteration planning using [Miro](https://miro.com) to align the team on expected layout and behaviour before implementation began. One mockup was produced per user story.
 
+> 🔗 **[View full interactive Miro board](https://miro.com/app/board/uXjVG2z_87o=/?share_link_id=934045949629)** — includes colour palette, all wireframe screens, and navigation flow.
+
 #### Iteration 1 Mockups
 
 | User Story | Screen | Mockup |

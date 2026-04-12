@@ -47,7 +47,7 @@ export default function LoginPage() {
 
         {/* Header */}
         <div className="bg-[#D85A30] rounded-t-2xl px-8 pt-10 pb-8 text-center">
-          <h1 className="text-3xl font-medium text-white tracking-tight">MyFood</h1>
+          <h1 className="text-3xl font-medium text-white tracking-tight">FeedMe</h1>
           <p className="text-[#FAECE7] text-sm mt-1">Delivery at your door</p>
         </div>
 
