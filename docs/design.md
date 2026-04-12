@@ -203,19 +203,19 @@ Wireframe mockups were created during iteration planning using [Miro](https://mi
 
 | User Story | Screen | Mockup |
 |---|---|---|
-| US-01 Create Account | Registration form | ![US-01](../images/us01_create_account_mockup.jpg) |
-| US-02 Login | Sign in screen | ![US-02](../images/us02_login_mockup.jpg) |
-| US-03 Browse Restaurants | Restaurant listing | ![US-03](../images/us03_browse_restaurants_mockup_01.jpg) |
-| US-04 View Menu | Restaurant menu | ![US-04](../images/us04_view_restaurant_menu_mockup.jpg) |
-| US-05 Shopping Cart | Cart review | ![US-05](../images/us05_view_shopping_cart_mockup.jpg) |
-| US-06 Checkout | Payment & address | ![US-06](../images/us06_checkout_mockup.jpg) |
-| US-07 Track Order | Order status | ![US-07](../images/us07_track_orders_mockup_1.png) |
+| US-01 Create Account | Registration form | ![US-01](../frontend/public/images/us01_create_account_mockup.jpg) |
+| US-02 Login | Sign in screen | ![US-02](../frontend/public/images/us02_login_mockup.jpg) |
+| US-03 Browse Restaurants | Restaurant listing | ![US-03](../frontend/public/images/us03_browse_restaurants_mockup_01.jpg) |
+| US-04 View Menu | Restaurant menu | ![US-04](../frontend/public/images/us04_view_restaurant_menu_mockup.jpg) |
+| US-05 Shopping Cart | Cart review | ![US-05](../frontend/public/images/us05_view_shopping_cart_mockup.jpg) |
+| US-06 Checkout | Payment & address | ![US-06](../frontend/public/images/us06_checkout_mockup.jpg) |
+| US-07 Track Order | Order status | ![US-07](../frontend/public/images/us07_track_orders_mockup_1.png) |
 
 #### Iteration 2 Mockups
 
 | User Story | Screen | Mockup |
 |---|---|---|
-| US-08 Account Settings | Profile management | ![US-08](../images/us08_account_settings_mockup.png) |
+| US-08 Account Settings | Profile management | ![US-08](../frontend/public/images/us08_account_settings_mockup.png) |
 | US-09 Delivery Location | Address selection | ![US-09](../images/us09_delivery_location_mockup.jpg) |
 | US-10 Select Restaurant | Restaurant detail | ![US-10](../images/us10_select_restaurant.jpg) |
 | US-11 Search Restaurants | Search & results | ![US-11](../images/us11_search_restaurants.jpg) |
