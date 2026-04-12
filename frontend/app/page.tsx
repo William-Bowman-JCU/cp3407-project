@@ -65,7 +65,7 @@ export default function Home() {
 
       <div style={{ minHeight: "100vh", background: "#3a3333", display: "flex", flexDirection: "column" }}>
 
-        {/* ── Header ── */}
+        {/*  Header  */}
         <div style={{ position: "relative", background: "#2f2929", color: "white", padding: "18px 24px", display: "flex", alignItems: "center", borderBottom: "2px solid #ef4444" }}>
           <h1 className="brand" style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", fontSize: "22px", letterSpacing: "1px" }}>
             Pizza Hut
@@ -81,7 +81,7 @@ export default function Home() {
           </button>
         </div>
 
-        {/* ── Cart Dropdown ── */}
+        {/*  Cart Dropdown  */}
         {showCart && (
           <div style={{ position: "absolute", right: "24px", top: "70px", width: "240px", background: "white", padding: "20px", borderRadius: "12px", boxShadow: "0 8px 24px rgba(0,0,0,0.15)", zIndex: 20 }}>
             <p className="brand" style={{ fontSize: "17px", color: "#1f2937", marginBottom: "8px" }}>Your Cart</p>
@@ -90,7 +90,7 @@ export default function Home() {
           </div>
         )}
 
-        {/* ── Main ── */}
+        {/*  Main  */}
         <div style={{ flex: 1, padding: "24px" }}>
           <div style={{ background: "white", borderRadius: "20px", overflow: "hidden", paddingBottom: "32px" }}>
 
@@ -107,7 +107,7 @@ export default function Home() {
               Regular / Large
             </p>
 
-            {/* ── Pizza Grid ── */}
+            {/*  Pizza Grid  */}
             <div style={{ margin: "0 16px", border: "1px solid #f3f4f6", borderRadius: "16px", overflow: "hidden" }}>
               {rows.map((row, ri) => (
                 <div key={ri} className="pizza-row">
