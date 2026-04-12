@@ -197,7 +197,7 @@ Post-order status view (US-07).
 
 ### UI Mockups
 
-Wireframe mockups were created during iteration planning to guide implementation. Images are stored in the [`/images`](https://github.com/leonardrein/cp3407-project/tree/main/images) directory of the repository.
+Wireframe mockups were created during iteration planning to guide implementation. Images are stored in the [`/images`](https://github.com/William-Bowman-JCU/cp3407-project/tree/main/images) directory of the repository.
 
 - `images/restaurant_selection.png` — Restaurant selection screen
 - `images/User_story_10_15/` — Mockups for user stories 10–15
