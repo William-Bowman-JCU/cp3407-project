@@ -60,6 +60,35 @@ export function createOrder(payload: OrderPayload): Promise<CreatedOrder> {
   });
 }
 
+// ── Restaurants & Menu ──────────────────────────────────────────────────────
+
+export type MenuItem = {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  category: string;
+  image_url: string;
+  is_available: boolean;
+};
+
+export type RestaurantDetail = {
+  id: number;
+  name: string;
+  cuisine_type: string;
+  address: string;
+  rating: number;
+  image_url: string;
+  opening_time: string;
+  closing_time: string;
+  is_active: boolean;
+  menu_items: MenuItem[];
+};
+
+export function getRestaurantDetail(id: number): Promise<RestaurantDetail> {
+  return apiFetch(`/restaurants/${id}/`, { method: "GET" });
+}
+
 // ── Account Settings ────────────────────────────────────────────────────────
 
 export type AccountProfile = {
