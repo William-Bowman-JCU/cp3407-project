@@ -32,7 +32,7 @@ Completed:
 * Account Settings – completed
 * Search Restaurants – completed
 * Restaurant Details – completed
-* Reorder Previous Order – completed
+* Reorder Previous Order – completed (Alan)
 
 ### Burn Down for iteration-2 (see chapter 4)
 
