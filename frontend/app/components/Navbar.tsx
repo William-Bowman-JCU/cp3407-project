@@ -18,6 +18,12 @@ export default function Navbar() {
           <Link href="/browse" className="text-zinc-300 hover:text-white text-sm transition">
             Browse
           </Link>
+          <Link href="/orders" className="text-zinc-300 hover:text-white text-sm transition">
+            Orders
+          </Link>
+          <Link href="/delivery" className="text-zinc-300 hover:text-white text-sm transition">
+            Delivery
+          </Link>
           <Link href="/checkout" className="text-zinc-300 hover:text-white text-sm transition">
             Checkout
           </Link>
@@ -29,7 +35,7 @@ export default function Navbar() {
               </span>
             )}
           </Link>
-          <Link href="/login" className="text-zinc-300 hover:text-white transition">
+          <Link href="/account" className="text-zinc-300 hover:text-white transition">
             👤
           </Link>
         </div>

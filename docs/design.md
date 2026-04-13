@@ -197,10 +197,34 @@ Post-order status view (US-07).
 
 ### UI Mockups
 
-Wireframe mockups were created during iteration planning to guide implementation. Images are stored in the [`/images`](https://github.com/leonardrein/cp3407-project/tree/main/images) directory of the repository.
+Wireframe mockups were created during iteration planning using [Miro](https://miro.com) to align the team on expected layout and behaviour before implementation began. One mockup was produced per user story.
 
-- `images/restaurant_selection.png` — Restaurant selection screen
-- `images/User_story_10_15/` — Mockups for user stories 10–15
+> 🔗 **[View full interactive Miro board](https://miro.com/app/board/uXjVG2z_87o=/?share_link_id=934045949629)** — includes colour palette, all wireframe screens, and navigation flow.
+
+#### Iteration 1 Mockups
+
+| User Story | Screen | Mockup |
+|---|---|---|
+| US-01 Create Account | Registration form | ![US-01](../frontend/public/images/us01_create_account_mockup.jpg) |
+| US-02 Login | Sign in screen | ![US-02](../frontend/public/images/us02_login_mockup.jpg) |
+| US-03 Browse Restaurants | Restaurant listing | ![US-03](../frontend/public/images/us03_browse_restaurants_mockup_01.jpg) |
+| US-04 View Menu | Restaurant menu | ![US-04](../frontend/public/images/us04_view_restaurant_menu_mockup.jpg) |
+| US-05 Shopping Cart | Cart review | ![US-05](../frontend/public/images/us05_view_shopping_cart_mockup.jpg) |
+| US-06 Checkout | Payment & address | ![US-06](../frontend/public/images/us06_checkout_mockup.jpg) |
+| US-07 Track Order | Order status | ![US-07](../frontend/public/images/us07_track_orders_mockup_1.png) |
+
+#### Iteration 2 Mockups
+
+| User Story | Screen | Mockup |
+|---|---|---|
+| US-08 Account Settings | Profile management | ![US-08](../frontend/public/images/us08_account_settings_mockup.png) |
+| US-09 Delivery Location | Address selection | ![US-09](../images/us09_delivery_location_mockup.jpg) |
+| US-10 Select Restaurant | Restaurant detail | ![US-10](../images/us10_select_restaurant.jpg) |
+| US-11 Search Restaurants | Search & results | ![US-11](../images/us11_search_restaurants.jpg) |
+| US-12 Order History | Past orders list | ![US-12](../images/us12_order_history.jpg) |
+| US-13 Reorder | Quick reorder flow | ![US-13](../images/us13_reorder.jpg) |
+| US-14 Restaurant Details | Info & hours | ![US-14](../images/us14_restaurant_details.jpg) |
+| US-15 Filter Restaurants | Filter panel | ![US-15](../images/us15_filter_restaurants.jpg) |
 
 ---
 

@@ -24,7 +24,16 @@ export default function LoginPage() {
 
       if (!response.ok) throw new Error('Login failed');
 
-      router.push('/dashboard');
+      const data = await response.json();
+      // Store user info so Account Settings page can read it
+      if (data.user) {
+        localStorage.setItem('feedme_user', JSON.stringify({
+          email: data.user.email,
+          name: data.user.name,
+        }));
+      }
+
+      router.push('/');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
@@ -38,7 +47,7 @@ export default function LoginPage() {
 
         {/* Header */}
         <div className="bg-[#D85A30] rounded-t-2xl px-8 pt-10 pb-8 text-center">
-          <h1 className="text-3xl font-medium text-white tracking-tight">MyFood</h1>
+          <h1 className="text-3xl font-medium text-white tracking-tight">FeedMe</h1>
           <p className="text-[#FAECE7] text-sm mt-1">Delivery at your door</p>
         </div>
 
