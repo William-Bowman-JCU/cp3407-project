@@ -9,8 +9,11 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
+from dotenv import load_dotenv
 from pathlib import Path
+import os
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6*7w+8@jl0%=p*u^i5gem5r#2h$)-pm*r*zom8%2y3t*u3-&5#'
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+PASSWORD = os.environ['PASSWORD']
+DB_URL = os.environ['DB_URL']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '127.0.0.1').split(',')
 
 
 # Application definition
@@ -92,8 +96,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'JCUcp3407',
-        'HOST': 'feedme-db-instance-1.crcs8cuq6041.ap-southeast-2.rds.amazonaws.com', # Found in RDS Connectivity tab
+        'PASSWORD': PASSWORD,
+        'HOST': DB_URL, # Found in RDS Connectivity tab
         'PORT': '5432',
     }
 }
