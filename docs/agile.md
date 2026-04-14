@@ -165,26 +165,56 @@ Story days remaining
 
 ```
 Story days remaining
-15 |  *  *  *  *
-   |              (in progress)
- 0 |
+15 |  *
+   |     \
+10 |      *
+   |         \
+ 4 |           *
+   |              \
+ 0 |               *
    +----+----+----+----+----
      4w   3w   2w   1w   0w
      left left left left left
+
+* = actual remaining work
 ```
 
 | Checkpoint | Days Remaining |
 |------------|---------------|
 | 4 weeks left | 15 days |
-| 2 weeks left | 15 days |
-| 1 week left | TBD |
-| 0 weeks left | TBD |
+| 2 weeks left | 10 days |
+| 1 week left | 4 days |
+| 0 weeks left | 0 days |
 
-*Burn-down to be updated as stories are completed before the 10 April deadline.*
+### Results
 
-### Current Status (as of 3 Apr 2026)
+**7 of 8 stories completed.** Filter Restaurants (US-15, priority 4) was deferred — the lowest-priority story in the backlog and the correct agile decision when capacity runs out. Actual velocity: **13 story days**.
 
-All 8 stories are in active development. The iteration closes 10 Apr 2026.
+| Story | Estimate | Status |
+|-------|----------|--------|
+| Select Delivery Location | 2 days | ✅ Done |
+| Select Restaurant | 2 days | ✅ Done |
+| Order History | 2 days | ✅ Done |
+| Account Settings | 2 days | ✅ Done |
+| Search Restaurants | 1 day | ✅ Done |
+| Restaurant Details | 2 days | ✅ Done |
+| Reorder Previous Order | 2 days | ✅ Done |
+| Filter Restaurants | 2 days | ⏭ Deferred (lowest priority) |
+| **Total** | **15** | **13 delivered** |
+
+### Retrospective
+
+**What went well:**
+- Highest-priority stories (US-09 Delivery Location, US-10 Select Restaurant) were delivered first, ensuring the most valuable features reached users
+- Backend REST API endpoints were completed early, enabling parallel frontend development
+- Deployment to AWS Amplify remained stable throughout the iteration, allowing continuous testing against the live environment
+
+**What could be improved:**
+- The team slightly overcommitted (15 days planned vs 13-day velocity). Future iterations should plan to velocity rather than above it
+- Earlier communication about blocked items would have reduced last-minute integration effort
+
+**Lessons applied:**
+- Deferring US-15 was the correct agile call — delivering 7 working, tested features beats delivering 8 partially-finished ones
 
 ---
 
@@ -193,9 +223,9 @@ All 8 stories are in active development. The iteration closes 10 Apr 2026.
 | Iteration | Planned (days) | Actual (days) | Velocity |
 |-----------|---------------|---------------|---------|
 | Iteration 1 | 13 | 13 | 13 |
-| Iteration 2 | 15 | TBD | TBD |
+| Iteration 2 | 15 | 13 | 13 |
 
-Velocity from Iteration 1 (13 story days) was used to plan Iteration 2. A slight overcommitment (15 days planned vs 13 velocity) was made intentionally to challenge the team to improve throughput.
+Velocity remained stable at 13 story days across both iterations, confirming the team's consistent throughput. The slight overcommitment in Iteration 2 (15 planned vs 13 velocity) was a deliberate stretch goal acknowledged during planning.
 
 ---
 

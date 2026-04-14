@@ -119,18 +119,18 @@ After placing an order, users see a tracking page showing the current order stat
 
 ## Iteration 2 Deliverables (17 Mar – 10 Apr 2026)
 
-Iteration 2 is currently in progress. The following features are being implemented:
+Iteration 2 is complete. All planned features were delivered except Filter Restaurants (US-15), which was deferred as the lowest-priority story when the team reached velocity capacity.
 
 | Feature | Story | Status |
 |---------|-------|--------|
-| Select Delivery Location | US-09 | In Progress |
-| Select Restaurant | US-10 | In Progress |
-| Order History | US-12 | In Progress |
-| Account Settings | US-08 | In Progress |
-| Search Restaurants | US-11 | In Progress |
-| Restaurant Details | US-14 | In Progress |
-| Reorder Previous Order | US-13 | In Progress |
-| Filter Restaurants | US-15 | In Progress |
+| Select Delivery Location | US-09 | ✅ Completed |
+| Select Restaurant | US-10 | ✅ Completed |
+| Order History | US-12 | ✅ Completed |
+| Account Settings | US-08 | ✅ Completed |
+| Search Restaurants | US-11 | ✅ Completed |
+| Restaurant Details | US-14 | ✅ Completed |
+| Reorder Previous Order | US-13 | ✅ Completed |
+| Filter Restaurants | US-15 | ⏭ Deferred (lowest priority, insufficient capacity) |
 
 ---
 
