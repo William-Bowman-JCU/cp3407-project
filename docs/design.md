@@ -169,12 +169,22 @@ After selecting a category and restaurant, the user sees the full menu grouped b
 - Menu items displayed as cards: image left, name + description + price right
 - Floating "Add to Cart" button anchored to bottom of screen, showing running total
 
-#### Cart Screen
+#### Shopping Cart Page
 
-Before checkout, the user reviews their selection.
+Before checkout, the user reviews their selection. The shopping cart is primarly client side in Next.js using React and localstorage, after data is fetched from the database. The items for the cart are stored locally and server is only called during checkout. The backend of the cart operates through the 'CartItem' interface:
+
+```typescript
+export type CartItem ={
+      id: number;
+  name: string;
+  quantity: number;
+  price: number;
+}
+```
+Ideally, a whole production version of FeedMe would involve full connection to the database(linkes with the users account) at all times to get live changes but sticking with the hybrid localstorage and database system for single user mvp. 
 
 - List of items with quantity stepper (+/−) and line prices
-- Subtotal + delivery fee + total shown at bottom
+- Subtotal + delivery fee + tax + total shown at bottom
 - "Confirm Order" CTA navigates to checkout
 
 #### Checkout / Confirmation Screen
