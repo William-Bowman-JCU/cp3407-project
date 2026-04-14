@@ -152,6 +152,25 @@ After completing Iteration 1, the team demonstrated the working application and 
 
 ---
 
+## Client Feedback — Post Iteration 2
+
+After completing Iteration 2, the team reviewed the deployed application against the original user stories and collected feedback on the delivered features.
+
+**Positive feedback:**
+- The account settings page (US-08) provided a complete and intuitive way to manage name, email and password — all changes persisted correctly after reload.
+- The delivery location page (US-09) clearly distinguished the default address with a visual highlight, matching UberEats/FoodPanda conventions users were familiar with.
+- Order history (US-12) colour-coded status badges (green for delivered, yellow for preparing, etc.) made it immediately clear which orders were active vs completed.
+- The restaurant menu page (US-14) grouped items by category, which made navigation through long menus significantly easier.
+
+**Feedback and observations for a future iteration:**
+- The browse page (US-10) currently shows restaurant cards without live images — integrating real restaurant images from the database would improve the visual quality significantly.
+- Users expected the category filter buttons on the browse page to actively filter the restaurant list — this is the core feature of US-15 (Filter Restaurants), which was correctly deferred due to capacity and remains the top candidate for Iteration 3.
+- A rating and review system after delivery would increase trust and engagement.
+
+> This feedback confirms that the highest-priority Iteration 2 stories (US-09, US-12, US-08) delivered the most visible user value and validates the prioritisation decisions made during planning.
+
+---
+
 ## Code Quality
 
 ### Conventions
@@ -181,31 +200,51 @@ cp3407-project/
 
 ## Deployment
 
-### Frontend — Vercel
+### Live Application
 
-The Next.js frontend is deployable to **Vercel** with zero configuration. Vercel automatically detects Next.js projects and sets up build and deployment pipelines on every push to `main`.
+> 🔗 **[https://main.d29mzie0h3ms32.amplifyapp.com](https://main.d29mzie0h3ms32.amplifyapp.com)**
 
-**Deployment steps:**
-1. Connect the `leonardrein/cp3407-project` GitHub repo to Vercel
-2. Set root directory to `frontend/`
-3. Set environment variable `NEXT_PUBLIC_API_URL` to the backend URL
-4. Push to `main` — Vercel deploys automatically
+The full application is deployed and accessible at the link above. The following pages are live:
 
-### Backend — Railway / Render
+| Page | Route | Feature |
+|------|-------|---------|
+| Home | `/` | Landing page |
+| Browse | `/browse` | Restaurant browsing with category scroll and search |
+| Restaurant Menu | `/restaurants/[id]` | Full menu with add-to-cart (US-04, US-14) |
+| Shopping Cart | `/cart` | Cart review before checkout |
+| Checkout | `/checkout` | Address selection and order placement |
+| Order History | `/orders` | Past orders with status badges (US-12) |
+| Delivery Location | `/delivery` | Saved addresses management (US-09) |
+| Account Settings | `/account` | Profile and password management (US-08) |
+| Login / Register | `/login`, `/register` | Authentication |
 
-The Django backend can be deployed to **Railway** or **Render** as a web service.
+### AWS Amplify — Frontend
 
-**Deployment steps:**
-1. Create a `Procfile` in the backend root: `web: gunicorn backend.wsgi`
-2. Add `gunicorn` and `psycopg2-binary` to `requirements.txt`
-3. Set `DATABASE_URL` environment variable (PostgreSQL provided by Railway)
-4. Set `DJANGO_SECRET_KEY`, `DEBUG=False`, `ALLOWED_HOSTS` in environment
+The Next.js frontend is deployed to **AWS Amplify**, configured via `amplify.yml` in the repository root. Amplify automatically rebuilds and redeploys on every push to `main`.
+
+**Configuration (`amplify.yml`):**
+```yaml
+version: 1
+applications:
+  - frontend:
+      phases:
+        preBuild:
+          commands: [npm ci]
+        build:
+          commands: [npm run build]
+      artifacts:
+        baseDirectory: .next
+        files: ['**/*']
+      cache:
+        paths: [node_modules/**/*, .next/cache/**/*]
+    appRoot: frontend
+```
 
 ### Environment Variables
 
 | Variable | Service | Description |
 |----------|---------|-------------|
-| `NEXT_PUBLIC_API_URL` | Frontend | URL of the Django API |
+| `NEXT_PUBLIC_API_URL` | Frontend | URL of the Django backend API |
 | `DJANGO_SECRET_KEY` | Backend | Django secret key (keep private) |
 | `DATABASE_URL` | Backend | PostgreSQL connection string |
 | `DEBUG` | Backend | Set to `False` in production |
