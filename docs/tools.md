@@ -212,3 +212,39 @@ This page documents all tools used during the development of FeedMe, explaining 
 | UI mockups | Figma | Online | Wireframes |
 | Project management | GitHub Projects | - | Kanban board |
 | AI assistance | Claude / ChatGPT | - | Scaffolding, docs |
+
+
+---
+
+## Declaration of AI-Generated Material
+
+In accordance with the CP3407 assessment guidelines, the following declares all use of Generative AI tools during this project.
+
+### Tools Used
+
+| Tool | Purpose |
+|------|---------|
+| Claude (Anthropic) | Code scaffolding, documentation drafting, debugging assistance |
+| ChatGPT (OpenAI) | Initial project kick-start, brainstorming feature ideas |
+
+### Example Prompts Used
+
+**Project kick-start:**
+> "You are a software company who wants to make a better FoodPanda app called FeedMe. Generate a set of user stories covering account creation, browsing restaurants, placing orders, and tracking deliveries."
+
+**Backend scaffolding:**
+> "Generate a Django REST Framework view for listing restaurants with optional search and cuisine filter query parameters."
+
+**Documentation:**
+> "Write a Mermaid ER diagram for a food delivery app database with tables for users, addresses, restaurants, menu items, orders, and order items."
+
+### Scope of AI Use
+
+AI tools were used to:
+- Generate boilerplate code that was then reviewed, modified, and integrated manually
+- Draft initial documentation structure (subsequently edited and expanded)
+- Assist with debugging specific errors
+
+AI tools were **not** used to:
+- Submit generated content without review
+- Replace the understanding or decision-making of the development team

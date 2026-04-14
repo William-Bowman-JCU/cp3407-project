@@ -60,4 +60,14 @@ Users may optionally choose "Use my current location" as a shortcut.
 ![US09 - Select delivery location mockup](../images/us09_delivery_location_mockup.jpg)
 
 ## Completed
-- Not started
+- Feature implemented in iteration 2
+- Frontend: `/delivery` page with saved address list and add-address form (street, suburb, city, postcode)
+- Backend: `GET /api/addresses/`, `POST /api/addresses/`, `DELETE /api/addresses/<id>/`, `PATCH /api/addresses/<id>/` endpoints
+- Default address highlighted with orange border and star label; first saved address auto-set as default
+- Unauthenticated users are redirected to login
+- Acceptance criteria met:
+  - [x] User can add a new delivery address
+  - [x] User can set a default address from their saved list
+  - [x] User can remove a saved address
+  - [x] Default address is clearly indicated in the UI
+- Deployed at: https://main.d29mzie0h3ms32.amplifyapp.com/delivery

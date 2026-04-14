@@ -23,6 +23,8 @@ This page documents the architectural, database, and user interface design decis
 
 FeedMe follows a **decoupled client–server architecture**. The frontend and backend are separate applications that communicate via a REST API. This separation allows each layer to be developed, tested, and deployed independently.
 
+> 🔗 **[View interactive architecture diagram on Miro](https://miro.com/welcomeonboard/WHl5QUhjeHdEVFcrRjdxY1FYcW9tNEF2dGc2eHIyZ3VIWlcvcFNYdHROR2FtVVpYUklQWXJVNTZlRUhSeWdJY280blBSakY0T09RRHNhUlJyUVlrWWNTVmxHWmh3UkJkcTM2bTBtY2R2SXRwcG4wbEV3Tm9wVlhiUU1wUXZ1d3RzVXVvMm53MW9OWFg1bkJoVXZxdFhRPT0hdjE=?share_link_id=390991071424)** — includes full system architecture, component relationships and navigation flow.
+
 ```mermaid
 graph TB
     subgraph Client["Client Layer"]
@@ -58,6 +60,10 @@ graph TB
 ---
 
 ## Database Design
+
+The database schema was designed using an entity-relationship approach and documented with an interactive diagram.
+
+> 🔗 **[View full ER diagram on Miro](https://miro.com/welcomeonboard/WHl5QUhjeHdEVFcrRjdxY1FYcW9tNEF2dGc2eHIyZ3VIWlcvcFNYdHROR2FtVVpYUklQWXJVNTZlRUhSeWdJY280blBSakY0T09RRHNhUlJyUVlrWWNTVmxHWmh3UkJkcTM2bTBtY2R2SXRwcG4wbEV3Tm9wVlhiUU1wUXZ1d3RzVXVvMm53MW9OWFg1bkJoVXZxdFhRPT0hdjE=?share_link_id=390991071424)**
 
 The database models reflect the core domain of a food delivery application: users place orders from restaurants, each order containing menu items.
 
@@ -207,9 +213,11 @@ Post-order status view (US-07).
 
 ### UI Mockups
 
-Wireframe mockups were created during iteration planning using [Miro](https://miro.com) to align the team on expected layout and behaviour before implementation began. One mockup was produced per user story.
+Wireframe mockups were created during iteration planning using **[NinjaMock](https://ninjamock.com)** — a dedicated prototyping tool — to align the team on expected layout and behaviour before implementation began. One mockup was produced per user story.
 
-> 🔗 **[View full interactive Miro board](https://miro.com/app/board/uXjVG2z_87o=/?share_link_id=934045949629)** — includes colour palette, all wireframe screens, and navigation flow.
+The full mockup collection is also available on our interactive Miro board:
+
+> 🔗 **[View full interactive Miro board](https://miro.com/welcomeonboard/WHl5QUhjeHdEVFcrRjdxY1FYcW9tNEF2dGc2eHIyZ3VIWlcvcFNYdHROR2FtVVpYUklQWXJVNTZlRUhSeWdJY280blBSakY0T09RRHNhUlJyUVlrWWNTVmxHWmh3UkJkcTM2bTBtY2R2SXRwcG4wbEV3Tm9wVlhiUU1wUXZ1d3RzVXVvMm53MW9OWFg1bkJoVXZxdFhRPT0hdjE=?share_link_id=390991071424)** — includes all wireframe screens, colour palette, and navigation flow.
 
 #### Iteration 1 Mockups
 
@@ -245,18 +253,36 @@ The Next.js app is organised using the App Router with a component-based structu
 ```
 frontend/
 ├── app/
-│   ├── layout.tsx          # Root layout (Navbar, global styles)
-│   ├── page.tsx            # Home page (food category browse)
+│   ├── layout.tsx               # Root layout (Navbar, global styles, CartProvider)
+│   ├── page.tsx                 # Home page
+│   ├── browse/
+│   │   └── page.tsx             # Browse restaurants with category filter & search
+│   ├── restaurants/
+│   │   └── [id]/page.tsx        # Restaurant detail + menu (US-04, US-14)
 │   ├── cart/
-│   │   └── page.tsx        # Shopping cart view
+│   │   └── page.tsx             # Shopping cart review
 │   ├── checkout/
-│   │   └── page.tsx        # Checkout and payment
+│   │   └── page.tsx             # Checkout and address selection
 │   ├── confirmation/
-│   │   └── page.tsx        # Order confirmation
+│   │   └── page.tsx             # Order confirmation
+│   ├── orders/
+│   │   └── orderHistoryPage.tsx # Order history (US-12)
+│   ├── delivery/
+│   │   └── page.tsx             # Delivery location management (US-09)
+│   ├── account/
+│   │   └── page.tsx             # Account settings (US-08)
+│   ├── login/
+│   │   └── page.tsx             # Login page
+│   ├── register/
+│   │   └── page.tsx             # Registration page
+│   ├── context/
+│   │   └── CartContext.tsx      # Global cart state (localStorage-backed)
+│   ├── services/
+│   │   └── api.ts               # Typed API service layer (all backend calls)
 │   └── components/
-│       └── Navbar.tsx      # Shared navigation bar
-├── public/                 # Static assets
-└── globals.css             # Global Tailwind base styles
+│       └── Navbar.tsx           # Shared navigation bar
+├── public/                      # Static assets and mockup images
+└── globals.css                  # Global Tailwind base styles
 ```
 
 ### Separation of Concerns

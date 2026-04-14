@@ -51,4 +51,11 @@ Users can click on a restaurant to open its menu.
 ![US10 - Select restaurant mockup](../images/us10_select_restaurant.jpg)
 
 ## Completed
-- Not started
+- Feature implemented in iteration 2
+- Frontend: `/browse` page displays restaurant cards with category scroll bar (Pizza, Chinese, Mexican, Greek, Italian, Japanese, Thai)
+- Restaurant cards are clickable and navigate to the individual restaurant menu page
+- Acceptance criteria met:
+  - [x] User can browse a list of restaurants
+  - [x] Restaurants are displayed with name, rating, and delivery time
+  - [x] Clicking a restaurant navigates to its menu
+- Deployed at: https://main.d29mzie0h3ms32.amplifyapp.com/browse

@@ -6,7 +6,7 @@ nav_order: 5
 # Testing
 {: .no_toc }
 
-FeedMe uses a layered testing approach with **69 automated tests** covering unit, integration, API, and acceptance levels. All tests pass against a clean in-memory database.
+FeedMe uses a layered testing approach with **86 automated tests** — 69 backend (Django) and 17 frontend (Jest/React Testing Library) — covering unit, integration, API, acceptance, and component levels.
 
 <details open markdown="block">
   <summary>Table of contents</summary>
@@ -19,16 +19,28 @@ FeedMe uses a layered testing approach with **69 automated tests** covering unit
 
 ## Running the Tests
 
+**Backend (Django):**
 ```bash
-cd cp3407-project
+cd backend
 source venv/bin/activate
-python manage.py test backend.app --verbosity=2
+python manage.py test app --verbosity=2
 ```
-
 Expected output:
 ```
 Ran 69 tests in 12.5s
 OK
+```
+
+**Frontend (Jest + React Testing Library):**
+```bash
+cd frontend
+npm test
+```
+Expected output:
+```
+Test Suites: 3 passed, 3 total
+Tests:       17 passed, 17 total
+Time:        ~0.5s
 ```
 
 ---
@@ -59,7 +71,18 @@ graph TB
 | `MenuItemAPITest` | 3 | API | Available items only, field shape, unknown restaurant |
 | `OrderAPITest` | 6 | API | Auth required, isolation, create, subtotal/total in response |
 | `AddressAPITest` | 5 | API | Auth required, isolation, create, delete |
-| **Total** | **69** | | |
+| **Backend Total** | **69** | | |
+
+### Frontend Test Suites (Jest + React Testing Library)
+
+| Suite | Tests | What is tested |
+|-------|-------|----------------|
+| `CartContext.test.tsx` | 40+ | Cart state management — add, remove, update quantity, persist to localStorage, clear on checkout |
+| `Navbar.test.tsx` | 6 | Component renders FeedMe brand, all navigation links present and point to correct routes |
+| `api.test.ts` | 11 | API service layer — correct URLs constructed, responses parsed, ApiError thrown on failure |
+| **Frontend Total** | **17** | |
+
+| **Grand Total** | **86** | | |
 
 ### Test-Driven Development
 

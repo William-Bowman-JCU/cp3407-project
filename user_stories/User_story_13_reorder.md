@@ -48,4 +48,12 @@ shown through a small pop up container/card with information text
 ![US13 - Reorder mockup](../images/us13_reorder.jpg)
 
 ## Completed
-- Not started
+- Feature implemented in iteration 2
+- Reorder button available on each order card in the order history page (`/orders`)
+- Clicking the button re-adds all items from the previous order to the shopping cart
+- Visual feedback (success/error notification) displayed after reorder action
+- Acceptance criteria met:
+  - [x] Each order card displays a "Reorder" button
+  - [x] Clicking reorder adds previous items to the cart
+  - [x] User receives visual confirmation that the reorder was successful
+- Deployed at: https://main.d29mzie0h3ms32.amplifyapp.com/orders

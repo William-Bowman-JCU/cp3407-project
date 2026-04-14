@@ -49,4 +49,7 @@ Users can filter restaurants by category or rating to reduce the number of displ
 ![US15 - Filter Restaurants mockup](../images/us15_filter_restaurants.jpg)
 
 ## Completed
-- Not started
+- **Deferred — not implemented in Iteration 2**
+- This story was the lowest-priority item in the Iteration 2 backlog (priority 4). When the team reached velocity capacity (13 story days delivered of 15 planned), this was the correct story to defer per agile principles: deliver the highest-value work first.
+- The backend `GET /api/restaurants/?cuisine=<type>` filter endpoint is implemented and ready. Frontend integration remains as a candidate for a future iteration.
+- Acceptance criteria were not tested in this iteration.
