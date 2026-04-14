@@ -18,13 +18,12 @@ It is recommended to complete this assignment in a group of 2–4 students.
 * Frontend: Next.js 14 (TypeScript), Tailwind CSS
 * Backend: Django 5, Django REST Framework
 * Database: SQLite (development), PostgreSQL (production)
-* Deployment: AWS Amplify (backend), Vercel (frontend)
+* Deployment: AWS Amplify
 * Tools: GitHub, NinjaMock, Miro
 
 ## Deployed Application
 
-* **Live app (Vercel):** https://feedme-dusky.vercel.app
-* **AWS Amplify:** https://main.d29mzie0h3ms32.amplifyapp.com
+* **Live app (AWS Amplify):** https://main.d29mzie0h3ms32.amplifyapp.com
 
 ## Documentation
 

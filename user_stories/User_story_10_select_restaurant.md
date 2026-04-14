@@ -58,4 +58,4 @@ Users can click on a restaurant to open its menu.
   - [x] User can browse a list of restaurants
   - [x] Restaurants are displayed with name, rating, and delivery time
   - [x] Clicking a restaurant navigates to its menu
-- Deployed at: https://feedme-dusky.vercel.app/browse
+- Deployed at: https://main.d29mzie0h3ms32.amplifyapp.com/browse

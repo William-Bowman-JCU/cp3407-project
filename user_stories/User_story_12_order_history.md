@@ -62,4 +62,4 @@ Each order shows the order date, restaurant name, ordered items, and total price
   - [x] Each order shows date, items, and total price
   - [x] Order status is clearly displayed with colour coding
   - [x] Empty state shown when no orders exist
-- Deployed at: https://feedme-dusky.vercel.app/orders
+- Deployed at: https://main.d29mzie0h3ms32.amplifyapp.com/orders

@@ -70,4 +70,4 @@ Users may optionally choose "Use my current location" as a shortcut.
   - [x] User can set a default address from their saved list
   - [x] User can remove a saved address
   - [x] Default address is clearly indicated in the UI
-- Deployed at: https://feedme-dusky.vercel.app/delivery
+- Deployed at: https://main.d29mzie0h3ms32.amplifyapp.com/delivery

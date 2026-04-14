@@ -59,4 +59,4 @@ The system filters restaurant results dynamically based on the search query.
   - [x] User can search for a restaurant by name
   - [x] Results are filtered dynamically based on input
   - [x] Empty search results show appropriate feedback text
-- Deployed at: https://feedme-dusky.vercel.app/browse
+- Deployed at: https://main.d29mzie0h3ms32.amplifyapp.com/browse

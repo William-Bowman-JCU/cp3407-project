@@ -60,4 +60,4 @@ The restaurant details page shows the restaurant name, rating, delivery time, an
   - [x] Full menu grouped by category is shown
   - [x] User can add items to cart directly from this page
   - [x] Cart summary is always visible at the bottom when items are added
-- Deployed at: https://feedme-dusky.vercel.app/restaurants/1
+- Deployed at: https://main.d29mzie0h3ms32.amplifyapp.com/restaurants/1

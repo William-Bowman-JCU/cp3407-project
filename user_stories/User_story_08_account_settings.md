@@ -62,5 +62,5 @@ These will be freely editable within the interface and will only save & writebac
   - [x] User can view and edit their name, email, and password
   - [x] Invalid input (e.g. short password) shows an error message
   - [x] Saved changes are reflected immediately and persist after page reload
-- Deployed at: https://feedme-dusky.vercel.app/account
+- Deployed at: https://main.d29mzie0h3ms32.amplifyapp.com/account
 

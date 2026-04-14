@@ -56,4 +56,4 @@ shown through a small pop up container/card with information text
   - [x] Each order card displays a "Reorder" button
   - [x] Clicking reorder adds previous items to the cart
   - [x] User receives visual confirmation that the reorder was successful
-- Deployed at: https://feedme-dusky.vercel.app/orders
+- Deployed at: https://main.d29mzie0h3ms32.amplifyapp.com/orders
