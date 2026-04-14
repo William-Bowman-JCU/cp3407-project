@@ -53,4 +53,13 @@ Each order shows the order date, restaurant name, ordered items, and total price
 ![US12 - Order history mockup](../images/us12_order_history.jpg)
 
 ## Completed
-- Not started
+- Feature implemented in iteration 2
+- Frontend: `/orders` page fetches and displays all previous orders via `GET /api/orders/`
+- Order cards show restaurant name, ordered items with quantities, status badge (colour-coded), delivery fee, total, and formatted date
+- Loading and empty states handled; unauthenticated users redirected to login
+- Acceptance criteria met:
+  - [x] User can view a list of all previous orders
+  - [x] Each order shows date, items, and total price
+  - [x] Order status is clearly displayed with colour coding
+  - [x] Empty state shown when no orders exist
+- Deployed at: https://feedme-dusky.vercel.app/orders

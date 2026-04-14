@@ -52,4 +52,11 @@ The system filters restaurant results dynamically based on the search query.
 ![US11 - Search restaurant mockup](../images/us11_search_restaurants.jpg)
 
 ## Completed
-- Not started
+- Feature implemented in iteration 2
+- Backend: `GET /api/restaurants/?search=<query>` filters restaurants by name
+- Search integrated into the browse page experience
+- Acceptance criteria met:
+  - [x] User can search for a restaurant by name
+  - [x] Results are filtered dynamically based on input
+  - [x] Empty search results show appropriate feedback text
+- Deployed at: https://feedme-dusky.vercel.app/browse

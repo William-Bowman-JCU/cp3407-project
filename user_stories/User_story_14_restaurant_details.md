@@ -50,4 +50,14 @@ The restaurant details page shows the restaurant name, rating, delivery time, an
 ![US14 - Restaurant details mockup](../images/us14_restaurant_details.jpg)
 
 ## Completed
-- Not started
+- Feature implemented in iteration 2
+- Frontend: `/restaurants/[id]` dynamic route fetches restaurant details and full menu via `GET /api/restaurants/<id>/`
+- Menu items grouped by category; each item has an "Add to Cart" button with visual ✓ confirmation
+- Sticky bottom bar appears when cart has items, showing item count, total, and "View Cart" link
+- Unauthenticated users are redirected to login
+- Acceptance criteria met:
+  - [x] Restaurant name, rating, delivery time, and description are displayed
+  - [x] Full menu grouped by category is shown
+  - [x] User can add items to cart directly from this page
+  - [x] Cart summary is always visible at the bottom when items are added
+- Deployed at: https://feedme-dusky.vercel.app/restaurants/1
