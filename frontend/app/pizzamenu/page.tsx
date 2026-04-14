@@ -40,7 +40,7 @@ export default function Home() {
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;500;600;700&display=swap');
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Nunito', sans-serif; }
+        .pizza-menu-wrap * { font-family: 'Nunito', sans-serif; }
         .brand { font-family: 'Playfair Display', serif; }
         .pizza-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid #f3f4f6; }
         .pizza-row:last-child { border-bottom: none; }
@@ -54,7 +54,6 @@ export default function Home() {
         .pizza-name { font-weight: 700; font-size: 14px; color: #1f2937; line-height: 1.3; }
         .pizza-desc { font-size: 12px; color: #9ca3af; margin-top: 4px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         .pizza-price { font-size: 13px; font-weight: 700; color: #ef4444; white-space: nowrap; flex-shrink: 0; }
-        nav { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
         @media (max-width: 640px) {
           .pizza-row { grid-template-columns: 1fr; }
           .pizza-card:first-child { border-right: none; border-bottom: 1px solid #f3f4f6; }
