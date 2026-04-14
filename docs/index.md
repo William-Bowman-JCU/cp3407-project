@@ -39,6 +39,7 @@ A modern food delivery application — built with Next.js and Django for CP3407 
 | William Bowman | Developer |
 | Joyal Joy | Developer |
 | Joe David Mathew | Developer |
+| Alan Wilson | Developer |
 
 ---
 
@@ -77,18 +78,18 @@ All **7 planned user stories** delivered. Velocity: **13 story days**.
 
 ### Iteration 2 — Enhanced Features (17 Mar – 10 Apr 2026)
 
-**8 user stories** planned based on velocity of 13 from iteration 1.
+**7 of 8 user stories** delivered. Velocity: **13 story days**.
 
 | Story | Priority | Estimate | Status |
 |-------|----------|----------|--------|
-| Select Delivery Location | 10 | 2 days | In Progress |
-| Select Restaurant | 9 | 2 days | In Progress |
-| Order History | 8 | 2 days | In Progress |
-| Account Settings | 7 | 2 days | In Progress |
-| Search Restaurants | 6 | 1 day | In Progress |
-| Restaurant Details | 6 | 2 days | In Progress |
-| Reorder Previous Order | 5 | 2 days | In Progress |
-| Filter Restaurants | 4 | 2 days | In Progress |
+| Select Delivery Location | 10 | 2 days | ✅ Done |
+| Select Restaurant | 9 | 2 days | ✅ Done |
+| Order History | 8 | 2 days | ✅ Done |
+| Account Settings | 7 | 2 days | ✅ Done |
+| Search Restaurants | 6 | 1 day | ✅ Done |
+| Restaurant Details | 6 | 2 days | ✅ Done |
+| Reorder Previous Order | 5 | 2 days | ✅ Done |
+| Filter Restaurants | 4 | 2 days | ⏭ Deferred (lowest priority) |
 
 ---
 

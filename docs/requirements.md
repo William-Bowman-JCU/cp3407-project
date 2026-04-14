@@ -214,7 +214,7 @@ Stories were ordered within iterations to respect dependencies: e.g., *Create Ac
 
 ---
 
-## Iteration 2 Stories (In Progress)
+## Iteration 2 Stories — Completed
 
 ### US-08: Account Settings
 
@@ -227,7 +227,7 @@ Stories were ordered within iterations to respect dependencies: e.g., *Create Ac
 | Priority | 7 |
 | Estimate | 2 days |
 | Iteration | 2 |
-| Status | **In Progress** |
+| Status | ✅ **Completed** |
 
 **Acceptance criteria:**
 - User can update name, email, phone number, and password
@@ -248,7 +248,7 @@ Stories were ordered within iterations to respect dependencies: e.g., *Create Ac
 | Priority | 10 |
 | Estimate | 2 days |
 | Iteration | 2 |
-| Status | **In Progress** |
+| Status | ✅ **Completed** |
 
 **Acceptance criteria:**
 - Address input is shown on the home page before browsing
@@ -269,7 +269,7 @@ Stories were ordered within iterations to respect dependencies: e.g., *Create Ac
 | Priority | 9 |
 | Estimate | 2 days |
 | Iteration | 2 |
-| Status | **In Progress** |
+| Status | ✅ **Completed** |
 
 ---
 
@@ -284,7 +284,7 @@ Stories were ordered within iterations to respect dependencies: e.g., *Create Ac
 | Priority | 6 |
 | Estimate | 1 day |
 | Iteration | 2 |
-| Status | **In Progress** |
+| Status | ✅ **Completed** |
 
 ---
 
@@ -299,7 +299,7 @@ Stories were ordered within iterations to respect dependencies: e.g., *Create Ac
 | Priority | 8 |
 | Estimate | 2 days |
 | Iteration | 2 |
-| Status | **In Progress** |
+| Status | ✅ **Completed** |
 
 ---
 
@@ -314,7 +314,7 @@ Stories were ordered within iterations to respect dependencies: e.g., *Create Ac
 | Priority | 5 |
 | Estimate | 2 days |
 | Iteration | 2 |
-| Status | **In Progress** |
+| Status | ✅ **Completed** |
 
 ---
 
@@ -329,7 +329,7 @@ Stories were ordered within iterations to respect dependencies: e.g., *Create Ac
 | Priority | 6 |
 | Estimate | 2 days |
 | Iteration | 2 |
-| Status | **In Progress** |
+| Status | ✅ **Completed** |
 
 ---
 
@@ -344,7 +344,7 @@ Stories were ordered within iterations to respect dependencies: e.g., *Create Ac
 | Priority | 4 |
 | Estimate | 2 days |
 | Iteration | 2 |
-| Status | **In Progress** |
+| Status | ⏭ **Deferred** |
 
 ---
 
