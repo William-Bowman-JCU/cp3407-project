@@ -93,6 +93,16 @@ Acceptance criteria were written in each user story `.md` file **before** implem
 3. Implement the minimum code to make it pass
 4. Refactor and confirm the test still passes
 
+**Commit evidence of TDD in practice:**
+
+| Commit | What it shows |
+|--------|--------------|
+| [`d075ca6`](https://github.com/William-Bowman-JCU/cp3407-project/commit/d075ca6) | 48 unit + acceptance tests added **alongside** models — tests defined the expected behaviour of each model before views or API existed |
+| [`4ea08d2`](https://github.com/William-Bowman-JCU/cp3407-project/commit/4ea08d2) | 21 API tests added **in the same commit** as the DRF endpoints — each endpoint was written to satisfy a pre-existing test assertion |
+| [`4f27029`](https://github.com/William-Bowman-JCU/cp3407-project/commit/4f27029) | Frontend CartContext test suite (18 tests) written **before** cart UI integration work, covering all state transitions |
+
+The user story `.md` files (e.g. [`user_stories/User_story_01_create_account.md`](https://github.com/William-Bowman-JCU/cp3407-project/blob/main/user_stories/User_story_01_create_account.md)) contain the acceptance criteria that drove each test — written during iteration planning, weeks before any implementation commit.
+
 ---
 
 ## Acceptance Tests (User Story Coverage)
