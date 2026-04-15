@@ -41,18 +41,27 @@ It is recommended to complete this assignment in a group of 2–4 students.
 
 ## Project planning BEFORE iteration-1 (see chapters 1–3)
 
-* Must have more user stories than fit into iterations 1 and 2, to practice prioritisation.
+The full product backlog contains **15 user stories** — deliberately more than can fit into two iterations, to force real prioritisation decisions. All user stories are in [`/user_stories`](./user_stories/).
 
-* [Create account](./user_stories/User_story_01_create_account.md), priority 10, 2 days
-* [Login](./user_stories/User_story_02_login.md), priority 9, 1 day
-* [Browse Food](./user_stories/User_story_03_browse_food.md), priority 8, 2 days
-* [View Menu](./user_stories/User_story_04_view_menu.md), priority 8, 2 days
-* [Shopping Cart](./user_stories/User_story_05_shopping_cart.md), priority 7, 2 days
-* [Checkout](./user_stories/User_story_06_checkout.md), priority 6, 2 days
-* [Track Order](./user_stories/User_story_07_track_order.md), priority 5, 2 days
-* [Account Settings](./user_stories/User_story_08_account_settings.md), priority 4, 2 days
+| # | User Story | Priority | Estimate |
+|---|-----------|----------|----------|
+| US-01 | [Create account](./user_stories/User_story_01_create_account.md) | 10 | 2 days |
+| US-02 | [Login](./user_stories/User_story_02_login.md) | 9 | 1 day |
+| US-03 | [Browse Food](./user_stories/User_story_03_browse_food.md) | 8 | 2 days |
+| US-04 | [View Menu](./user_stories/User_story_04_view_menu.md) | 8 | 2 days |
+| US-05 | [Shopping Cart](./user_stories/User_story_05_shopping_cart.md) | 7 | 2 days |
+| US-06 | [Checkout](./user_stories/User_story_06_checkout.md) | 6 | 2 days |
+| US-07 | [Track Order](./user_stories/User_story_07_track_order.md) | 5 | 2 days |
+| US-08 | [Account Settings](./user_stories/User_story_08_account_settings.md) | 4 → 7 | 2 days |
+| US-09 | [Select Delivery Location](./user_stories/User_story_09_delivery_location.md) | 10 | 2 days |
+| US-10 | [Select Restaurant](./user_stories/User_story_10_select_restaurant.md) | 9 | 2 days |
+| US-11 | [Search Restaurants](./user_stories/User_story_11_search_restaurants.md) | 6 | 1 day |
+| US-12 | [Order History](./user_stories/User_story_12_order_history.md) | 8 | 2 days |
+| US-13 | [Reorder Previous Order](./user_stories/User_story_13_reorder.md) | 5 | 2 days |
+| US-14 | [Restaurant Details](./user_stories/User_story_14_restaurant_details.md) | 6 | 2 days |
+| US-15 | [Filter Restaurants](./user_stories/User_story_15_filter_restaurants.md) | 4 | 2 days |
 
-Total: 15 days
+**Total backlog: 28 story days** across 15 stories. US-09 was added after Iteration 1 retrospective (domain gap discovered). US-15 was deferred — lowest priority, did not fit within velocity.
 
 ## Iteration 1 [duration 3–4 weeks]
 
@@ -101,12 +110,12 @@ The **Account Settings** user story was not implemented and moved to iteration 2
 
 ### Velocity
 
-Planned effort: **15 story days**  
+Planned effort: **13 story days**  
 Completed effort: **13 story days**
 
-Team velocity for iteration 1: **≈13 story days per iteration**
+Team velocity for iteration 1: **13 story days per iteration**
 
-This velocity will be used to plan the scope of iteration 2.
+This velocity was used to plan the scope of iteration 2.
 
 ### Improvements for Iteration 2
 
@@ -158,7 +167,7 @@ Completed effort: **13 story days**
 
 - Delivery location, account settings, and order history features were delivered on time.
 - Backend REST API covered all required endpoints for iteration 2 features.
-- Deployment to Vercel and AWS Amplify remained stable throughout the iteration.
+- Deployment to AWS Amplify remained stable throughout the iteration, enabling continuous testing against the live environment.
 
 ### Lessons learned
 
