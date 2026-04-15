@@ -38,7 +38,7 @@ class Restaurant(models.Model):
 
 class Cuisine(models.Model):
     name = models.CharField(max_length=100, unique=True)
-
+    image_url = models.URLField(blank=True)
     def __str__(self):
         return self.name
 

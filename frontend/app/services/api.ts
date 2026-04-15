@@ -87,7 +87,13 @@ export function createOrder(payload: OrderPayload): Promise<CreatedOrder> {
   });
 }
 
-// ── Restaurants & Menu ──────────────────────────────────────────────────────
+// ── Cuisines,Restaurants & Menu ──────────────────────────────────────────────────────
+
+export type Cuisine = {
+  id: number;
+  name: string;
+  image_url: string;
+};
 
 export type MenuItem = {
   id: number;
@@ -102,15 +108,26 @@ export type MenuItem = {
 export type RestaurantDetail = {
   id: number;
   name: string;
-  cuisine_type: string;
   address: string;
   rating: number;
   image_url: string;
   opening_time: string;
   closing_time: string;
   is_active: boolean;
+  cuisine: string[];
   menu_items: MenuItem[];
 };
+
+export function getCuisines(): Promise<Cuisine[]> {
+  return apiFetch(`/cuisines/`, { method: "GET" })
+}
+
+export function getRestaurants(cuisine?: string): Promise<RestaurantDetail[]> {
+  const params = new URLSearchParams()
+  if (cuisine) params.set('cuisine', cuisine)
+
+  return apiFetch(`/restaurants/?${params}`, { method: "GET" });
+}
 
 export function getRestaurantDetail(id: number): Promise<RestaurantDetail> {
   return apiFetch(`/restaurants/${id}/`, { method: "GET" });
