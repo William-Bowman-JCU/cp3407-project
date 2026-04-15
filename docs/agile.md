@@ -78,30 +78,14 @@ The backlog contained **15 user stories** — deliberately more than could fit i
 
 ### Burn-Down Chart
 
-```
-Story days remaining
-15 |  *
-   |
-13 |  .  *
-   |
- 7 |        *
-   |
- 3 |              *
-   |
- 0 |                    *
-   +----+----+----+----+----
-     4w   3w   2w   1w   0w
-     left left left left left
-
-* = actual remaining work
-```
+![Iteration 1 Burndown Chart](https://quickchart.io/chart?w=600&h=300&c=%7B%22type%22%3A%20%22line%22%2C%20%22data%22%3A%20%7B%22labels%22%3A%20%5B%22Sprint%20Start%22%2C%20%22Week%202%22%2C%20%22Week%203%22%2C%20%22Sprint%20End%22%5D%2C%20%22datasets%22%3A%20%5B%7B%22label%22%3A%20%22Actual%22%2C%20%22data%22%3A%20%5B13%2C%207%2C%203%2C%200%5D%2C%20%22fill%22%3A%20false%2C%20%22borderColor%22%3A%20%22rgb%28220%2C38%2C38%29%22%2C%20%22backgroundColor%22%3A%20%22rgb%28220%2C38%2C38%29%22%2C%20%22tension%22%3A%200.1%7D%2C%20%7B%22label%22%3A%20%22Ideal%22%2C%20%22data%22%3A%20%5B13%2C%206.5%2C%203.25%2C%200%5D%2C%20%22fill%22%3A%20false%2C%20%22borderColor%22%3A%20%22rgb%28156%2C163%2C175%29%22%2C%20%22borderDash%22%3A%20%5B6%2C%204%5D%2C%20%22tension%22%3A%200%7D%5D%7D%2C%20%22options%22%3A%20%7B%22title%22%3A%20%7B%22display%22%3A%20true%2C%20%22text%22%3A%20%22Iteration%201%20%E2%80%94%20Burndown%20Chart%22%7D%2C%20%22scales%22%3A%20%7B%22yAxes%22%3A%20%5B%7B%22ticks%22%3A%20%7B%22beginAtZero%22%3A%20true%2C%20%22suggestedMax%22%3A%2015%7D%2C%20%22scaleLabel%22%3A%20%7B%22display%22%3A%20true%2C%20%22labelString%22%3A%20%22Story%20Days%20Remaining%22%7D%7D%5D%2C%20%22xAxes%22%3A%20%5B%7B%22scaleLabel%22%3A%20%7B%22display%22%3A%20true%2C%20%22labelString%22%3A%20%22Week%22%7D%7D%5D%7D%7D%7D)
 
 | Checkpoint | Days Remaining |
 |------------|---------------|
-| 4 weeks left | 13 days |
-| 2 weeks left | 7 days |
-| 1 week left | 3 days |
-| 0 weeks left | 0 days |
+| Sprint Start (4 weeks left) | 13 days |
+| Week 2 (2 weeks left) | 7 days |
+| Week 3 (1 week left) | 3 days |
+| Sprint End | 0 days |
 
 ### Results
 
@@ -163,28 +147,14 @@ Story days remaining
 
 ### Burn-Down Chart
 
-```
-Story days remaining
-15 |  *
-   |     \
-10 |      *
-   |         \
- 4 |           *
-   |              \
- 0 |               *
-   +----+----+----+----+----
-     4w   3w   2w   1w   0w
-     left left left left left
-
-* = actual remaining work
-```
+![Iteration 2 Burndown Chart](https://quickchart.io/chart?w=600&h=300&c=%7B%22type%22%3A%20%22line%22%2C%20%22data%22%3A%20%7B%22labels%22%3A%20%5B%22Sprint%20Start%22%2C%20%22Week%202%22%2C%20%22Week%203%22%2C%20%22Sprint%20End%22%5D%2C%20%22datasets%22%3A%20%5B%7B%22label%22%3A%20%22Actual%22%2C%20%22data%22%3A%20%5B15%2C%2010%2C%204%2C%200%5D%2C%20%22fill%22%3A%20false%2C%20%22borderColor%22%3A%20%22rgb%28220%2C38%2C38%29%22%2C%20%22backgroundColor%22%3A%20%22rgb%28220%2C38%2C38%29%22%2C%20%22tension%22%3A%200.1%7D%2C%20%7B%22label%22%3A%20%22Ideal%22%2C%20%22data%22%3A%20%5B15%2C%207.5%2C%203.75%2C%200%5D%2C%20%22fill%22%3A%20false%2C%20%22borderColor%22%3A%20%22rgb%28156%2C163%2C175%29%22%2C%20%22borderDash%22%3A%20%5B6%2C%204%5D%2C%20%22tension%22%3A%200%7D%5D%7D%2C%20%22options%22%3A%20%7B%22title%22%3A%20%7B%22display%22%3A%20true%2C%20%22text%22%3A%20%22Iteration%202%20%E2%80%94%20Burndown%20Chart%22%7D%2C%20%22scales%22%3A%20%7B%22yAxes%22%3A%20%5B%7B%22ticks%22%3A%20%7B%22beginAtZero%22%3A%20true%2C%20%22suggestedMax%22%3A%2016%7D%2C%20%22scaleLabel%22%3A%20%7B%22display%22%3A%20true%2C%20%22labelString%22%3A%20%22Story%20Days%20Remaining%22%7D%7D%5D%2C%20%22xAxes%22%3A%20%5B%7B%22scaleLabel%22%3A%20%7B%22display%22%3A%20true%2C%20%22labelString%22%3A%20%22Week%22%7D%7D%5D%7D%7D%7D)
 
 | Checkpoint | Days Remaining |
 |------------|---------------|
-| 4 weeks left | 15 days |
-| 2 weeks left | 10 days |
-| 1 week left | 4 days |
-| 0 weeks left | 0 days |
+| Sprint Start (4 weeks left) | 15 days |
+| Week 2 (2 weeks left) | 10 days |
+| Week 3 (1 week left) | 4 days |
+| Sprint End | 0 days |
 
 ### Results
 

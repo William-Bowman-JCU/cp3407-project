@@ -21,9 +21,9 @@ FeedMe uses **Git** and **GitHub** for all version control. This page documents 
 
 The project is hosted on GitHub at:
 
-[https://github.com/leonardrein/cp3407-project](https://github.com/leonardrein/cp3407-project)
+[https://github.com/William-Bowman-JCU/cp3407-project](https://github.com/William-Bowman-JCU/cp3407-project)
 
-The repository was forked from the course template (`jc138691/cp3407-project-v2024`) and extended with full source code, documentation, and project management artefacts.
+The repository was forked from the course template (`jc138691/cp3407-project-v2024`) and extended with full source code, documentation, and project management artefacts. The project was developed collaboratively by all four team members committing to this shared repository.
 
 ---
 
@@ -81,12 +81,14 @@ GitHub Issues are used to track user stories and bugs in Iteration 2. All open i
 
 | Issue | Title | Labels | Status |
 |-------|-------|--------|--------|
-| #6 | Account Settings | `iteration-2`, `user-story` | Open |
-| #9 | Restaurant menu configuration | `iteration-2`, `user-story` | Open |
-| #10 | UI Designs for User Stories 09–15 | `iteration-2`, `user-story` | Open |
+| #6 | Account Settings | `iteration-2`, `user-story` | ✅ Closed |
+| #9 | Restaurant menu configuration | `iteration-2`, `user-story` | ✅ Closed |
+| #10 | UI Designs for User Stories 09–15 | `iteration-2`, `user-story` | ✅ Closed |
+
+All Iteration 2 issues were resolved and closed at the end of the iteration (April 2026).
 
 Issues can be viewed at:
-[https://github.com/leonardrein/cp3407-project/issues](https://github.com/leonardrein/cp3407-project/issues)
+[https://github.com/William-Bowman-JCU/cp3407-project/issues](https://github.com/William-Bowman-JCU/cp3407-project/issues)
 
 ---
 
@@ -115,9 +117,9 @@ All 7 iteration 1 user stories were moved to **Done**:
 - Checkout (Payment & Confirmation)
 - Track Order
 
-### Iteration 2 — Current Board State
+### Iteration 2 — Board State at Completion
 
-Iteration 2 stories are in the **In Progress** column as the team works toward the April 10 deadline.
+All 7 delivered Iteration 2 user stories were moved to **Done**. US-15 (Filter Restaurants) was correctly deferred as the lowest-priority story when velocity capacity was reached.
 
 ---
 
@@ -140,6 +142,6 @@ This ensures only source code and documentation are tracked, keeping the reposit
 
 GitHub's commit graph and contributor statistics provide full transparency of individual contributions. The instructor can verify each team member's participation via:
 
-- **Commit history**: `https://github.com/leonardrein/cp3407-project/commits/main`
-- **Contributors graph**: `https://github.com/leonardrein/cp3407-project/graphs/contributors`
+- **Commit history**: `https://github.com/William-Bowman-JCU/cp3407-project/commits/main`
+- **Contributors graph**: `https://github.com/William-Bowman-JCU/cp3407-project/graphs/contributors`
 - **Issue comments**: Activity on individual GitHub Issues
