@@ -21,8 +21,18 @@ class Address(models.Model):
 
 
 class Restaurant(models.Model):
+    CUISINE_CHOICES = [
+        ('italian', 'Italian'),
+        ('chinese', 'Chinese'),
+        ('indian', 'Indian'),
+        ('mexican', 'Mexican'),
+        ('japanese', 'Japanese'),
+        ('thai', 'Thai'),
+        ('greek', 'Greek')
+    ]
+
     name = models.CharField(max_length=255)
-    cuisine_type = models.CharField(max_length=100)
+    cuisine_type = models.CharField(max_length=100, choices=CUISINE_CHOICES)
     address = models.CharField(max_length=255)
     rating = models.FloatField(
         default=0.0,
