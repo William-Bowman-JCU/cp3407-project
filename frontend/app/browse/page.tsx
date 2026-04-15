@@ -60,8 +60,8 @@ export default function browsePage() {
                     }}>➜</button>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-16 gap-x-4">
-                <div className="flex flex-col gap-4 min-h-54 min-w-86">
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] gap-y-16 gap-x-4 w-full px-10">
+                <div className="flex flex-col gap-4 min-h-54 w-full">
                     <div className="min-w-full rounded-xl min-h-46 bg-gray-50">image</div>
                     <div className='flex flex-col justify-between'>
                         <h3 className='pl-3 text-lg font-semibold'>Restaurant 1</h3>
@@ -71,7 +71,7 @@ export default function browsePage() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-4 min-h-54 min-w-86">
+                <div className="flex flex-col gap-4 min-h-54 min-w-0">
                     <div className="min-w-full rounded-xl min-h-46 bg-gray-50">image</div>
                     <div className='flex flex-col justify-between'>
                         <h3 className='pl-3 text-lg font-semibold'>Restaurant 2</h3>
@@ -81,7 +81,7 @@ export default function browsePage() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-4 min-h-54 min-w-86">
+                <div className="flex flex-col gap-4 min-h-54 min-w-0">
                     <div className="min-w-full rounded-xl min-h-46 bg-gray-50">image</div>
                     <div className='flex flex-col justify-between'>
                         <h3 className='pl-3 text-lg font-semibold'>Restaurant 3</h3>
@@ -91,7 +91,7 @@ export default function browsePage() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-4 min-h-54 min-w-86">
+                <div className="flex flex-col gap-4 min-h-54 min-w-0">
                     <div className="min-w-full rounded-xl min-h-46 bg-gray-50">image</div>
                     <div className='flex flex-col justify-between'>
                         <h3 className='pl-3 text-lg font-semibold'>Restaurant 4</h3>
@@ -101,7 +101,7 @@ export default function browsePage() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-4 min-h-54 min-w-86">
+                <div className="flex flex-col gap-4 min-h-54 min-w-0">
                     <div className="min-w-full rounded-xl min-h-46 bg-gray-50">image</div>
                     <div className='flex flex-col justify-between'>
                         <h3 className='pl-3 text-lg font-semibold'>Restaurant 5</h3>
@@ -111,7 +111,7 @@ export default function browsePage() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-4 min-h-54 min-w-86">
+                <div className="flex flex-col gap-4 min-h-54 min-w-0">
                     <div className="min-w-full rounded-xl min-h-46 bg-gray-50">image</div>
                     <div className='flex flex-col justify-between'>
                         <h3 className='pl-3 text-lg font-semibold'>Restaurant 6</h3>
@@ -121,7 +121,7 @@ export default function browsePage() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-4 min-h-54 min-w-86">
+                <div className="flex flex-col gap-4 min-h-54 min-w-0">
                     <div className="min-w-full rounded-xl min-h-46 bg-gray-50">image</div>
                     <div className='flex flex-col justify-between'>
                         <h3 className='pl-3 text-lg font-semibold'>Restaurant 7</h3>
@@ -131,7 +131,7 @@ export default function browsePage() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-4 min-h-54 min-w-86">
+                <div className="flex flex-col gap-4 min-h-54 min-w-0">
                     <div className="min-w-full rounded-xl min-h-46 bg-gray-50">image</div>
                     <div className='flex flex-col justify-between'>
                         <h3 className='pl-3 text-lg font-semibold'>Restaurant 8</h3>
