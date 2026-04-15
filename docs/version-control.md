@@ -29,13 +29,26 @@ The repository was forked from the course template (`jc138691/cp3407-project-v20
 
 ## Branching Strategy
 
-The team uses a simple **trunk-based** approach appropriate for a 4-person team:
+The team uses a **trunk-based** approach appropriate for a 4-person team:
 
 - **`main`** — the primary integration branch; all completed work is merged here
-- **Feature branches** — short-lived branches named after the user story (e.g., `feature/us-06-checkout`, `fix/cart-total`)
-- Direct commits to `main` are used for documentation and minor fixes
+- **Feature branches** — short-lived branches named after the user story (e.g., `feature/us-06-checkout`, `fix/cart-total`, `docs/final-cleanup`)
+- Direct commits to `main` are used for minor fixes and in-progress work; significant changes use pull requests
 
 This approach minimises merge conflicts while keeping a clean commit history on `main`.
+
+---
+
+## Pull Requests
+
+Pull requests are used to review and merge non-trivial changes into `main`. Each PR includes a description of what changed and a test checklist.
+
+| PR | Title | Author | Status |
+|----|-------|--------|--------|
+| [#12](https://github.com/William-Bowman-JCU/cp3407-project/pull/12) | docs: fix tool inconsistencies, stale refs, add burndown charts | leonardrein | ✅ Merged |
+
+All merged PRs are visible at:
+[https://github.com/William-Bowman-JCU/cp3407-project/pulls?q=is%3Apr+is%3Aclosed](https://github.com/William-Bowman-JCU/cp3407-project/pulls?q=is%3Apr+is%3Aclosed)
 
 ---
 
