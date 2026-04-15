@@ -134,7 +134,7 @@ export default function browsePage() {
                 ) : (
                 <div className="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] gap-y-16 gap-x-4 w-full px-10">
                     {restaurants.map(restaurant => (
-                    <div key={restaurant.id} className="flex flex-col gap-4 min-h-54 w-full">
+                    <div key={restaurant.id} className="flex flex-col gap-4 min-h-54 w-full" onClick={() => router.push(`/restaurants/${restaurant.id}`)}>
                         <div className="min-w-full h-46"><img className='w-full h-46 object-cover rounded-2xl ' src={restaurant.image_url} alt={restaurant.name} /></div>
                         <div className='flex flex-col justify-between'>
                             <h3 className='pl-3 text-lg font-semibold'>{restaurant.name}</h3>
