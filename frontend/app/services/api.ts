@@ -27,15 +27,15 @@ export type SavedAddress = {
 };
 
 export function getAddresses(): Promise<SavedAddress[]> {
-  return apiFetch("/addresses/", { method: "GET" });
+  return authFetch("/addresses/", { method: "GET" });
 }
 
 export function deleteAddress(id: number): Promise<void> {
-  return apiFetch(`/addresses/${id}/`, { method: "DELETE" });
+  return authFetch(`/addresses/${id}/`, { method: "DELETE" });
 }
 
 export function setDefaultAddress(id: number, current: SavedAddress): Promise<SavedAddress> {
-  return apiFetch(`/addresses/${id}/`, {
+  return authFetch(`/addresses/${id}/`, {
     method: "PUT",
     body: JSON.stringify({ ...current, is_default: true }),
   });
@@ -53,7 +53,7 @@ export type CreatedOrder = {
   total: string;
 };
 
-async function apiFetch<T>(path: string, options: RequestInit): Promise<T> {
+async function authFetch<T>(path: string, options: RequestInit): Promise<T> {
   const res = await fetch(`${API_BASE}${path}`, {
     ...options,
     credentials: "include",
@@ -71,23 +71,40 @@ async function apiFetch<T>(path: string, options: RequestInit): Promise<T> {
   return res.json() as Promise<T>;
 }
 
+async function publicFetch<T>(path: string, options: RequestInit): Promise<T> {
+  const res = await fetch(`${API_BASE}${path}`, {
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+  if (!res.ok) {
+    const text = await res.text().catch(() => res.statusText);
+    throw new ApiError(res.status, text);
+  }
+
+  return res.json() as Promise<T>;
+}
+
 export function createAddress(
   payload: AddressPayload
 ): Promise<{ id: number }> {
-  return apiFetch("/addresses/", {
+  return authFetch("/addresses/", {
     method: "POST",
     body: JSON.stringify(payload),
   });
 }
 
 export function createOrder(payload: OrderPayload): Promise<CreatedOrder> {
-  return apiFetch("/orders/create/", {
+  return authFetch("/orders/create/", {
     method: "POST",
     body: JSON.stringify(payload),
   });
 }
 
-// ── Cuisines,Restaurants & Menu ──────────────────────────────────────────────────────
+// ── Cuisines, Restaurants & Menu ──────────────────────────────────────────────────────
 
 export type Cuisine = {
   id: number;
@@ -119,18 +136,18 @@ export type RestaurantDetail = {
 };
 
 export function getCuisines(): Promise<Cuisine[]> {
-  return apiFetch(`/cuisines/`, { method: "GET" })
+  return publicFetch(`/cuisines/`, { method: "GET" })
 }
 
 export function getRestaurants(cuisine?: string): Promise<RestaurantDetail[]> {
   const params = new URLSearchParams()
   if (cuisine) params.set('cuisine', cuisine)
 
-  return apiFetch(`/restaurants/?${params}`, { method: "GET" });
+  return publicFetch(`/restaurants/?${params}`, { method: "GET" });
 }
 
 export function getRestaurantDetail(id: number): Promise<RestaurantDetail> {
-  return apiFetch(`/restaurants/${id}/`, { method: "GET" });
+  return publicFetch(`/restaurants/${id}/`, { method: "GET" });
 }
 
 // ── Orders ──────────────────────────────────────────────────────────────────
@@ -156,7 +173,7 @@ export type Order = {
 };
 
 export function getOrders(): Promise<Order[]> {
-  return apiFetch("/orders/", { method: "GET" });
+  return authFetch("/orders/", { method: "GET" });
 }
 
 // ── Account Settings ────────────────────────────────────────────────────────
@@ -174,7 +191,7 @@ export type AccountUpdatePayload = {
 };
 
 export function getAccount(email: string): Promise<AccountProfile> {
-  return apiFetch(`/account/?email=${encodeURIComponent(email)}`, {
+  return authFetch(`/account/?email=${encodeURIComponent(email)}`, {
     method: "GET",
   });
 }
@@ -182,7 +199,7 @@ export function getAccount(email: string): Promise<AccountProfile> {
 export function updateAccount(
   payload: AccountUpdatePayload
 ): Promise<{ message: string; user: AccountProfile }> {
-  return apiFetch("/account/", {
+  return authFetch("/account/", {
     method: "PUT",
     body: JSON.stringify(payload),
   });
