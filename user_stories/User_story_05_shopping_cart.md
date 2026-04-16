@@ -55,5 +55,19 @@ Users can increase or decrease the quantity, remove items, and see the total pri
 ![US06 - View shopping cart mockup](../images/us05_view_shopping_cart_mockup.jpg)
 
 ## Completed
-- Feature implemented
-- Basic functionality tested
+Route: 'frontend/app/cart'
+
+Live Page: https://main.d29mzie0h3ms32.amplifyapp.com/cart
+
+### Completion/What was built
+- Feature/features implemented(add item, update quantity, cart overview, ordersummary, etc)
+- Basic cart functionality implemented and tested
+- Empty state - Displayed through a 'Cart is Empty' text and a button back to the home page('Continue Shopping')
+- The core aspect, the cart('CartPage'). displays all items saved to cart with item name, price, remove button and quantity control
+- Local storgae implementation so it doesn't crash during page refreshes or other events 
+
+
+### Implementation Notes:
+- Cart states are directly managed through the 'CartContext' using React. Global cart state access across the whole web app
+- SSR guard (`typeof window === "undefined"`) prevents localStorage errors during Next.js server-side rendering
+
