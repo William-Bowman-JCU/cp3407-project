@@ -1,6 +1,6 @@
 ---
 title: Database Design
-nav_order: 9
+nav_order: 6
 ---
 
 # Database Design
@@ -29,6 +29,8 @@ FeedMe uses a **relational database** to store all application data. The schema 
 ---
 
 ## Entity-Relationship Diagram
+
+> 🔗 **[View interactive ER diagram on dbdiagram.io](https://dbdiagram.io/d/69e0cc808089629684b24e85)** — 6 entities, all relationships and constraints visible interactively.
 
 ```mermaid
 erDiagram

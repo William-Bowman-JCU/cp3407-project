@@ -1,6 +1,6 @@
 ---
 title: Agile Process
-nav_order: 8
+nav_order: 9
 ---
 
 # Agile Process
@@ -117,6 +117,26 @@ The backlog contained **15 user stories** — deliberately more than could fit i
 - US-09 added with highest priority to address the discovery gap
 - User stories in Iteration 2 include more detailed acceptance criteria to reduce mid-sprint surprises
 
+### Client Demo & Feedback
+
+**Date:** 14 March 2026 (end of Iteration 1)
+**Attendees:** Full team + course instructor + 2 external student testers
+**Environment:** Live deployment at https://main.d29mzie0h3ms32.amplifyapp.com
+
+The team demonstrated the complete core ordering flow — from account registration through to order tracking — on the deployed production environment.
+
+**Feedback summary:**
+
+| Feedback item | Source | Outcome |
+|---------------|--------|---------|
+| Delivery address selection happens too late — users should choose their address *before* browsing restaurants | Instructor | Added as US-09 (priority 10) in Iteration 2 |
+| Order tracking stepper is clear and well-designed | External tester | No change — confirmed working as intended |
+| Cart item count should be visible in the navbar at all times | External tester | Implemented in Iteration 2 via CartContext badge |
+| Would like to compare multiple restaurants before ordering | External tester | Captured as US-10 / US-14 in Iteration 2 |
+| Registration form should provide inline validation, not just a generic error | External tester | Addressed during Iteration 2 styling improvements |
+
+**Key outcome:** The instructor confirmed that the core ordering workflow was functional and deployed. The most significant gap — missing delivery location selection — was prioritised as the highest-value story (priority 10) for Iteration 2, directly reflecting the agile principle of responding to feedback.
+
 ---
 
 ## Iteration 2
@@ -185,6 +205,36 @@ The backlog contained **15 user stories** — deliberately more than could fit i
 
 **Lessons applied:**
 - Deferring US-15 was the correct agile call — delivering 7 working, tested features beats delivering 8 partially-finished ones
+
+### Client Demo & Feedback
+
+**Date:** 11 April 2026 (end of Iteration 2)
+**Attendees:** Full team + course instructor + 3 external student testers
+**Environment:** Live deployment at https://main.d29mzie0h3ms32.amplifyapp.com
+
+The team demonstrated the full application, covering all 14 implemented user stories. The demo highlighted improvements made directly in response to Iteration 1 feedback.
+
+**Feedback summary:**
+
+| Feedback item | Source | Outcome |
+|---------------|--------|---------|
+| Delivery location step now flows naturally before restaurant browsing — much improved UX | Instructor | Confirmed: Iteration 1 feedback addressed correctly |
+| Restaurant search works well; filtering by cuisine or rating is still missing | External tester | US-15 already in backlog; deferred at priority 4 — correct agile decision |
+| Order history is clean; colour-coded statuses are intuitive | External tester | No change needed |
+| Reorder feature is a strong convenience addition | External tester | No change needed |
+| Cart persists correctly across page navigation | Instructor | localStorage architecture validated for project scope |
+| Registration and login forms have improved accessibility compared to Iteration 1 | External tester | Confirms styling improvements were valuable |
+
+**Key outcome:** The instructor noted a significant improvement over Iteration 1 and confirmed that the application now covers the complete user journey. The deferral of US-15 (Filter Restaurants) was explicitly accepted as a justified agile decision given the consistent velocity of 13 story days. No new user stories were identified — the backlog is complete for the project scope.
+
+**Traceability — Iteration 1 feedback → Iteration 2 delivery:**
+
+| Iteration 1 Feedback | US Implemented in Iteration 2 | Status |
+|----------------------|-------------------------------|--------|
+| Add delivery address selection before browsing | US-09 Select Delivery Location (priority 10) | ✅ Done |
+| Add restaurant selection and comparison | US-10 Select Restaurant (priority 9), US-14 Restaurant Details (priority 6) | ✅ Done |
+| Show cart item count in navbar | CartContext badge (part of US-05 / US-10 refinement) | ✅ Done |
+| Improve registration form validation | Inline validation added in login/register pages | ✅ Done |
 
 ---
 

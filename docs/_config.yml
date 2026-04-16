@@ -2,6 +2,7 @@ title: FeedMe – CP3407 Project
 description: Food delivery application built for CP3407 Advanced Software Engineering at JCU.
 baseurl: "/cp3407-project"
 url: "https://william-bowman-jcu.github.io"
+nav_order: 11
 
 # theme: just-the-docs
 

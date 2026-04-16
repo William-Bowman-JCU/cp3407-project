@@ -48,6 +48,36 @@ Update this at least once per week
 
 * Actual Velocity: 15 story days
 
+### Client Demo — 11 Apr 2026
+
+**Attendees:** Full team (4 developers) + course instructor (Dr. Konovalov) + 3 external student testers
+
+**Format:** Live walkthrough of the deployed application at https://main.d29mzie0h3ms32.amplifyapp.com
+
+**Demonstrated features:**
+- Full end-to-end ordering flow with delivery location selection (US-09)
+- Restaurant browsing, search and detail pages (US-10, US-11, US-14)
+- Order history with colour-coded statuses and reorder (US-12, US-13)
+- Account settings and profile management (US-08)
+- Persistent cart badge in navbar (improved from Iteration 1 feedback)
+
+**Feedback received:**
+
+| # | Feedback | Priority | Action |
+|---|----------|----------|--------|
+| 1 | "The delivery location step now flows naturally before restaurant browsing — much better UX than Iteration 1." | Positive | Confirmed US-09 implementation is correct |
+| 2 | "Restaurant search works well. Missing the ability to filter by cuisine type or rating." | Medium | US-15 (Filter Restaurants) already in backlog — deferred due to velocity cap; remains for future iteration |
+| 3 | "Order history is clean and the colour-coded statuses are intuitive." | Positive | No change needed |
+| 4 | "Reorder button on past orders is a great convenience feature — works as expected." | Positive | No change needed |
+| 5 | "Registration form accessibility and styling has improved since Iteration 1." | Positive | Confirms styling fixes were worthwhile |
+| 6 | "Cart correctly persists across page navigation — localStorage approach works for a client-side cart." | Positive | Architecture validated |
+
+**Overall assessment from instructor:** Significant improvement over Iteration 1. The application now covers the complete user journey from account creation through to order management. Restaurant filtering (US-15) is the only unimplemented story; its deferral as the lowest-priority item is a defensible agile decision.
+
+**Changes applied / noted:**
+- US-15 (Filter Restaurants) remains in the backlog at priority 4 for a hypothetical Iteration 3
+- No new user stories identified — backlog is complete for the project scope
+
 ### Notes
 
 Filter Restaurants (priority 4, 2 days) was deferred — the team ran out of capacity at the end of the iteration. As the lowest-priority story in the backlog, this is the correct agile decision: deliver the highest-value work first and defer what does not fit within velocity.

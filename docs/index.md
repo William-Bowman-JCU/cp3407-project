@@ -27,7 +27,7 @@ A modern food delivery application — built with Next.js and Django for CP3407 
 | **Methodology** | Agile (XP-inspired, 2 iterations) |
 | **Frontend** | Next.js 14 / TypeScript |
 | **Backend** | Django 5 / Python |
-| **Database** | SQLite (development) |
+| **Database** | SQLite (development) / PostgreSQL on AWS RDS (production) |
 
 ---
 
@@ -43,20 +43,25 @@ A modern food delivery application — built with Next.js and Django for CP3407 
 
 ---
 
+## Marking Guide
+
+All eight rubric criteria are documented on this GitHub Pages site. Use the table below to navigate directly to the relevant section for each criterion:
+
+| Criterion | Section | What you will find |
+|-----------|---------|--------------------|
+| **1 — Requirements** | [Requirements](./requirements) | 15 user stories with priorities, story-day estimates, acceptance criteria, and planning justification |
+| **2 — Design** | [Design](./design) | System architecture (Miro), database ERD (dbdiagram.io), UI wireframes (NinjaMock), UML diagrams |
+| **2 — Design (DB)** | [Database](./database) | Full relational schema (6 entities), design decisions, and dbdiagram.io source |
+| **3 — Implementation** | [Implementation](./implementation) | Delivered features per iteration, tech stack, AWS deployment, client demo feedback |
+| **4 — Testing** | [Testing](./testing) | Test strategy, 86 automated tests (TDD evidence), acceptance tests, test pyramid |
+| **5 — Version Control** | [Version Control](./version-control) | Git workflow, Conventional Commits, branching strategy, PR process |
+| **6 — Tools** | [Tools](./tools) | All development, design, and deployment tools with justification |
+| **7 — Agile** | [Agile Process](./agile) | Iteration plans, burn-down charts, velocity, retrospectives, client demo feedback |
+| **8 — Technical Writing** | This site | All pages follow the provided template; navigable from this index |
+
 ## Navigation Guide
 
-Use the left sidebar to navigate all project documentation. All eight assessment criteria are covered:
-
-| Section | What you will find |
-|---------|--------------------|
-| [Requirements](./requirements) | Full backlog of 15 user stories with priorities and estimates |
-| [Design](./design) | Architecture diagram, database ERD, UI wireframes |
-| [Implementation](./implementation) | Delivered features per iteration, tech stack, deployment |
-| [Testing](./testing) | Testing strategy, acceptance tests, test results |
-| [Version Control](./version-control) | Git workflow, commits, branches, issues |
-| [Tools](./tools) | All development tools used and justification |
-| [Agile Process](./agile) | Iteration plans, burn-down charts, velocity, retrospectives |
-| [Team](./team) | Team members and individual contributions |
+Use the left sidebar or the links above to navigate all project documentation.
 
 ---
 
