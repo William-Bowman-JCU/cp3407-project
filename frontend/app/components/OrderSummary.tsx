@@ -40,7 +40,7 @@ export default function OrderSummary({ items }: OrderSummaryProps) {
 
       <div className="flex justify-between items-center">
         <span className="text-white font-semibold text-base">Total</span>
-        <span className="text-red-400 font-bold text-xl">
+        <span className="text-[#D85A30] font-bold text-xl">
           ${total.toFixed(2)}
         </span>
       </div>

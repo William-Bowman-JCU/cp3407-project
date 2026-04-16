@@ -31,11 +31,11 @@ export default function MenuTemplate({
       <div className="w-full max-w-5xl bg-[#3a3333] rounded-lg shadow-lg overflow-hidden">
 
         {/* Header */}
-        <div className="bg-[#2f2929] text-white px-6 py-4 flex justify-between items-center border-b border-red-500">
+        <div className="bg-[#2f2929] text-white px-6 py-4 flex justify-between items-center border-b border-[#D85A30]">
           <h1 className="text-xl font-bold">{restaurantName}</h1>
           <button onClick={() => setShowCart(!showCart)} className="relative text-xl">
             🛒
-            <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+            <span className="absolute -top-2 -right-3 bg-[#D85A30] text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
               {cartCount}
             </span>
           </button>

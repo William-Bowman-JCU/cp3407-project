@@ -26,7 +26,7 @@ function ConfirmationContent() {
           <p className="text-zinc-400 text-xs uppercase tracking-widest mb-1">
             Order ID
           </p>
-          <p className="text-red-400 font-mono font-bold text-xl">
+          <p className="text-[#D85A30] font-mono font-bold text-xl">
             {orderId}
           </p>
         </div>
@@ -41,7 +41,7 @@ function ConfirmationContent() {
         <div className="flex flex-col gap-3 w-full mt-2">
           <button
             onClick={() => router.push("/")}
-            className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl uppercase tracking-widest transition-colors"
+            className="w-full bg-[#D85A30] hover:bg-[#c04f28] text-white font-bold py-3 rounded-xl uppercase tracking-widest transition-colors"
           >
             Track My Order
           </button>

@@ -64,7 +64,7 @@ export default function CheckoutPage() {
             <p className="text-xl mb-4">Your cart is empty.</p>
             <button
               onClick={() => router.push("/browse")}
-              className="bg-[#D85A30] hover:bg-red-700 text-white font-bold px-6 py-3 rounded-xl transition"
+              className="bg-[#D85A30] hover:bg-[#c04f28] text-white font-bold px-6 py-3 rounded-xl transition"
             >
               Browse Restaurants
             </button>
@@ -77,15 +77,15 @@ export default function CheckoutPage() {
               </h2>
 
               {needsLogin && (
-                <div className="mb-6 bg-zinc-700 border border-red-500 rounded-xl px-5 py-4 text-sm">
-                  <p className="text-red-400 font-semibold mb-1">
+                <div className="mb-6 bg-zinc-700 border border-[#D85A30] rounded-xl px-5 py-4 text-sm">
+                  <p className="text-[#D85A30] font-semibold mb-1">
                     Login required
                   </p>
                   <p className="text-zinc-300">
                     Please{" "}
                     <Link
                       href="/login"
-                      className="text-red-400 underline hover:text-red-300 transition"
+                      className="text-[#D85A30] underline hover:text-[#c04f28] transition"
                     >
                       log in
                     </Link>{" "}
@@ -95,7 +95,7 @@ export default function CheckoutPage() {
               )}
 
               {apiError && (
-                <div className="mb-6 bg-zinc-700 border border-red-500 rounded-xl px-5 py-4 text-sm text-red-400">
+                <div className="mb-6 bg-zinc-700 border border-[#D85A30] rounded-xl px-5 py-4 text-sm text-[#D85A30]">
                   {apiError}
                 </div>
               )}

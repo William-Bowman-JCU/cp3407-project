@@ -95,7 +95,7 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
   }
 
   const inputClass =
-    "w-full bg-zinc-600 text-white placeholder-zinc-400 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 transition";
+    "w-full bg-zinc-600 text-white placeholder-zinc-400 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#D85A30] transition";
 
   const errorClass = "text-red-400 text-xs mt-1";
 
@@ -237,7 +237,7 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
           name="notifications"
           checked={formData.notifications}
           onChange={handleChange}
-          className="w-4 h-4 accent-red-500"
+          className="w-4 h-4 accent-[#D85A30]"
         />
         Do you like to receive notifications and updates?
       </label>
@@ -245,7 +245,7 @@ export default function CheckoutForm({ onSubmit, isLoading }: CheckoutFormProps)
       <button
         type="submit"
         disabled={isLoading}
-        className="mt-2 w-full bg-red-600 hover:bg-red-700 disabled:bg-zinc-500 disabled:cursor-not-allowed text-white font-bold py-3 rounded-xl text-base tracking-widest uppercase transition-colors"
+        className="mt-2 w-full bg-[#D85A30] hover:bg-[#c04f28] disabled:bg-zinc-500 disabled:cursor-not-allowed text-white font-bold py-3 rounded-xl text-base tracking-widest uppercase transition-colors"
       >
         {isLoading ? "Processing..." : "PAY"}
       </button>
