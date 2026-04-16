@@ -31,7 +31,8 @@ class RestaurantDetailSerializer(serializers.ModelSerializer):
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = Address
-        fields = ['id', 'street', 'city', 'postcode', 'is_default']
+        fields = ['id', 'street', 'city', 'suburb', 'postcode', 'is_default']
+        
 
 
 class OrderItemSerializer(serializers.ModelSerializer):
@@ -72,7 +73,7 @@ class OrderItemCreateSerializer(serializers.ModelSerializer):
 
 class OrderCreateSerializer(serializers.ModelSerializer):
     items = OrderItemCreateSerializer(many=True)
-    
+
     class Meta:
         model = Order
         fields = ['restaurant', 'delivery_address', 'delivery_fee', 'items']

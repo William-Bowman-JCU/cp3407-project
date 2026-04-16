@@ -6,7 +6,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 class Address(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='addresses')
     street = models.CharField(max_length=255)
-    suburb = models.CharField(max_length=100)
+    suburb = models.CharField(max_length=100, blank=True, null=True)
     city = models.CharField(max_length=100)
     postcode = models.CharField(max_length=10)
     is_default = models.BooleanField(default=False)
