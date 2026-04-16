@@ -49,69 +49,74 @@ export default function RegisterPage() {
       <div className="w-full max-w-md">
 
         {/* Header */}
-        <div className="bg-[#D85A30] rounded-t-2xl px-8 pt-10 pb-8 text-center">
-          <h1 className="text-3xl font-medium text-white tracking-tight">MyFood</h1>
+        <div className="bg-zinc-900 rounded-t-2xl px-8 pt-10 pb-8 text-center">
+          <div className="text-center mb-6">
+            <span className="font-extrabold text-2xl tracking-tight">
+              <span className="text-white">Feed</span>
+              <span className="text-[#D85A30]">Me</span>
+            </span>
+          </div>
           <p className="text-[#FAECE7] text-sm mt-1">Create your account</p>
         </div>
 
         {/* Form */}
-        <div className="bg-zinc-800 border border-t-0 border-stone-200 rounded-b-2xl px-8 py-8">
+        <div className="bg-zinc-800 border border-t-0 border-zinc-900 rounded-b-2xl px-8 py-8">
           <form onSubmit={handleSubmit} className="space-y-4">
 
             <div>
-              <label className="block text-xs font-medium text-stone-500 mb-1">Full name</label>
+              <label className="block text-xs font-medium text-zinc-300 mb-1">Full name</label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="John Smith"
                 required
-                className="w-full px-3 py-2.5 bg-stone-50 border border-stone-200 rounded-lg text-sm text-stone-800 focus:outline-none focus:border-[#D85A30]"
+                className="w-full px-3 py-2.5 bg-zinc-900 border-zinc-700 rounded-lg text-sm text-white focus:outline-none focus:border-[#D85A30]"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-stone-500 mb-1">Email</label>
+              <label className="block text-xs font-medium text-zinc-300 mb-1">Email</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@email.com"
                 required
-                className="w-full px-3 py-2.5 bg-stone-50 border border-stone-200 rounded-lg text-sm text-stone-800 focus:outline-none focus:border-[#D85A30]"
+                className="w-full px-3 py-2.5 bg-zinc-900 border-zinc-700 rounded-lg text-sm text-white focus:outline-none focus:border-[#D85A30]"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-stone-500 mb-1">Password</label>
+              <label className="block text-xs font-medium text-zinc-300 mb-1">Password</label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
                 required
-                className="w-full px-3 py-2.5 bg-stone-50 border border-stone-200 rounded-lg text-sm text-stone-800 focus:outline-none focus:border-[#D85A30]"
+                className="w-full px-3 py-2.5 bg-zinc-900 border-zinc-700 rounded-lg text-sm text-white focus:outline-none focus:border-[#D85A30]"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-stone-500 mb-1">Confirm password</label>
+              <label className="block text-xs font-medium text-zinc-300 mb-1">Confirm password</label>
               <input
                 type="password"
                 value={confirm}
                 onChange={(e) => setConfirm(e.target.value)}
                 placeholder="••••••••"
                 required
-                className="w-full px-3 py-2.5 bg-stone-50 border border-stone-200 rounded-lg text-sm text-stone-800 focus:outline-none focus:border-[#D85A30]"
+                className="w-full px-3 py-2.5 bg-zinc-900 border-zinc-700 rounded-lg text-sm text-white focus:outline-none focus:border-[#D85A30]"
               />
             </div>
 
-            {error && <p className="text-red-500 text-sm">{error}</p>}
+            {error && <p className="text-red-400 text-sm">{error}</p>}
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-[#D85A30] text-white rounded-lg text-sm font-medium hover:bg-[#c04f28] transition-colors disabled:opacity-50"
+              className="w-full py-3 bg-[#D85A30] text-white rounded-lg text-sm font-medium hover:bg-[#AC4724] transition-colors disabled:opacity-50"
             >
               {loading ? 'Creating account...' : 'Create account'}
             </button>
