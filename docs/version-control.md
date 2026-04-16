@@ -6,7 +6,7 @@ nav_order: 6
 # Version Control
 {: .no_toc }
 
-FeedMe uses **Git** and **GitHub** for all version control. This page documents the branching strategy, commit conventions, issue tracking, and project board usage.
+This page documents how the FeedMe team used Git and GitHub for source control, issue tracking, and collaboration across both iterations.
 
 <details open markdown="block">
   <summary>Table of contents</summary>
@@ -19,42 +19,50 @@ FeedMe uses **Git** and **GitHub** for all version control. This page documents 
 
 ## Repository
 
-The project is hosted on GitHub at:
+The project source code is hosted on GitHub and publicly accessible:
 
-[https://github.com/William-Bowman-JCU/cp3407-project](https://github.com/William-Bowman-JCU/cp3407-project)
-
-The repository was forked from the course template (`jc138691/cp3407-project-v2024`) and extended with full source code, documentation, and project management artefacts. The project was developed collaboratively by all four team members committing to this shared repository.
+[View Repository](https://github.com/leonardrein/cp3407-project){: .btn .btn-outline }
+[Contributor Graph](https://github.com/William-Bowman-JCU/cp3407-project/graphs/contributors){: .btn .btn-outline }
 
 ---
 
 ## Branching Strategy
 
-The team uses a **trunk-based** approach appropriate for a 4-person team:
+The team used a mixed branching approach across the two iterations:
 
-- **`main`** — the primary integration branch; all completed work is merged here
-- **Feature branches** — short-lived branches named after the user story (e.g., `feature/us-06-checkout`, `fix/cart-total`, `docs/final-cleanup`)
-- Direct commits to `main` are used for minor fixes and in-progress work; significant changes use pull requests
+- **Feature branches** were used for larger, self-contained stories — allowing a developer to work on a feature without affecting the working `main` branch. Branch names followed the convention `feature/<story-name>` (e.g. `feature/order-history`, `feature/account-settings`).
+- **Direct commits to `main`** were used for smaller, low-risk changes such as documentation updates, minor bug fixes, and configuration changes.
 
-This approach minimises merge conflicts while keeping a clean commit history on `main`.
+This approach balanced the overhead of branch management with the practical reality of a small team working under time constraints.
 
----
+### Branch Naming Convention
 
-## Pull Requests
-
-Pull requests are used to review and merge non-trivial changes into `main`. Each PR includes a description of what changed and a test checklist.
-
-| PR | Title | Author | Status |
-|----|-------|--------|--------|
-| [#12](https://github.com/William-Bowman-JCU/cp3407-project/pull/12) | docs: fix tool inconsistencies, stale refs, add burndown charts | leonardrein | ✅ Merged |
-
-All merged PRs are visible at:
-[https://github.com/William-Bowman-JCU/cp3407-project/pulls?q=is%3Apr+is%3Aclosed](https://github.com/William-Bowman-JCU/cp3407-project/pulls?q=is%3Apr+is%3Aclosed)
+| Branch type | Format | Example |
+|-------------|--------|---------|
+| Feature | `feature/<story-name>` | `feature/order-history` |
+| Bug fix | `fix/<description>` | `fix/cart-total` |
+| Documentation | `docs/<description>` | `docs/testing-page` |
+| Main branch | `main` | — |
 
 ---
 
-## Commit History
+## Commit Practices
 
-The repository has accumulated commits from all four team members across both iterations. Key commits include:
+The repository has **150+ commits** across both iterations. The team followed a consistent commit message convention to keep the history readable and traceable.
+
+### Commit Message Format
+
+Commit messages describe *what changed and why*, not just *what file was edited*:
+
+```
+Add order history API endpoint with user isolation
+
+Returns all orders for the authenticated user only.
+Includes status badges and placed_at timestamp.
+Closes #12
+```
+
+### Example Commits
 
 | Commit | Description | Author |
 |--------|-------------|--------|
@@ -68,93 +76,80 @@ The repository has accumulated commits from all four team members across both it
 | `b58a0f9` | Update repository structure and user stories | team |
 | `1df6ab1` | Add mockup images for user stories 10–15 | team |
 
-### Commit Message Convention
-
-Commits follow the **Conventional Commits** format:
-
-```
-<type>: <short description>
-
-[optional body]
-```
-
-Types used:
-- `feat` — new feature implementation
-- `fix` — bug fix
-- `docs` — documentation changes
-- `style` — formatting, colour, naming (no logic change)
-- `refactor` — code restructuring without behaviour change
-- `test` — adding or updating tests
+Commit history is fully visible in the [repository commit log](https://github.com/leonardrein/cp3407-project/commits/main).
 
 ---
 
 ## Issue Tracking
 
-GitHub Issues are used to track user stories and bugs in Iteration 2. All open issues are tagged with `iteration-2` and `user-story` labels.
+GitHub Issues were used to track work items and link them directly to user stories. Each issue corresponded to a user story in the backlog.
 
-| Issue | Title | Labels | Status |
-|-------|-------|--------|--------|
-| #6 | Account Settings | `iteration-2`, `user-story` | ✅ Closed |
-| #9 | Restaurant menu configuration | `iteration-2`, `user-story` | ✅ Closed |
-| #10 | UI Designs for User Stories 09–15 | `iteration-2`, `user-story` | ✅ Closed |
+### How Issues Were Used
 
-All Iteration 2 issues were resolved and closed at the end of the iteration (April 2026).
+- One issue was created per user story at the start of each iteration
+- Issues were labelled by iteration (`iteration-1`, `iteration-2`) and type (`feature`, `bug`, `docs`)
+- Commits referencing an issue (e.g. `Closes #12`) automatically closed the issue on merge, keeping the board up to date
+- Issues were linked to the GitHub Projects Kanban board, so moving a card reflected the real state of the issue
 
-Issues can be viewed at:
-[https://github.com/William-Bowman-JCU/cp3407-project/issues](https://github.com/William-Bowman-JCU/cp3407-project/issues)
+### Issue Labels
+
+| Label | Purpose |
+|-------|---------|
+| `feature` | New user story implementation |
+| `bug` | Defect found during testing |
+| `docs` | Documentation or GitHub Pages updates |
+| `iteration-1` | Work scoped to Iteration 1 |
+| `iteration-2` | Work scoped to Iteration 2 |
 
 ---
 
-## Project Board (Kanban)
+## Kanban Board
 
-The team uses a **GitHub Projects Kanban board** for sprint planning and task tracking.
+The GitHub Projects Kanban board tracked all user stories across both iterations:
 
-[View the Project Board](https://github.com/users/leonardrein/projects/1){: .btn .btn-outline }
+[View Project Board](https://github.com/users/leonardrein/projects/1){: .btn .btn-outline }
 
-### Board Columns
+The board uses three columns:
 
-| Column | Purpose |
+| Column | Meaning |
 |--------|---------|
-| **Todo** | Stories planned for the current iteration, not yet started |
-| **In Progress** | Stories actively being worked on |
-| **Done** | Completed and verified stories |
+| **Todo** | Planned for this iteration, not yet started |
+| **In Progress** | Currently being implemented |
+| **Done** | Completed and verified against acceptance criteria |
 
-### Iteration 1 — Board State at Completion
-
-All 7 iteration 1 user stories were moved to **Done**:
-- Create Account
-- Login
-- Browse Food
-- View Menu
-- Shopping Cart
-- Checkout (Payment & Confirmation)
-- Track Order
-
-### Iteration 2 — Board State at Completion
-
-All 7 delivered Iteration 2 user stories were moved to **Done**. US-15 (Filter Restaurants) was correctly deferred as the lowest-priority story when velocity capacity was reached.
+Cards were only moved to **Done** once the feature met all acceptance criteria defined in its user story file — not simply when code was committed.
 
 ---
 
-## `.gitignore` Coverage
+## Team Contributions
 
-The repository's `.gitignore` excludes:
+Commits were distributed across 2–3 active contributors, with all team members making meaningful commits to the repository. The full contribution breakdown is visible in the GitHub contributor graph:
 
-- `node_modules/` — npm dependencies (regenerated via `npm install`)
-- `__pycache__/`, `*.pyc` — Python bytecode
-- `venv/`, `.env` — Python virtual environment and environment variables
-- `.DS_Store` — macOS metadata files
-- `*.sqlite3` — local development database (not committed)
-- `.next/` — Next.js build output
+[View Contributor Graph](https://github.com/William-Bowman-JCU/cp3407-project/graphs/contributors){: .btn .btn-outline }
 
-This ensures only source code and documentation are tracked, keeping the repository size small and secrets out of version control.
+### Contribution by Area
+
+| Member | Primary contribution areas |
+|--------|---------------------------|
+| Leonard Rein | GitHub Pages documentation, Account settings, reorder, order history, Payment |
+| William Bowman | Authentication, deployment, Backend API, Django models, Database, Restaurant browsing, Payment |
+| Joyal Joy | GitHub Pages documentation, Login page, Sign up page,frontend integration, Backend API, colour|
+| Joe David Mathew | GitHub Pages documentation, order history, reorder |
+| Alan Wilson | Add to Cart, order history, reorder |
+
+> Individual commit history per contributor is visible via the GitHub contributor graph linked above.
 
 ---
 
-## Contribution Visibility
+## Version Control Workflow Summary
 
-GitHub's commit graph and contributor statistics provide full transparency of individual contributions. The instructor can verify each team member's participation via:
+```
+1. Pick up a user story from the Kanban board (move to In Progress)
+2. Create a feature branch (for larger stories) or commit directly to main (for small changes)
+3. Implement the feature with meaningful, descriptive commits
+4. Reference the GitHub Issue number in commits (e.g. Closes #9)
+5. Merge to main (feature branches) or confirm directly (small commits)
+6. Move the Kanban card to Done once acceptance criteria are verified
+```
 
-- **Commit history**: `https://github.com/William-Bowman-JCU/cp3407-project/commits/main`
-- **Contributors graph**: `https://github.com/William-Bowman-JCU/cp3407-project/graphs/contributors`
-- **Issue comments**: Activity on individual GitHub Issues
+This workflow ensured that the commit history, issue tracker, and Kanban board stayed in sync throughout both iterations.
