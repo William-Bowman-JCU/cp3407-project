@@ -1,6 +1,6 @@
 ---
 title: Version Control
-nav_order: 6
+nav_order: 8
 ---
 
 # Version Control

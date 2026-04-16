@@ -1,6 +1,6 @@
 ---
 title: Database Design
-nav_order: 9
+nav_order: 6
 ---
 
 # Database Design
