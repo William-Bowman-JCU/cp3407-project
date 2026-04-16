@@ -45,7 +45,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-stone-100">
+    <div className="min-h-screen flex items-center justify-center">
       <div className="w-full max-w-md">
 
         {/* Header */}
@@ -55,7 +55,7 @@ export default function RegisterPage() {
         </div>
 
         {/* Form */}
-        <div className="bg-white border border-t-0 border-stone-200 rounded-b-2xl px-8 py-8">
+        <div className="bg-zinc-800 border border-t-0 border-stone-200 rounded-b-2xl px-8 py-8">
           <form onSubmit={handleSubmit} className="space-y-4">
 
             <div>

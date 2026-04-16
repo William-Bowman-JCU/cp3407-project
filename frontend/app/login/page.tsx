@@ -47,7 +47,7 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center">
       <div className="w-full max-w-md">
         {/* Header */}
-        <div className="bg-zinc-900 rounded-t-2xl px-8 pt-10 pb-8 text-center">
+        <div className="bg-zinc-900 rounded-t-2xl px-8 pt-10 pb-8 texSt-center">
           <h1>
             {/* Logo */}
             <div className="text-center mb-6">
