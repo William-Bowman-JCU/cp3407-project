@@ -18,6 +18,7 @@ export function getCookie(name: string) {
 export type AddressPayload = {
   street: string;
   city: string;
+  suburb?: string;
   postcode?: string;
   is_default?: boolean;
 };
