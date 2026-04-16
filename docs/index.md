@@ -10,7 +10,7 @@ A modern food delivery application — built with Next.js and Django for CP3407 
 {: .fs-6 .fw-300 }
 
 [Live App](https://main.d29mzie0h3ms32.amplifyapp.com){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[View on GitHub](https://github.com/leonardrein/cp3407-project){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View on GitHub](https://github.com/William-Bowman-JCU/cp3407-project){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Project Board (Kanban)](https://github.com/users/leonardrein/projects/1){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
@@ -33,13 +33,12 @@ A modern food delivery application — built with Next.js and Django for CP3407 
 
 ## Team
 
-| Name | Role |
-|------|------|
-| Leonard Rein | Developer, Project Lead |
-| William Bowman | Developer |
-| Joyal Joy | Developer |
-| Joe David Mathew | Developer |
-| Alan Wilson | Developer |
+| Name | GitHub |
+|------|--------|
+| Leonard Rein | [@leonardrein](https://github.com/leonardrein) |
+| William Bowman | [@William-Bowman-JCU](https://github.com/William-Bowman-JCU) |
+| Joyal Joy | [@JoeJCU](https://github.com/JoeJCU) |
+| Joe David Mathew | [@AlanWilson112114](https://github.com/AlanWilson112114) |
 
 ---
 
@@ -56,7 +55,7 @@ Use the left sidebar to navigate all project documentation. All eight assessment
 | [Version Control](./version-control) | Git workflow, commits, branches, issues |
 | [Tools](./tools) | All development tools used and justification |
 | [Agile Process](./agile) | Iteration plans, burn-down charts, velocity, retrospectives |
-| [Team](./team) | Team members and individual contributions |
+| [Team](./team) | Team members and working agreement |
 
 ---
 
@@ -93,4 +92,4 @@ All **7 planned user stories** delivered. Velocity: **13 story days**.
 
 ---
 
-> Full project source code is available on [GitHub](https://github.com/leonardrein/cp3407-project).
+> Full project source code is available on [GitHub](https://github.com/William-Bowman-JCU/cp3407-project).

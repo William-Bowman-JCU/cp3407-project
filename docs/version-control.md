@@ -58,15 +58,15 @@ The repository has accumulated commits from all four team members across both it
 
 | Commit | Description | Author |
 |--------|-------------|--------|
-| `2e934b9` | style: set dark background as global default | leonardrein |
 | `c41567c` | feat: add shared Navbar component, homepage and global layout | leonardrein |
-| `35e24ea` | docs: add link to project board in README | leonardrein |
-| `cabd196` | refactor: clean up code and remove unnecessary comments | leonardrein |
-| `4f9f715` | style: update colour scheme to red/black and rename app to FeedMe | leonardrein |
-| `059a6c7` | feat: implement Payment & Confirmation feature (User Story #7) | leonardrein |
-| `0c46b53` | Update .gitignore | team |
-| `b58a0f9` | Update repository structure and user stories | team |
-| `1df6ab1` | Add mockup images for user stories 10–15 | team |
+| `059a6c7` | feat: implement Payment & Confirmation feature (US-07) | leonardrein |
+| `d075ca6` | feat: add domain models and 48 passing tests (unit + acceptance) | leonardrein |
+| `f6969e2` | feat: refactor restaurant model to use ManyToMany relationship | William-Bowman-JCU |
+| `0e0e84e` | feat: add browse page UI with category scroll functionality | William-Bowman-JCU |
+| `4ef3b78` | feat: refactor backend to use feedme as main application | William-Bowman-JCU |
+| `dccad15` | fix: Pizza Menu Nav Bar padding and font consistency | JoeJCU |
+| `da6147f` | feat: add order history page and fetch order data from backend | JoeJCU |
+| `cf24718` | feat: add reorder functionality to order history | AlanWilson112114 |
 
 ### Commit Message Convention
 
