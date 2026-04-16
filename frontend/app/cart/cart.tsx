@@ -50,7 +50,7 @@ export default function CartPage() {
                     <div className='text-center py-20'>
                         <p className='text-xl mb-4'>Cart is Empty!</p>
                         <Link href="/"
-                            className='inline-block bg-red-600 text-white font-bold px-8 py-2.5 rounded-lg transition'>
+                            className='inline-block bg-[#D85A30] text-white font-bold px-8 py-2.5 rounded-lg transition'>
                             Continue Shopping
                         </Link>
                     </div>
@@ -66,21 +66,34 @@ export default function CartPage() {
                                     {items.map((item) => (
                                         <div 
                                         key={item.id}
-                                        className='bg-zinc-600 rounded-xl p-4 hover:bg-zinc-500 transition'>
-                                            <div className='flex-1'>
+                                        className='bg-zinc-600 rounded-xl p-4 hover:bg-zinc-500 transition flex items-center gap-4 '>
+                                            <div className='flex-1 min-w-0'>
                                                 <h3 className='text-white font-semibold'>{item.name}</h3>
                                                 <p className='text-sm'>${item.price.toFixed(2)}</p>
                                             </div>
+
+                                        {/* Quantity */}
+                                        <div className='flex items-center bg-zinc-700 rounded-lg shrink-0 overflow-hidden'>
+                                            <button onClick={() => updateQuantityFunc(item.id, item.quantity - 1)}
+                                            className='px-3 py-2 text-[#D85A30] hover:bg-zinc-600 font-bold transitions text-base'>
+                                                -
+                                            </button>
+                                            <span className='text-sm px-3 font-semibold border-x border-zinc-500'>{item.quantity}</span>
+                                            <button onClick={() => updateQuantityFunc(item.id, item.quantity + 1)}
+                                            className='px-3 py-2 text-green-400 hover:bg-zinc-600 font-bold transitions text-base'>
+                                                +
+                                            </button>
+                                        </div>
                                             
 
                                         {/* Total  */}
-                                        <p className='text-red-400 font-bold text-sm w-16 text-right'>
+                                        <p className='text-[#D85A30] font-bold text-sm w-16 text-right'>
                                             ${(item.price * item.quantity).toFixed(2)}
                                         </p>
                                 
                                         {/* Remove Button */}
                                         <button onClick={() => removeItemFunc(item.id)}
-                                            className='text-zinc-400 hover:text-red-500 text-sm transition'>
+                                            className='shrink-0 text-zinc-400 hover:text-[#D85A30] text-sm transition px-3 py-2 rounded-lg text-zinc-400 hover:bg-[#D85A30] hover:text-white bg-zinc-800'>
                                             Remove
                                         </button>
 
@@ -95,7 +108,7 @@ export default function CartPage() {
                                 <OrderSummary items={items} />
                                 <button onClick={handleCheckout}
                                 disabled={items.length === 0 || isLoading} 
-                                className='w-full bg-red-600 text-white py-3 transition rounded-lg font-bold mt-4 hover:bg-red-700'>
+                                className='w-full bg-[#D85A30] text-white py-3 transition rounded-lg font-bold mt-4 hover:bg-[#c04f28]'>
                                     Checkout
                                 </button>
                             </div>
