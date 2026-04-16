@@ -176,5 +176,5 @@ Team velocity for iteration 2: **≈12 story days per iteration**
 
 ## Iteration Journals
 
-1. [Iteration 1](./iteration_1.md)
-2. [Iteration 2](./iteration_2.md)
+1. [Iteration 1](./Iteration_Journal/iteration_1.md)
+2. [Iteration 2](./Iteration_Journal/iteration_2.md)
