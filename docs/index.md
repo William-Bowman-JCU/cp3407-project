@@ -83,7 +83,7 @@ All **7 planned user stories** delivered. Velocity: **13 story days**.
 
 ### Iteration 2 — Enhanced Features (17 Mar – 10 Apr 2026)
 
-**7 of 8 user stories** delivered. Velocity: **13 story days**.
+**6 of 8 user stories** delivered. Velocity: **12 story days**.
 
 | Story | Priority | Estimate | Status |
 |-------|----------|----------|--------|
@@ -91,7 +91,7 @@ All **7 planned user stories** delivered. Velocity: **13 story days**.
 | Select Restaurant | 9 | 2 days | ✅ Done |
 | Order History | 8 | 2 days | ✅ Done |
 | Account Settings | 7 | 2 days | ✅ Done |
-| Search Restaurants | 6 | 1 day | ✅ Done |
+| Search Restaurants | 6 | 1 day | ⏭ Deferred (UI present, filtering incomplete) |
 | Restaurant Details | 6 | 2 days | ✅ Done |
 | Reorder Previous Order | 5 | 2 days | ✅ Done |
 | Filter Restaurants | 4 | 2 days | ⏭ Deferred (lowest priority) |

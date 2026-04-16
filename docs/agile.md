@@ -178,7 +178,7 @@ The team demonstrated the complete core ordering flow — from account registrat
 
 ### Results
 
-**7 of 8 stories completed.** Filter Restaurants (US-15, priority 4) was deferred — the lowest-priority story in the backlog and the correct agile decision when capacity runs out. Actual velocity: **13 story days**.
+**6 of 8 stories completed.** Two stories were deferred: Filter Restaurants (US-15, priority 4) and Search Restaurants (US-11, priority 6 — search bar UI present, text filtering incomplete). Actual velocity: **12 story days**.
 
 | Story | Estimate | Status |
 |-------|----------|--------|
@@ -186,11 +186,11 @@ The team demonstrated the complete core ordering flow — from account registrat
 | Select Restaurant | 2 days | ✅ Done |
 | Order History | 2 days | ✅ Done |
 | Account Settings | 2 days | ✅ Done |
-| Search Restaurants | 1 day | ✅ Done |
+| Search Restaurants | 1 day | ⏭ Deferred (UI present, filtering incomplete) |
 | Restaurant Details | 2 days | ✅ Done |
 | Reorder Previous Order | 2 days | ✅ Done |
 | Filter Restaurants | 2 days | ⏭ Deferred (lowest priority) |
-| **Total** | **15** | **13 delivered** |
+| **Total** | **15** | **12 delivered** |
 
 ### Retrospective
 
@@ -200,11 +200,12 @@ The team demonstrated the complete core ordering flow — from account registrat
 - Deployment to AWS Amplify remained stable throughout the iteration, allowing continuous testing against the live environment
 
 **What could be improved:**
-- The team slightly overcommitted (15 days planned vs 13-day velocity). Future iterations should plan to velocity rather than above it
+- The team overcommitted (15 days planned vs 12 delivered). Future iterations should plan to measured velocity rather than above it
+- Search Restaurants (US-11) had UI scaffolding built but text filtering was not completed — earlier identification of this gap would have allowed reallocation of the 1-day budget to a higher-value story
 - Earlier communication about blocked items would have reduced last-minute integration effort
 
 **Lessons applied:**
-- Deferring US-15 was the correct agile call — delivering 7 working, tested features beats delivering 8 partially-finished ones
+- Deferring US-15 and US-11 was the correct agile call — delivering 6 fully working, tested features is preferable to shipping partially-completed functionality
 
 ### Client Demo & Feedback
 
@@ -219,13 +220,13 @@ The team demonstrated the full application, covering all 14 implemented user sto
 | Feedback item | Source | Outcome |
 |---------------|--------|---------|
 | Delivery location step now flows naturally before restaurant browsing — much improved UX | Instructor | Confirmed: Iteration 1 feedback addressed correctly |
-| Restaurant search works well; filtering by cuisine or rating is still missing | External tester | US-15 already in backlog; deferred at priority 4 — correct agile decision |
+| Search bar is visible on the browse page but text-based filtering does not work | External tester | US-11 deferred; UI scaffolding present but backend filtering was not completed this iteration |
 | Order history is clean; colour-coded statuses are intuitive | External tester | No change needed |
 | Reorder feature is a strong convenience addition | External tester | No change needed |
 | Cart persists correctly across page navigation | Instructor | localStorage architecture validated for project scope |
 | Registration and login forms have improved accessibility compared to Iteration 1 | External tester | Confirms styling improvements were valuable |
 
-**Key outcome:** The instructor noted a significant improvement over Iteration 1 and confirmed that the application now covers the complete user journey. The deferral of US-15 (Filter Restaurants) was explicitly accepted as a justified agile decision given the consistent velocity of 13 story days. No new user stories were identified — the backlog is complete for the project scope.
+**Key outcome:** The instructor noted a significant improvement over Iteration 1. The deferral of US-15 (Filter Restaurants, priority 4) and the incomplete US-11 (Search, priority 6 — UI present, filtering not functional) were noted. Both remain in the backlog for a future iteration. Actual velocity: 12 story days.
 
 **Traceability — Iteration 1 feedback → Iteration 2 delivery:**
 
@@ -243,9 +244,9 @@ The team demonstrated the full application, covering all 14 implemented user sto
 | Iteration | Planned (days) | Actual (days) | Velocity |
 |-----------|---------------|---------------|---------|
 | Iteration 1 | 13 | 13 | 13 |
-| Iteration 2 | 15 | 13 | 13 |
+| Iteration 2 | 15 | 12 | 12 |
 
-Velocity remained stable at 13 story days across both iterations, confirming the team's consistent throughput. The slight overcommitment in Iteration 2 (15 planned vs 13 velocity) was a deliberate stretch goal acknowledged during planning.
+Iteration 1 velocity was 13 story days. Iteration 2 delivered 12 story days — two stories deferred (US-11 search incomplete, US-15 lowest priority). The overcommitment (15 planned vs 12 delivered) confirms that future iterations should plan to measured velocity.
 
 ---
 

@@ -140,18 +140,18 @@ Total: 15 days
 
 ### Completed user stories
 
-1. [Account Settings](./user_stories/User_story_08_account_settings.md), priority 6, 1.5 days
+1. [Account Settings](./user_stories/User_story_08_account_settings.md), priority 7, 2 days
 2. [Select Delivery Location](./user_stories/User_story_09_delivery_location.md), priority 10, 2 days
 3. [Select Restaurant](./user_stories/User_story_10_select_restaurant.md), priority 9, 2 days
-4. [Search Restaurants](./user_stories/User_story_11_search_restaurants.md), priority 6, 1 day
-5. [Order History](./user_stories/User_story_12_order_history.md), priority 8, 2 days
-6. [Reorder Previous Order](./user_stories/User_story_13_reorder.md), priority 5, 2 days
-7. [Restaurant Details](./user_stories/User_story_14_restaurant_details.md), priority 6, 2 days
+4. [Order History](./user_stories/User_story_12_order_history.md), priority 8, 2 days
+5. [Reorder Previous Order](./user_stories/User_story_13_reorder.md), priority 5, 2 days
+6. [Restaurant Details](./user_stories/User_story_14_restaurant_details.md), priority 6, 2 days
 
-Completed effort: **13 story days**
+Completed effort: **12 story days**
 
 ### Not completed — deferred
 
+* [Search Restaurants](./user_stories/User_story_11_search_restaurants.md), priority 6, 1 day — search bar UI is present but text-based filtering was not fully implemented; deferred to a future iteration.
 * [Filter Restaurants](./user_stories/User_story_15_filter_restaurants.md), priority 4, 2 days — deferred due to insufficient remaining story days and lowest priority in the backlog. To be considered for a future iteration.
 
 ### What went well
@@ -168,9 +168,9 @@ Completed effort: **13 story days**
 ### Velocity
 
 Planned effort: **15 story days**
-Completed effort: **13 story days**
+Completed effort: **12 story days**
 
-Team velocity for iteration 2: **≈13 story days per iteration**
+Team velocity for iteration 2: **≈12 story days per iteration**
 
 ---
 

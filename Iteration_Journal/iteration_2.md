@@ -30,7 +30,7 @@ Completed:
 * Select Restaurant – completed
 * Order History – completed
 * Account Settings – completed (closes #6)
-* Search Restaurants – completed
+* Search Restaurants – not completed (search bar UI present, text filtering deferred)
 * Restaurant Details – completed
 * Reorder Previous Order – completed
 * Shopping Cart / Cart Page – completed (closes #11)
@@ -46,7 +46,7 @@ Update this at least once per week
 * 1 week left, 4 days
 * 0 weeks left, 0 days
 
-* Actual Velocity: 15 story days
+* Actual Velocity: 12 story days
 
 ### Client Demo — 11 Apr 2026
 
@@ -56,7 +56,7 @@ Update this at least once per week
 
 **Demonstrated features:**
 - Full end-to-end ordering flow with delivery location selection (US-09)
-- Restaurant browsing, search and detail pages (US-10, US-11, US-14)
+- Restaurant browsing and detail pages (US-10, US-14)
 - Order history with colour-coded statuses and reorder (US-12, US-13)
 - Account settings and profile management (US-08)
 - Persistent cart badge in navbar (improved from Iteration 1 feedback)
@@ -66,7 +66,7 @@ Update this at least once per week
 | # | Feedback | Priority | Action |
 |---|----------|----------|--------|
 | 1 | "The delivery location step now flows naturally before restaurant browsing — much better UX than Iteration 1." | Positive | Confirmed US-09 implementation is correct |
-| 2 | "Restaurant search works well. Missing the ability to filter by cuisine type or rating." | Medium | US-15 (Filter Restaurants) already in backlog — deferred due to velocity cap; remains for future iteration |
+| 2 | "Search bar is visible but does not filter results — text search is not yet functional." | Medium | US-11 deferred; search bar UI exists but backend filtering was not completed in this iteration |
 | 3 | "Order history is clean and the colour-coded statuses are intuitive." | Positive | No change needed |
 | 4 | "Reorder button on past orders is a great convenience feature — works as expected." | Positive | No change needed |
 | 5 | "Registration form accessibility and styling has improved since Iteration 1." | Positive | Confirms styling fixes were worthwhile |

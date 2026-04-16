@@ -51,12 +51,12 @@ The system filters restaurant results dynamically based on the search query.
 ### Mockup
 ![US11 - Search restaurant mockup](../images/us11_search_restaurants.jpg)
 
-## Completed
-- Feature implemented in iteration 2
-- Backend: `GET /api/restaurants/?search=<query>` filters restaurants by name
-- Search integrated into the browse page experience
-- Acceptance criteria met:
-  - [x] User can search for a restaurant by name
-  - [x] Results are filtered dynamically based on input
-  - [x] Empty search results show appropriate feedback text
-- Deployed at: https://main.d29mzie0h3ms32.amplifyapp.com/browse
+## Status: Deferred (Iteration 2)
+
+- Search bar UI is present on the browse page (`/browse`)
+- Text-based filtering was not completed in Iteration 2 — the input is a visual placeholder only
+- Acceptance criteria not fully met:
+  - [ ] User can search for a restaurant by name
+  - [ ] Results are filtered dynamically based on input
+  - [ ] Empty search results show appropriate feedback text
+- Deferred to a future iteration; to be prioritised above US-15 (priority 6 vs 4)

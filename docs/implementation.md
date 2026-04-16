@@ -119,7 +119,7 @@ After placing an order, users see a tracking page showing the current order stat
 
 ## Iteration 2 Deliverables (17 Mar – 10 Apr 2026)
 
-Iteration 2 is complete. All planned features were delivered except Filter Restaurants (US-15), which was deferred as the lowest-priority story when the team reached velocity capacity.
+Iteration 2 delivered 6 of 8 planned stories (12 story days). Two stories were deferred: Search Restaurants (US-11 — search bar UI present, text filtering not implemented) and Filter Restaurants (US-15 — lowest priority).
 
 | Feature | Story | Status |
 |---------|-------|--------|
@@ -127,9 +127,9 @@ Iteration 2 is complete. All planned features were delivered except Filter Resta
 | Select Restaurant | US-10 | ✅ Completed |
 | Order History | US-12 | ✅ Completed |
 | Account Settings | US-08 | ✅ Completed |
-| Search Restaurants | US-11 | ✅ Completed |
 | Restaurant Details | US-14 | ✅ Completed |
 | Reorder Previous Order | US-13 | ✅ Completed |
+| Search Restaurants | US-11 | ⏭ Deferred (UI scaffolding present, text filtering incomplete) |
 | Filter Restaurants | US-15 | ⏭ Deferred (lowest priority, insufficient capacity) |
 
 ---
