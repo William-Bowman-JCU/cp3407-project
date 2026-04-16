@@ -41,4 +41,35 @@ Completed:
 * 0 weeks left, 0 days  
 
 * Actual Velocity: 13 story days
+
+### Client Demo — 14 Mar 2026
+
+**Attendees:** Full team (4 developers) + course instructor (Dr. Konovalov) + 2 external student testers
+
+**Format:** Live walkthrough of the deployed application at https://main.d29mzie0h3ms32.amplifyapp.com
+
+**Demonstrated features:**
+- User registration and login (US-01, US-02)
+- Browse food categories (US-03)
+- View restaurant menu and add items (US-04)
+- Shopping cart with quantity adjustment (US-05)
+- Multi-step checkout with payment (US-06)
+- Order tracking status stepper (US-07)
+
+**Feedback received:**
+
+| # | Feedback | Priority | Action |
+|---|----------|----------|--------|
+| 1 | "Users need to select a delivery address *before* browsing — the checkout currently asks for an address too late in the flow." | High | Added as US-09 (Select Delivery Location, priority 10) in Iteration 2 |
+| 2 | "The order tracking stepper is clear and well-designed — this is a strong feature." | Positive | No change needed |
+| 3 | "Registration form should provide inline validation feedback rather than a generic error." | Medium | Noted; addressed in Iteration 2 styling fixes |
+| 4 | "Would like to see the ability to browse and compare multiple restaurants." | Medium | Captured as US-10/US-14 in Iteration 2 |
+| 5 | "Cart item count should be visible in the navbar at all times." | Low | Addressed in Iteration 2 via CartContext badge |
+
+**Overall assessment from instructor:** Core ordering workflow is functional and deployed. Key gap identified: delivery location must be part of the pre-checkout flow. Team demonstrated good prioritisation discipline.
+
+**Changes applied to Iteration 2 planning:**
+- US-09 (Select Delivery Location) elevated to priority 10 — highest in Iteration 2 backlog
+- US-10 (Select Restaurant) added at priority 9 to address restaurant discovery gap
+- Inline form validation improvements noted for implementation
     
