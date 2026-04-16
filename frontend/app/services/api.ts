@@ -27,6 +27,7 @@ export type SavedAddress = {
   id: number;
   street: string;
   city: string;
+  suburb?: string;
   postcode: string;
   is_default: boolean;
 };
