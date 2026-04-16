@@ -71,6 +71,19 @@ export default function CartPage() {
                                                 <h3 className='text-white font-semibold'>{item.name}</h3>
                                                 <p className='text-sm'>${item.price.toFixed(2)}</p>
                                             </div>
+                                            
+
+                                        {/* Total  */}
+                                        <p className='text-red-400 font-bold text-sm w-16 text-right'>
+                                            ${(item.price * item.quantity).toFixed(2)}
+                                        </p>
+                                
+                                        {/* Remove Button */}
+                                        <button onClick={() => removeItemFunc(item.id)}
+                                            className='text-zinc-400 hover:text-red-500 text-sm transition'>
+                                            Remove
+                                        </button>
+
                                         </div>
                                     ))}
                                 </div>

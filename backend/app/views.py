@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
-from .models import Restaurant, MenuItem, Order, Address
+from .models import Restaurant, MenuItem, Order, Address, Cuisine
 from .serializers import (
     RestaurantSerializer,
     RestaurantDetailSerializer,
@@ -11,7 +11,13 @@ from .serializers import (
     OrderSerializer,
     OrderCreateSerializer,
     AddressSerializer,
+    CuisineSerializer,
 )
+
+class CuisineListView(generics.ListAPIView):
+    serializer_class = CuisineSerializer
+    permission_classes = [AllowAny]
+    queryset = Cuisine.objects.all()
 
 
 class RestaurantListView(generics.ListAPIView):
@@ -23,10 +29,10 @@ class RestaurantListView(generics.ListAPIView):
         cuisine = self.request.query_params.get('cuisine')
         search = self.request.query_params.get('search')
         if cuisine:
-            queryset = queryset.filter(cuisine_type__icontains=cuisine)
+            queryset = queryset.filter(cuisines__name__icontains=cuisine)
         if search:
             queryset = queryset.filter(name__icontains=search)
-        return queryset
+        return queryset.distinct()
 
 
 class RestaurantDetailView(generics.RetrieveAPIView):

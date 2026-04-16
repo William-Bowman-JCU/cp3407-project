@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Restaurant, MenuItem, Order, OrderItem, Address
+from .models import Restaurant, MenuItem, Order, OrderItem, Address, Cuisine
 
 
 class MenuItemSerializer(serializers.ModelSerializer):
@@ -8,10 +8,16 @@ class MenuItemSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'description', 'price', 'category', 'image_url', 'is_available']
 
 
+class CuisineSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cuisine
+        fields = ['id', 'name', 'image_url']
+
+
 class RestaurantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Restaurant
-        fields = ['id', 'name', 'cuisine_type', 'address', 'rating', 'image_url', 'opening_time', 'closing_time', 'is_active']
+        fields = ['id', 'name', 'address', 'rating', 'image_url', 'opening_time', 'closing_time', 'is_active']
 
 
 class RestaurantDetailSerializer(serializers.ModelSerializer):
@@ -19,7 +25,7 @@ class RestaurantDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Restaurant
-        fields = ['id', 'name', 'cuisine_type', 'address', 'rating', 'image_url', 'opening_time', 'closing_time', 'is_active', 'menu_items']
+        fields = ['id', 'name', 'address', 'rating', 'image_url', 'opening_time', 'closing_time', 'is_active', 'menu_items']
 
 
 class AddressSerializer(serializers.ModelSerializer):

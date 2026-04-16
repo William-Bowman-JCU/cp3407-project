@@ -23,7 +23,7 @@ This page documents the architectural, database, and user interface design decis
 
 FeedMe follows a **decoupled client–server architecture**. The frontend and backend are separate applications that communicate via a REST API. This separation allows each layer to be developed, tested, and deployed independently.
 
-> 🔗 **[View interactive architecture diagram on Miro](https://miro.com/welcomeonboard/WHl5QUhjeHdEVFcrRjdxY1FYcW9tNEF2dGc2eHIyZ3VIWlcvcFNYdHROR2FtVVpYUklQWXJVNTZlRUhSeWdJY280blBSakY0T09RRHNhUlJyUVlrWWNTVmxHWmh3UkJkcTM2bTBtY2R2SXRwcG4wbEV3Tm9wVlhiUU1wUXZ1d3RzVXVvMm53MW9OWFg1bkJoVXZxdFhRPT0hdjE=?share_link_id=390991071424)** — includes full system architecture, component relationships and navigation flow.
+> 🔗 **[View interactive architecture diagram on Miro](https://miro.com/welcomeonboard/WHl5QUhjeHdEVFcrRjdxY1FYcW9tNEF2dGc2eHIyZ3VIWlcvcFNYdHROR2FtVVpYUklQWXJVNTZlRUhSeWdJY280blBSakY0T09RRHNhUlJyUVlrWWNTVmxHWmh3UkJkcTM2bTBtY2R2SXRWcEVBRzVDSEdOOEdjZURRM3RxZE9zVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=675059761588)** — includes full system architecture, component relationships and navigation flow.
 
 ```mermaid
 graph TB
@@ -63,7 +63,7 @@ graph TB
 
 The database schema was designed using an entity-relationship approach and documented with an interactive diagram.
 
-> 🔗 **[View full ER diagram on Miro](https://miro.com/welcomeonboard/WHl5QUhjeHdEVFcrRjdxY1FYcW9tNEF2dGc2eHIyZ3VIWlcvcFNYdHROR2FtVVpYUklQWXJVNTZlRUhSeWdJY280blBSakY0T09RRHNhUlJyUVlrWWNTVmxHWmh3UkJkcTM2bTBtY2R2SXRwcG4wbEV3Tm9wVlhiUU1wUXZ1d3RzVXVvMm53MW9OWFg1bkJoVXZxdFhRPT0hdjE=?share_link_id=390991071424)**
+> 🔗 **[View full ER diagram on Miro](https://miro.com/welcomeonboard/WHl5QUhjeHdEVFcrRjdxY1FYcW9tNEF2dGc2eHIyZ3VIWlcvcFNYdHROR2FtVVpYUklQWXJVNTZlRUhSeWdJY280blBSakY0T09RRHNhUlJyUVlrWWNTVmxHWmh3UkJkcTM2bTBtY2R2SXRWcEVBRzVDSEdOOEdjZURRM3RxZE9zVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=675059761588)**
 
 The database models reflect the core domain of a food delivery application: users place orders from restaurants, each order containing menu items.
 
@@ -217,7 +217,7 @@ Wireframe mockups were created during iteration planning using **[NinjaMock](htt
 
 The full mockup collection is also available on our interactive Miro board:
 
-> 🔗 **[View full interactive Miro board](https://miro.com/welcomeonboard/WHl5QUhjeHdEVFcrRjdxY1FYcW9tNEF2dGc2eHIyZ3VIWlcvcFNYdHROR2FtVVpYUklQWXJVNTZlRUhSeWdJY280blBSakY0T09RRHNhUlJyUVlrWWNTVmxHWmh3UkJkcTM2bTBtY2R2SXRwcG4wbEV3Tm9wVlhiUU1wUXZ1d3RzVXVvMm53MW9OWFg1bkJoVXZxdFhRPT0hdjE=?share_link_id=390991071424)** — includes all wireframe screens, colour palette, and navigation flow.
+> 🔗 **[View full interactive Miro board](https://miro.com/welcomeonboard/WHl5QUhjeHdEVFcrRjdxY1FYcW9tNEF2dGc2eHIyZ3VIWlcvcFNYdHROR2FtVVpYUklQWXJVNTZlRUhSeWdJY280blBSakY0T09RRHNhUlJyUVlrWWNTVmxHWmh3UkJkcTM2bTBtY2R2SXRWcEVBRzVDSEdOOEdjZURRM3RxZE9zVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=675059761588)** — includes all wireframe screens, colour palette, and navigation flow.
 
 #### Iteration 1 Mockups
 

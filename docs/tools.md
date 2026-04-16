@@ -149,13 +149,15 @@ This page documents all tools used during the development of FeedMe, explaining 
 
 ---
 
-### draw.io / diagrams.net (Architecture Diagrams)
+### Miro (Architecture & UML Diagrams)
 
-**What:** Free online diagramming tool.
+**What:** Online collaborative whiteboard and diagramming platform.
 
-**Why:** draw.io is browser-based (no install required), exports to SVG/PNG, and integrates with VS Code via extension. It was used to sketch the initial system architecture before coding began.
+**Why:** Miro is browser-based, supports real-time multi-user editing, and allows the creation of UML-style architecture diagrams and component relationship maps. It was used to produce and share the system architecture diagram and navigation flow for FeedMe.
 
-**Used for:** Architecture diagram drafts, component relationship sketches
+**Used for:** System architecture diagram, component relationships, navigation flow
+
+**Link:** [View FeedMe Architecture on Miro](https://miro.com/welcomeonboard/WHl5QUhjeHdEVFcrRjdxY1FYcW9tNEF2dGc2eHIyZ3VIWlcvcFNYdHROR2FtVVpYUklQWXJVNTZlRUhSeWdJY280blBSakY0T09RRHNhUlJyUVlrWWNTVmxHWmh3UkJkcTM2bTBtY2R2SXRWcEVBRzVDSEdOOEdjZURRM3RxZE9zVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=675059761588)
 
 ---
 
@@ -169,13 +171,13 @@ This page documents all tools used during the development of FeedMe, explaining 
 
 ---
 
-### Figma (UI Wireframes)
+### NinjaMock (UI Wireframes)
 
-**What:** Browser-based UI design and wireframing tool.
+**What:** Browser-based wireframe and UI prototyping tool.
 
-**Why:** Figma allows multiple team members to collaborate on wireframes in real time. Mockup screens were created in Figma before implementation to agree on layout and user flow, reducing rework during coding.
+**Why:** NinjaMock is purpose-built for rapid wireframing of mobile and web interfaces. It was used to create one mockup screen per user story before implementation began, aligning the team on expected layout and user flow before any code was written.
 
-**Used for:** UI wireframes for all 15 user stories (image exports stored in `/images`)
+**Used for:** UI wireframes for all 15 user stories — one mockup per user story (image exports stored in `/images` and `/frontend/public/images`)
 
 ---
 
@@ -207,9 +209,9 @@ This page documents all tools used during the development of FeedMe, explaining 
 | Version control | Git + GitHub | - | Source control, collaboration |
 | Package manager (JS) | npm | 10.x | JS dependencies |
 | Package manager (Python) | pip + venv | - | Python dependencies |
-| Diagrams | draw.io | Online | Architecture diagrams |
+| Diagrams | Miro | Online | Architecture & UML diagrams |
 | DB design | dbdiagram.io | Online | ER diagrams |
-| UI mockups | Figma | Online | Wireframes |
+| UI mockups | NinjaMock | Online | Wireframes |
 | Project management | GitHub Projects | - | Kanban board |
 | AI assistance | Claude / ChatGPT | - | Scaffolding, docs |
 

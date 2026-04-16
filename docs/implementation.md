@@ -14,12 +14,12 @@ This page documents the features delivered in each iteration, the technology sta
 
 [**Open FeedMe App**](https://main.d29mzie0h3ms32.amplifyapp.com){: .btn .btn-primary .fs-5 .mb-4 }
 
-The frontend is deployed on Vercel and publicly accessible. The app demonstrates the complete Iteration 1 user journey: browse food categories, manage the shopping cart, proceed through checkout, and view the order confirmation.
+The frontend is deployed on **AWS Amplify** and publicly accessible. The app demonstrates the complete two-iteration user journey: account creation, browsing restaurants, managing the shopping cart, checkout, order tracking, order history, delivery location management, and account settings.
 
 | Environment | URL | Status |
 |-------------|-----|--------|
-| Production (frontend) | [feedme-dusky.vercel.app](https://main.d29mzie0h3ms32.amplifyapp.com) | Live |
-| Backend API | Django / local dev | Available via `python manage.py runserver` |
+| Production (frontend) | [main.d29mzie0h3ms32.amplifyapp.com](https://main.d29mzie0h3ms32.amplifyapp.com) | Live |
+| Backend API | Django / AWS Elastic Beanstalk | Available via `python manage.py runserver` (local) |
 
 <details open markdown="block">
   <summary>Table of contents</summary>

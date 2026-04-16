@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect } from "react";
+import {getRestaurantDetail} from "../services/api";
 
 export type CartItem = {
   id: number;
@@ -22,10 +23,21 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | null>(null);
 
-export function CartProvider({ children }: { children: React.ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>([]);
+function readStoredCart(): CartItem[]{
+  try {
+    const stored = localStorage.getItem("feedme_cart");
+    if (!stored) return [];
+    const parsed = JSON.parse(stored) as CartItem[];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
 
-  // Load cart from localStorage on mount
+export function CartProvider({ children }: { children: React.ReactNode }) {
+  const [items, setItems] = useState<CartItem[]>(readStoredCart); //goes through the function
+
+  // Load cart from localStorage on mount 
   useEffect(() => {
     try {
       const stored = localStorage.getItem("feedme_cart");

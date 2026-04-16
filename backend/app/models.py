@@ -21,18 +21,8 @@ class Address(models.Model):
 
 
 class Restaurant(models.Model):
-    CUISINE_CHOICES = [
-        ('italian', 'Italian'),
-        ('chinese', 'Chinese'),
-        ('indian', 'Indian'),
-        ('mexican', 'Mexican'),
-        ('japanese', 'Japanese'),
-        ('thai', 'Thai'),
-        ('greek', 'Greek')
-    ]
-
     name = models.CharField(max_length=255)
-    cuisine_type = models.CharField(max_length=100, choices=CUISINE_CHOICES)
+    cuisines = models.ManyToManyField('Cuisine', related_name='restaurants')
     address = models.CharField(max_length=255)
     rating = models.FloatField(
         default=0.0,
@@ -45,6 +35,13 @@ class Restaurant(models.Model):
 
     def __str__(self):
         return self.name
+
+class Cuisine(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    image_url = models.URLField(blank=True)
+    def __str__(self):
+        return self.name
+
 
 
 class MenuItem(models.Model):

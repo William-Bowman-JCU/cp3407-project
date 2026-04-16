@@ -90,7 +90,7 @@ export default function RestaurantMenuPage() {
         <div className="mt-4 flex items-start justify-between gap-4">
           <div>
             <h1 className="text-3xl font-bold">{restaurant.name}</h1>
-            <p className="text-zinc-400 text-sm mt-1">{restaurant.cuisine_type}</p>
+            {/* <p className="text-zinc-400 text-sm mt-1">{restaurant.cuisine_type}</p> */}
             <p className="text-zinc-500 text-xs mt-1">{restaurant.address}</p>
           </div>
 
@@ -119,7 +119,7 @@ export default function RestaurantMenuPage() {
 
             {/* Category heading */}
             <div className="flex items-center gap-3 mb-4">
-              <h2 className="text-lg font-semibold text-white uppercase tracking-widest text-sm">
+              <h2 className="font-semibold text-white uppercase tracking-widest text-sm">
                 {category}
               </h2>
               <div className="flex-1 h-px bg-zinc-700" />
