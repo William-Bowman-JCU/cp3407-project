@@ -59,7 +59,7 @@ export default function CheckoutPage() {
             <p className="text-xl mb-4">Your cart is empty.</p>
             <button
               onClick={() => router.push("/browse")}
-              className="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-xl transition"
+              className="bg-[#D85A30] hover:bg-red-700 text-white font-bold px-6 py-3 rounded-xl transition"
             >
               Browse Restaurants
             </button>
