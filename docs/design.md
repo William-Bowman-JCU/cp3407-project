@@ -29,15 +29,15 @@ FeedMe follows a **decoupled client–server architecture**. The frontend and ba
 graph TB
     subgraph Client["Client Layer"]
         Browser["User Browser"]
-        Next["Next.js 14 (TypeScript)\nReact Components\nApp Router"]
+        Next["Next.js 16 (TypeScript)\nReact Components\nApp Router"]
     end
 
     subgraph Server["Server Layer"]
-        Django["Django 5 (Python)\nREST API\nAuthentication\nBusiness Logic"]
+        Django["Django 6 (Python)\nREST API\nAuthentication\nBusiness Logic"]
     end
 
     subgraph Data["Data Layer"]
-        DB[("SQLite\n(Development)\nPostgreSQL\n(Production)")]
+        DB[("PostgreSQL\n(configured via env for dev & prod)")]
     end
 
     Browser --> Next
@@ -49,15 +49,54 @@ graph TB
 
 | Decision | Choice | Justification |
 |----------|--------|---------------|
-| Frontend framework | Next.js 14 (TypeScript) | Server-side rendering improves performance and SEO; App Router provides file-based routing |
-| Backend framework | Django 5 (Python) | Mature ORM, built-in admin, rapid API development with Django REST Framework |
+| Frontend framework | Next.js 16 (TypeScript) | Server-side rendering improves performance and SEO; App Router provides file-based routing |
+| Backend framework | Django 6 (Python) | Mature ORM, built-in admin, rapid API development with Django REST Framework |
 | API style | REST (JSON) | Simple, stateless, widely supported; suitable for a CRUD-heavy food delivery domain |
 | Database (dev) | SQLite | Zero-configuration, file-based, ships with Python — ideal for development and testing |
 | Database (prod) | PostgreSQL | Production-grade, ACID-compliant, fully supported by Django ORM |
-| Authentication | JWT (JSON Web Tokens) | Stateless auth that works well with decoupled frontend/backend architecture |
+| Authentication | JWT (JSON Web Tokens) | Session-based authentication (Django sessions + DRF SessionAuthentication) |
 | Styling | Tailwind CSS | Utility-first CSS, rapid UI development, consistent design system |
 
 ---
+
+
+### Combined System Context and Logical Architecture 
+
+```mermaid
+flowchart TB
+  subgraph External["External"]
+    User((User / Browser))
+  end
+
+  subgraph Frontend["Frontend — Next.js"]
+    direction TB
+    Pages["App Router pages\n(browse, restaurant menu, cart, checkout, orders, …)"]
+    Ctx["CartContext + localStorage"]
+    ApiClient["api.ts\n(publicFetch / authFetch)"]
+    Pages --- Ctx
+    Pages --> ApiClient
+  end
+
+  subgraph Backend["Backend — Django + DRF"]
+    direction TB
+    RootURLs["feedme.urls\nmount at /api/"]
+    AppAPI["app views\n(cuisines, restaurants, menu, orders, addresses)"]
+    AcctAPI["accounts views\n(login, register, account)"]
+    ORM["Django ORM / models"]
+    RootURLs --> AppAPI
+    RootURLs --> AcctAPI
+    AppAPI --> ORM
+    AcctAPI --> ORM
+  end
+
+  subgraph Data["Data store"]
+    PG[(PostgreSQL)]
+  end
+
+  User --> Frontend
+  ApiClient -->|"HTTPS REST + JSON\n(session cookie on protected routes)"| RootURLs
+  ORM --> PG
+```
 
 ## Database Design
 
@@ -71,12 +110,11 @@ The database models reflect the core domain of a food delivery application: user
 erDiagram
     USER {
         int id PK
+        string username
         string email
-        string password_hash
-        string full_name
-        string phone
-        datetime created_at
-        datetime updated_at
+        string password
+        string first_name
+        string last_name
     }
     ADDRESS {
         int id PK
@@ -87,10 +125,14 @@ erDiagram
         string postcode
         bool is_default
     }
+    CUISINE {
+        int id PK
+        string name
+        string image_url
+    }
     RESTAURANT {
         int id PK
         string name
-        string cuisine_type
         string address
         float rating
         string image_url
@@ -114,9 +156,7 @@ erDiagram
         int restaurant_id FK
         int delivery_address_id FK
         string status
-        decimal subtotal
         decimal delivery_fee
-        decimal total
         datetime placed_at
         datetime estimated_delivery
     }
@@ -130,6 +170,7 @@ erDiagram
 
     USER ||--o{ ADDRESS : "has saved"
     USER ||--o{ ORDER : "places"
+    RESTAURANT }o--o{ CUISINE : "categorized as"
     RESTAURANT ||--o{ MENU_ITEM : "offers"
     RESTAURANT ||--o{ ORDER : "receives"
     ORDER ||--o{ ORDER_ITEM : "contains"
@@ -137,12 +178,44 @@ erDiagram
     ADDRESS ||--o{ ORDER : "delivers to"
 ```
 
+### Deployment UML
+Traffic flows from the user through the hosted frontend; the browser calls the API using `NEXT_PUBLIC_API_URL` (must include the `/api` path prefix used by Django).
+
+```mermaid
+flowchart LR
+  U[User]
+  CF[CloudFront / Amplify URL]
+  API[API host e.g. CloudFront or origin]
+  RDS[(RDS PostgreSQL)]
+
+  U --> CF
+  CF -->|NEXT_PUBLIC_API_URL /api/*| API
+  API --> RDS
+```
+
+### Place Order UML
+
+```mermaid
+sequenceDiagram
+  actor User
+  participant Next as Next.js (checkout)
+  participant API as Django REST
+  participant DB as PostgreSQL
+  User->>Next: Submit checkout form
+  Next->>API: POST /api/addresses/ (session cookie)
+  API->>DB: INSERT Address
+  API-->>Next: address id
+  Next->>API: POST /api/orders/create/
+  API->>DB: INSERT Order + OrderItems
+  API-->>Next: order id
+  Next->>Next: clearCart, redirect confirmation
+```
 ### Key Design Decisions
 
 - **`ORDER_ITEM.unit_price`** stores the price at the time of ordering, so historical orders remain accurate even if menu prices change later.
 - **`ADDRESS`** is a separate table linked to users, supporting multiple saved addresses per account (US-08, US-09).
 - **`RESTAURANT.is_active`** allows restaurants to be disabled without deleting their data or order history.
-- **`ORDER.status`** uses a string enum (`pending`, `confirmed`, `preparing`, `on_the_way`, `delivered`, `cancelled`) to track delivery lifecycle (US-07).
+- **`ORDER` totals are derived in the application layer from line items and delivery_fee.
 
 ---
 
