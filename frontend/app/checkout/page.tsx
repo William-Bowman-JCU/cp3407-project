@@ -24,7 +24,7 @@ export default function CheckoutPage() {
       const address = await createAddress({
         street: formData.street,
         city: formData.city,
-        postal_code: formData.postalCode,
+        postcode: formData.postalCode,
       });
 
       const restaurantId = items.find((i) => i.restaurantId)?.restaurantId ?? 1;
@@ -32,6 +32,11 @@ export default function CheckoutPage() {
       const order = await createOrder({
         restaurant: restaurantId,
         delivery_address: address.id,
+        items: items.map((item) => ({
+          menu_item: item.id,
+          quantity: item.quantity,
+          unit_price: item.price
+        })),
       });
 
       clearCart();
@@ -46,7 +51,7 @@ export default function CheckoutPage() {
       setIsLoading(false);
     }
   }
-
+  console.log(items);
   return (
     <div className="min-h-screen text-white">
       <main className="max-w-5xl mx-auto px-6 py-10">

@@ -8,19 +8,23 @@ export class ApiError extends Error {
   }
 }
 
+export function getCookie(name: string) {
+  if (typeof document === "undefined") return null;
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop()?.split(";").shift();
+}
+
 export type AddressPayload = {
   street: string;
-  suburb?: string;
   city: string;
   postcode?: string;
-  postal_code?: string;
   is_default?: boolean;
 };
 
 export type SavedAddress = {
   id: number;
   street: string;
-  suburb: string;
   city: string;
   postcode: string;
   is_default: boolean;
@@ -41,10 +45,18 @@ export function setDefaultAddress(id: number, current: SavedAddress): Promise<Sa
   });
 }
 
+export type OrderItemPayload = {
+  menu_item: number;
+  quantity: number;
+  unit_price: number;
+};
+
 export type OrderPayload = {
+  id?: number;
   restaurant: number;
   delivery_address: number;
   delivery_fee?: number;
+  items: OrderItemPayload[];
 };
 
 export type CreatedOrder = {
@@ -54,17 +66,20 @@ export type CreatedOrder = {
 };
 
 async function authFetch<T>(path: string, options: RequestInit): Promise<T> {
+  const csrfToken = getCookie("csrftoken");
   const res = await fetch(`${API_BASE}${path}`, {
     ...options,
     credentials: "include",
     headers: {
       "Content-Type": "application/json",
+      "X-CSRFToken": csrfToken || "",
       ...options.headers,
     },
   });
 
   if (!res.ok) {
     const text = await res.text().catch(() => res.statusText);
+    console.error(`API error ${res.status}: ${text}`);
     throw new ApiError(res.status, text);
   }
 
@@ -92,13 +107,6 @@ export function createAddress(
   payload: AddressPayload
 ): Promise<{ id: number }> {
   return authFetch("/addresses/", {
-    method: "POST",
-    body: JSON.stringify(payload),
-  });
-}
-
-export function createOrder(payload: OrderPayload): Promise<CreatedOrder> {
-  return authFetch("/orders/create/", {
     method: "POST",
     body: JSON.stringify(payload),
   });
@@ -175,6 +183,15 @@ export type Order = {
 export function getOrders(): Promise<Order[]> {
   return authFetch("/orders/", { method: "GET" });
 }
+
+export function createOrder(payload: OrderPayload): Promise<CreatedOrder> {
+  return authFetch("/orders/create/", {
+    method: "POST",
+    body: JSON.stringify(payload),
+  });
+}
+
+
 
 // ── Account Settings ────────────────────────────────────────────────────────
 

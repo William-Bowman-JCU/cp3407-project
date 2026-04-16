@@ -120,7 +120,7 @@ export default function OrderHistoryPage() {
                       className="flex justify-between text-sm"
                     >
                       <span className="text-zinc-300">
-                        {item.quantity}× {item.menu_item.name}
+                        {item.quantity}x {item.menu_item.name}
                       </span>
                       <span className="text-zinc-400">
                         ${parseFloat(item.line_total).toFixed(2)}

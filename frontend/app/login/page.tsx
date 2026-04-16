@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link'; //
+import Link from 'next/link'; 
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -18,9 +18,13 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const response = await fetch(`${DJANGO_URL}/api/login/`, {
+      const response = await fetch(`${DJANGO_URL}/login`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        
         body: JSON.stringify({ email, password }),
       });
 

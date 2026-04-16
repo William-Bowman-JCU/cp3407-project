@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { getAccount, updateAccount, ApiError } from "../services/api";
+import { getCookie, getAccount, updateAccount, ApiError } from "../services/api";
 
 export default function AccountSettingsPage() {
   const router = useRouter();
@@ -87,10 +87,27 @@ export default function AccountSettingsPage() {
     }
   }
 
-  function handleLogout() {
-    localStorage.removeItem("feedme_user");
-    router.push("/login");
+const handleLogout = async () => {
+  try {
+    // 1. Tell Django to kill the session
+    await fetch('/api/logout/', {
+      method: 'POST',
+      headers: {
+        'X-CSRFToken': getCookie('csrftoken') || '',
+      },
+      credentials: 'include',
+    });
+  } catch (error) {
+    console.error("Logout failed", error);
+  } finally {
+
+    // 2. Clear local data regardless of API success
+    localStorage.removeItem('feedme_user');
+    
+    // 3. Force a reload or redirect to clear the internal state
+    router.push('/login');
   }
+};
 
   if (loading) {
     return (

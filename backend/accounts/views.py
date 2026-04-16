@@ -1,11 +1,14 @@
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
-from rest_framework.decorators import api_view
+from django.contrib.auth import authenticate, login, logout
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
-
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 @api_view(['POST'])
+@permission_classes([AllowAny])
+@ensure_csrf_cookie
 def register_view(request):
     name = request.data.get('name')
     email = request.data.get('email')
@@ -28,8 +31,14 @@ def register_view(request):
 
     return Response({'message': 'Account created successfully'}, status=status.HTTP_201_CREATED)
 
+@api_view(['POST'])
+def logout_view(request):
+    logout(request) # This destroys the session in the DB and clears the cookie
+    return Response({"message": "Logged out successfully"}, status=200)
 
 @api_view(['POST'])
+@permission_classes([AllowAny])
+@ensure_csrf_cookie
 def login_view(request):
     email = request.data.get('email')
     password = request.data.get('password')
@@ -40,6 +49,7 @@ def login_view(request):
     user = authenticate(request, username=email, password=password)
 
     if user is not None:
+        login(request, user)
         return Response({'message': 'Login successful', 'user': {'email': user.email, 'name': user.get_full_name()}})
     else:
         return Response({'error': 'Invalid email or password'}, status=status.HTTP_401_UNAUTHORIZED)

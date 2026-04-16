@@ -31,7 +31,7 @@ class RestaurantDetailSerializer(serializers.ModelSerializer):
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = Address
-        fields = ['id', 'street', 'suburb', 'city', 'postcode', 'is_default']
+        fields = ['id', 'street', 'city', 'postcode', 'is_default']
 
 
 class OrderItemSerializer(serializers.ModelSerializer):
@@ -65,12 +65,27 @@ class OrderSerializer(serializers.ModelSerializer):
     def get_total(self, obj):
         return obj.total()
 
+class OrderItemCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OrderItem
+        fields = ['menu_item', 'quantity', 'unit_price']
 
 class OrderCreateSerializer(serializers.ModelSerializer):
+    items = OrderItemCreateSerializer(many=True)
+    
     class Meta:
         model = Order
-        fields = ['restaurant', 'delivery_address', 'delivery_fee']
+        fields = ['restaurant', 'delivery_address', 'delivery_fee', 'items']
 
     def create(self, validated_data):
+        items_data = validated_data.pop('items')
         user = self.context['request'].user
-        return Order.objects.create(user=user, **validated_data)
+
+        order = Order.objects.create(user=user, **validated_data)
+
+        for item_data in items_data:
+            OrderItem.objects.create(order=order, **item_data)
+        return order
+
+    
+

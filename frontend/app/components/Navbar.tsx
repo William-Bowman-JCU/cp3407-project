@@ -2,9 +2,15 @@
 
 import Link from "next/link";
 import { useCart } from "../context/CartContext";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const { totalItems } = useCart();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <nav className="bg-zinc-800 border-b-2 border-[#D85A30] shadow-md">
@@ -29,7 +35,7 @@ export default function Navbar() {
           </Link>
           <Link href="/cart" className="relative text-zinc-300 hover:text-white transition">
             🛒
-            {totalItems > 0 && (
+            {mounted && totalItems > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center">
                 {totalItems}
               </span>
